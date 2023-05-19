@@ -6,40 +6,55 @@ import {
     getAllDraftsForLeague,
     getDraftPicks,
 } from "./services/draft.service.js";
-import { getAllLeaguesForUser, getLeague } from "./services/league.service.js";
+import {
+    getAllLeagueSeasons,
+    getAllLeaguesForUser,
+    getLastCompletedSeason,
+    getLeague,
+    getLeagueTransactions,
+} from "./services/league.service.js";
 
 import { getUser } from "./services/user.service.js";
 import { getAllPlayers } from "./services/player.service.js";
+import { getRostersFromLastCompletedSeason } from "./services/roster.service.js";
 
 const app = express();
 
-const MY_USER_ID = "444630794862850048";
-const YMFL_LEAGUE_ID = "837484548060192768";
-const YEAR_STARTED = 2019;
-const LEAGUE_NAME = "Your Mom's Favorite League";
-const JUSTIN_JEFFERSON_PLAYER_ID = "6794";
+const HistoryEntry = ({
+    rosterId,
+    season,
+    week,
+    type,
+    round,
+    pick,
+    overall,
+    keeper,
+}) => {
+    const draftMetadata =
+        round || pick || overall || keeper
+            ? {
+                  round,
+                  pick,
+                  overall,
+                  keeper,
+              }
+            : null;
+
+    return {
+        rosterId,
+        season,
+        week,
+        type,
+        draftMetadata,
+    };
+};
 
 const func = async () => {
     //dayjs years since
-    const yearsLeagueHasExisted = dayjs().diff(
-        dayjs(`${YEAR_STARTED}-01-01`),
-        "year"
-    );
-
-    const responses = await Promise.all(
-        Array.from({ length: yearsLeagueHasExisted }).map(async (_, i) => {
-            const year = YEAR_STARTED + i;
-            const leagues = await getAllLeaguesForUser(MY_USER_ID, year);
-            return leagues;
-        })
-    );
-
-    const leaguesSinceInception = _.flatten(responses).filter(
-        ({ name }) => name === LEAGUE_NAME
-    );
+    const allLeagueSeasons = await getAllLeagueSeasons();
 
     const allDrafts = await Promise.all(
-        leaguesSinceInception.map(async ({ league_id }) => {
+        allLeagueSeasons.map(async ({ league_id }) => {
             const drafts = await getAllDraftsForLeague(league_id);
             return drafts;
         })
@@ -56,15 +71,213 @@ const func = async () => {
         })
     );
 
-    return draftPicksBySeason;
+    const transactions = await Promise.all(
+        allLeagueSeasons.map(async ({ league_id, season }) => {
+            const t = [];
 
-    const myLeagues = await getAllLeaguesForUser(MY_USER_ID);
+            const p = await Promise.all(
+                _.times(20).map((i) => getLeagueTransactions(league_id, i))
+            );
 
-    return myLeagues;
+            t.push(..._.flatten(p));
+
+            return _.flattenDeep(t.map((y) => ({ ...y, season })));
+        })
+    );
+
+    const allTransacation = _.flatten(transactions)
+        .filter(({ status }) => status === "complete")
+        .reduce((acc, { leg, adds, drops, type, season }) => {
+            Object.entries(adds || {}).forEach(([playerId, rosterId]) => {
+                if (!acc[playerId]) {
+                    acc[playerId] = [];
+                }
+
+                const isWaiverMove = [
+                    "waiver",
+                    "free_agent",
+                    "commissioner",
+                ].includes(type);
+
+                acc[playerId].push(
+                    HistoryEntry({
+                        rosterId,
+                        season,
+                        week: leg,
+                        type: isWaiverMove
+                            ? "WAIVER_ADD"
+                            : type === "trade"
+                            ? "TRADED_IN"
+                            : "DRAFT_PICK",
+                    })
+                );
+            });
+
+            Object.entries(drops || {}).forEach(([playerId, rosterId]) => {
+                const isWaiverMove = [
+                    "waiver",
+                    "free_agent",
+                    "commissioner",
+                ].includes(type);
+
+                if (!acc[playerId]) {
+                    acc[playerId] = [];
+                }
+                acc[playerId].push(
+                    HistoryEntry({
+                        rosterId,
+                        season,
+                        week: leg,
+                        type: isWaiverMove
+                            ? "WAIVER_DROP"
+                            : type === "trade"
+                            ? "TRADED_OUT"
+                            : "DRAFT_PICK",
+                    })
+                );
+            });
+
+            return acc;
+        }, {});
+
+    const transactionMap = {};
+
+    const a = Object.entries(draftPicksBySeason).reduce(
+        (acc, [season, draftPicks]) => {
+            draftPicks.forEach(
+                ({
+                    player_id,
+                    roster_id,
+                    pick_no,
+                    is_keeper,
+                    round,
+                    metadata,
+                    draft_slot,
+                }) => {
+                    if (!acc[player_id]) {
+                        acc[player_id] = {
+                            name: `${metadata.first_name} ${metadata.last_name}`,
+                            transactions: [],
+                        };
+                    }
+
+                    acc[player_id].transactions.push(
+                        HistoryEntry({
+                            rosterId: roster_id,
+                            type: "DRAFT_PICK",
+                            season,
+                            week: 0,
+                            round,
+                            pick: draft_slot,
+                            overall: pick_no,
+                            keeper: !!is_keeper,
+                        })
+                    );
+                }
+            );
+
+            return acc;
+        },
+        {}
+    );
+
+    const b = Object.entries(allTransacation).reduce(
+        (acc, [playerId, transactions]) => {
+            const playerTransactions = allTransacation[playerId];
+
+            if (!acc[playerId]) {
+                acc[playerId] = {
+                    name: playerTransactions[0].player_name,
+                    transactions: [],
+                };
+            }
+
+            playerTransactions?.forEach((pt) => {
+                acc[playerId].transactions.push(pt);
+            });
+
+            return acc;
+        },
+        a
+    );
+
+    return b;
+};
+
+const getKeeperValue = (playerId, allPlayerHistory) => {
+    if (!allPlayerHistory[playerId] || !allPlayerHistory[playerId].name) {
+        return `No Transactions for ${playerId}`;
+    }
+
+    const { transactions } = allPlayerHistory[playerId];
+    const sortedTransactions = _.orderBy(
+        transactions,
+        ["season", "week"],
+        ["desc", "desc"]
+    );
+
+    const lastNonTradeTransaction = sortedTransactions.find(
+        ({ type }) => !["TRADED_IN", "TRADED_OUT"].includes(type)
+    );
+
+    const seasonsWithOwner =
+        sortedTransactions.length === 1
+            ? 1
+            : sortedTransactions.findIndex(
+                  ({ rosterId }) => rosterId !== sortedTransactions[0].rosterId
+              );
+
+    const firstOtherUserTransaction = sortedTransactions.find(
+        ({ rosterId }) => {
+            return rosterId !== sortedTransactions[0].rosterId;
+        }
+    );
+
+    const getFibinnaci = (n) => {
+        if (n <= 1) return 1;
+        return getFibinnaci(n - 1) + getFibinnaci(n - 2);
+    };
+
+    const keeperValue = _.sum(
+        _.times(seasonsWithOwner).map((i) => getFibinnaci(i + 2))
+    );
+
+    if (
+        lastNonTradeTransaction?.type === "DRAFT_PICK" &&
+        lastNonTradeTransaction?.draftMetadata.round <= 2
+    ) {
+        return `${allPlayerHistory[playerId].name} can not be kept.`;
+    }
+
+    if (
+        ["TRADED_IN", "WAIVER_ADD", "WAIVER_DROP"].includes(
+            sortedTransactions.at(seasonsWithOwner - 1).type
+        )
+    ) {
+        return `Keeper value for ${allPlayerHistory[playerId].name} is TBD.`;
+    }
+
+    const intialDraftValue = sortedTransactions.at(seasonsWithOwner - 1)
+        .draftMetadata.round;
+
+    return `Keeper value for ${allPlayerHistory[playerId].name} is ${
+        intialDraftValue - keeperValue
+    }.`;
 };
 
 app.get("/", async (req, res) => {
-    res.send(await func());
+    const allPlayerHistory = await func();
+    const rosters = await getRostersFromLastCompletedSeason();
+
+    Object.entries(rosters).forEach(([teamId, roster]) => {
+        roster.forEach((playerId) => {
+            const keeperValue = getKeeperValue(playerId, allPlayerHistory);
+
+            console.log(keeperValue);
+        });
+    }, {});
+
+    res.send(rosters);
 });
 
 app.listen(1738, () => {

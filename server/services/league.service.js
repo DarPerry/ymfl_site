@@ -1,4 +1,13 @@
+import _ from "lodash";
+import dayjs from "dayjs";
+
 import { fetchFromSleeperEndpoint } from "../util/api.util.js";
+
+const YEAR_STARTED = 2019;
+const MY_USER_ID = "444630794862850048";
+const YMFL_LEAGUE_ID = "837484548060192768";
+const LEAGUE_NAME = "Your Mom's Favorite League";
+const JUSTIN_JEFFERSON_PLAYER_ID = "6794";
 
 export const getAllLeaguesForUser = async (userId, season) =>
     fetchFromSleeperEndpoint(`/user/${userId}/leagues/nfl/${season}`);
@@ -20,9 +29,36 @@ export const getPlayoffBracket = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/winners_bracket`);
 
 export const getLeagueTransactions = (leagueId, week) =>
-    fetchFromSleeperEndpoint(`/transactions/${leagueId}/${week}`);
+    fetchFromSleeperEndpoint(`/league/${leagueId}/transactions/${week}`);
 
 export const getLeagueTradedPicks = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/traded_picks`);
 
 export const getNflState = () => fetchFromSleeperEndpoint(`/state/nfl`);
+
+export const getAllLeagueSeasons = async () => {
+    const yearsLeagueHasExisted = dayjs().diff(
+        dayjs(`${YEAR_STARTED}-01-01`),
+        "year"
+    );
+
+    const responses = await Promise.all(
+        Array.from({ length: yearsLeagueHasExisted }).map(async (_, i) => {
+            const year = YEAR_STARTED + i;
+            const leagues = await getAllLeaguesForUser(MY_USER_ID, year);
+            return leagues;
+        })
+    );
+
+    const leaguesSinceInception = _.flatten(responses).filter(
+        ({ name }) => name === LEAGUE_NAME
+    );
+
+    return leaguesSinceInception;
+};
+
+export const getLastCompletedSeason = async () => {
+    const allLeagueSeasons = await getAllLeagueSeasons();
+
+    return allLeagueSeasons[allLeagueSeasons.length - 1];
+};
