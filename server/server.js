@@ -93,11 +93,11 @@ const func = async () => {
                     acc[playerId] = [];
                 }
 
-                const isWaiverMove = [
-                    "waiver",
-                    "free_agent",
-                    "commissioner",
-                ].includes(type);
+                if (type === "commissioner") {
+                    return;
+                }
+
+                const isWaiverMove = ["waiver", "free_agent"].includes(type);
 
                 acc[playerId].push(
                     HistoryEntry({
@@ -114,11 +114,11 @@ const func = async () => {
             });
 
             Object.entries(drops || {}).forEach(([playerId, rosterId]) => {
-                const isWaiverMove = [
-                    "waiver",
-                    "free_agent",
-                    "commissioner",
-                ].includes(type);
+                const isWaiverMove = ["waiver", "free_agent"].includes(type);
+
+                if (type === "commissioner") {
+                    return;
+                }
 
                 if (!acc[playerId]) {
                     acc[playerId] = [];
@@ -256,6 +256,9 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
         _.times(seasonsWithOwner).map((i) => getFibinnaci(i + 2))
     );
 
+    console.log(allPlayerHistory[playerId].name);
+    console.log(lastNonTradeTransaction);
+
     if (
         lastNonTradeTransaction?.type === "DRAFT_PICK" &&
         lastNonTradeTransaction?.draftMetadata.round <= 2
@@ -268,9 +271,16 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
             sortedTransactions.at(seasonsWithOwner - 1).type
         )
     ) {
+        console.log(allPlayerHistory[playerId].name);
+        console.log(sortedTransactions.at(0));
+
+        const value =
+            sortedTransactions.at(0).draftMetadata.round -
+            getFibinnaci(seasonsWithOwner + 1);
+
         return {
             name: allPlayerHistory[playerId].name,
-            value: "ADP + 1",
+            value: value < 0 ? 0 : value,
             playerId,
         };
     }
@@ -278,8 +288,6 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
     if (
         ["TRADED_IN"].includes(sortedTransactions.at(seasonsWithOwner - 1).type)
     ) {
-        console.log(allPlayerHistory[playerId].name);
-
         if (lastNonTradeTransaction.type === "WAIVER_ADD") {
             return {
                 name: allPlayerHistory[playerId].name,
@@ -322,8 +330,11 @@ app.get("/", async (req, res) => {
             acc[teamId] = [];
         }
 
-        acc[teamId] = roster.map((playerId) =>
-            getKeeperValue(playerId, allPlayerHistory)
+        acc[teamId] = _.uniqBy(
+            roster
+                .map((playerId) => getKeeperValue(playerId, allPlayerHistory))
+                .filter(Boolean),
+            "playerId"
         );
 
         return acc;
