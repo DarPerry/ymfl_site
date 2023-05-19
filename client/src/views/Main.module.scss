@@ -16,3 +16,113 @@
     gap: 8px;
     padding: 24px;
 }
+
+.teamRow {
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.teamName {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.teamImage {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 24px;
+}
+
+.playerRow {
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    margin: 24px 0;
+}
+
+.position {
+    border-radius: 8px;
+    padding: 7px 14px;
+    margin-right: 8px;
+    color: #022047;
+    font-size: 12px;
+    font-weight: 600;
+    width: 18px;
+
+    &.QB {
+        background-color: #ff2a6d;
+    }
+
+    &.RB {
+        background-color: #00ceb8;
+    }
+
+    &.WR {
+        background-color: #58a7ff;
+    }
+
+    &.TE {
+        background-color: #ffae58;
+    }
+
+    &.K {
+        background-color: #bd66ff;
+    }
+
+    &.DEF {
+        color: white;
+        background-color: #7988a1;
+    }
+}
+
+.name {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+}
+
+.image {
+    width: 32px;
+    height: 32px;
+    background-color: #efefef;
+    border-radius: 24px;
+    margin-right: 8px;
+}
+
+.team {
+    margin-left: 4px;
+}
+
+.playerRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: solid 1px #3a465b;
+    justify-content: space-between;
+}
+
+.right {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #f9f9f9;
+    color: #213547;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.noKeep {
+    background-color: #ff2a6d;
+    color: white;
+    font-weight: 800;
+}

@@ -5,6 +5,7 @@ import { getAvatar } from "./services/avatar.service.js";
 import {
     getAllDraftsForLeague,
     getDraftPicks,
+    getPlayerADPs,
 } from "./services/draft.service.js";
 import {
     getAllLeagueSeasons,
@@ -15,7 +16,10 @@ import {
 } from "./services/league.service.js";
 
 import { getUser } from "./services/user.service.js";
-import { getAllPlayers } from "./services/player.service.js";
+import {
+    getAllPlayers,
+    normalizePlayerName,
+} from "./services/player.service.js";
 import { getRostersFromLastCompletedSeason } from "./services/roster.service.js";
 
 const app = express();
@@ -204,11 +208,14 @@ const func = async () => {
     return b;
 };
 
-const getKeeperValue = (playerId, allPlayerHistory) => {
+const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
     if (!allPlayerHistory[playerId] || !allPlayerHistory[playerId].name) {
         console.log(`No Transactions for ${playerId}`);
         return;
     }
+
+    const playerNameKey = normalizePlayerName(allPlayerHistory[playerId].name);
+    const adpData = allPLayerADPData[playerNameKey] || { adr: 9, adp: null };
 
     const { transactions } = allPlayerHistory[playerId];
     const sortedTransactions = _.orderBy(
@@ -224,7 +231,7 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
     if (sortedTransactions.at(0).type === "WAIVER_ADD") {
         return {
             name: allPlayerHistory[playerId].name,
-            value: "ADP + 1",
+            value: adpData.adr + 1,
             playerId,
         };
     }
@@ -256,9 +263,6 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
         _.times(seasonsWithOwner).map((i) => getFibinnaci(i + 2))
     );
 
-    console.log(allPlayerHistory[playerId].name);
-    console.log(lastNonTradeTransaction);
-
     if (
         lastNonTradeTransaction?.type === "DRAFT_PICK" &&
         lastNonTradeTransaction?.draftMetadata.round <= 2
@@ -271,9 +275,6 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
             sortedTransactions.at(seasonsWithOwner - 1).type
         )
     ) {
-        console.log(allPlayerHistory[playerId].name);
-        console.log(sortedTransactions.at(0));
-
         const value =
             sortedTransactions.at(0).draftMetadata.round -
             getFibinnaci(seasonsWithOwner + 1);
@@ -291,7 +292,7 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
         if (lastNonTradeTransaction.type === "WAIVER_ADD") {
             return {
                 name: allPlayerHistory[playerId].name,
-                value: `ADP - ${keeperValue}`,
+                value: adpData.adr - keeperValue,
                 playerId,
             };
         }
@@ -315,14 +316,13 @@ const getKeeperValue = (playerId, allPlayerHistory) => {
         value: intialDraftValue - keeperValue,
         playerId,
     };
-
-    return `Keeper value for ${allPlayerHistory[playerId].name} is ${
-        intialDraftValue - keeperValue
-    }.`;
 };
 
 app.get("/", async (req, res) => {
     const allPlayerHistory = await func();
+    const playerADPs = await getPlayerADPs();
+    const allPlayers = await getAllPlayers();
+
     const rosters = await getRostersFromLastCompletedSeason();
 
     const n = Object.entries(rosters).reduce((acc, [teamId, roster]) => {
@@ -332,10 +332,21 @@ app.get("/", async (req, res) => {
 
         acc[teamId] = _.uniqBy(
             roster
-                .map((playerId) => getKeeperValue(playerId, allPlayerHistory))
+                .map((playerId) =>
+                    getKeeperValue(playerId, allPlayerHistory, playerADPs)
+                )
                 .filter(Boolean),
             "playerId"
-        );
+        ).map((history) => {
+            const playerData = allPlayers[history.playerId];
+
+            return {
+                ...history,
+                team: playerData.team,
+                position: playerData.position,
+                id: playerData.sportradar_id,
+            };
+        });
 
         return acc;
     }, {});
