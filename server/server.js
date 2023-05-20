@@ -233,6 +233,9 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
             name: allPlayerHistory[playerId].name,
             value: adpData.adr + 1,
             playerId,
+            isAdpCalculated: true,
+
+            ...adpData,
         };
     }
 
@@ -267,7 +270,12 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
         lastNonTradeTransaction?.type === "DRAFT_PICK" &&
         lastNonTradeTransaction?.draftMetadata.round <= 2
     ) {
-        return { name: allPlayerHistory[playerId].name, value: 0, playerId };
+        return {
+            name: allPlayerHistory[playerId].name,
+            value: 0,
+            playerId,
+            ...adpData,
+        };
     }
 
     if (
@@ -283,6 +291,7 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
             name: allPlayerHistory[playerId].name,
             value: value < 0 ? 0 : value,
             playerId,
+            ...adpData,
         };
     }
 
@@ -294,6 +303,8 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
                 name: allPlayerHistory[playerId].name,
                 value: adpData.adr - keeperValue,
                 playerId,
+                isAdpCalculated: true,
+                ...adpData,
             };
         }
 
@@ -301,6 +312,7 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
             name: allPlayerHistory[playerId].name,
             value: lastNonTradeTransaction?.draftMetadata.round - keeperValue,
             playerId,
+            ...adpData,
         };
     }
 
@@ -308,7 +320,12 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
         .draftMetadata.round;
 
     if (intialDraftValue - keeperValue < 1) {
-        return { name: allPlayerHistory[playerId].name, value: 0, playerId };
+        return {
+            name: allPlayerHistory[playerId].name,
+            value: 0,
+            playerId,
+            ...adpData,
+        };
     }
 
     return {

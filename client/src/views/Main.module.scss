@@ -119,10 +119,22 @@
     color: #213547;
     cursor: pointer;
     transition: border-color 0.25s;
+    width: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .noKeep {
     background-color: #ff2a6d;
     color: white;
     font-weight: 800;
+}
+
+.body {
+    padding: 0 16px;
+}
+
+.adpTooltip {
+    font-size: 12px;
+    font-weight: 600;
 }
