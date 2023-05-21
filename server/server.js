@@ -15,8 +15,11 @@ import {
     getLeagueTransactions,
 } from "./services/league.service.js";
 
+import playerImages from "./data/players.json" assert { type: "json" };
+
 import { getUser } from "./services/user.service.js";
 import {
+    getActivePlayers,
     getAllPlayers,
     normalizePlayerName,
 } from "./services/player.service.js";
@@ -339,6 +342,7 @@ app.get("/", async (req, res) => {
     const allPlayerHistory = await func();
     const playerADPs = await getPlayerADPs();
     const allPlayers = await getAllPlayers();
+    const activePlayers = await getActivePlayers();
 
     const rosters = await getRostersFromLastCompletedSeason();
 
@@ -356,12 +360,14 @@ app.get("/", async (req, res) => {
             "playerId"
         ).map((history) => {
             const playerData = allPlayers[history.playerId];
+            const normalizedName = normalizePlayerName(history.name);
 
             return {
                 ...history,
                 team: playerData.team,
                 position: playerData.position,
                 id: playerData.sportradar_id,
+                image: playerImages[normalizedName],
             };
         });
 

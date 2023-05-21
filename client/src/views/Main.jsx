@@ -8,17 +8,24 @@ import SliderSelect from "../components/SliderSelect/SliderSelect";
 import classNames from "classnames";
 import _ from "lodash";
 
-const PlayerRow = ({ position, name, id, team, value, isAdpCalculated }) => {
+const PlayerRow = ({
+    position,
+    name,
+    id,
+    team,
+    value,
+    isAdpCalculated,
+    image,
+}) => {
     return (
         <div className={styles.playerRow}>
             <div className={styles.left}>
                 <div className={classNames(styles.position, styles[position])}>
                     {position}
                 </div>
-                <img
-                    className={styles.image}
-                    src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4362887.png&w=350&h=254"
-                />
+                <div className={styles.image}>
+                    <img className={styles.img} src={image} />
+                </div>
                 <div className={styles.name}>{name}</div>
                 <div className={styles.team}>({team || "--"})</div>
             </div>
@@ -80,6 +87,7 @@ const Main = () => {
                                 team: "LAC",
                                 position: "WR",
                                 id: "5f424505-f29f-433c-b3f2-1a143a04a010",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/15076.png",
                             },
                             {
                                 name: "Tom Brady",
@@ -100,6 +108,7 @@ const Main = () => {
                                 team: "MIN",
                                 position: "RB",
                                 id: "8960d61e-433b-41ea-a7ad-4e76be87b582",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/18872.png",
                             },
                             {
                                 name: "Christian McCaffrey",
@@ -110,6 +119,7 @@ const Main = () => {
                                 team: "SF",
                                 position: "RB",
                                 id: "f96db0af-5e25-42d1-a07a-49b4e065b364",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/18877.png",
                             },
                             {
                                 name: "James Conner",
@@ -120,6 +130,7 @@ const Main = () => {
                                 team: "ARI",
                                 position: "RB",
                                 id: "28a084c0-14df-499f-bd1f-b975603626b7",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/18983.png",
                             },
                             {
                                 name: "Saquon Barkley",
@@ -130,6 +141,7 @@ const Main = () => {
                                 team: "NYG",
                                 position: "RB",
                                 id: "9811b753-347c-467a-b3cb-85937e71e2b9",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/19766.png",
                             },
                             {
                                 name: "Dallas Goedert",
@@ -138,6 +150,7 @@ const Main = () => {
                                 team: "PHI",
                                 position: "TE",
                                 id: "e8029983-87cf-49a2-bc04-04c8233a0630",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/19863.png",
                             },
                             {
                                 name: "Diontae Johnson",
@@ -148,6 +161,7 @@ const Main = () => {
                                 team: "PIT",
                                 position: "WR",
                                 id: "244c00c7-fe9a-4f4f-adff-1d5b9c8877e7",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/21077.png",
                             },
                             {
                                 name: "Tyler Bass",
@@ -159,6 +173,7 @@ const Main = () => {
                                 team: "BUF",
                                 position: "K",
                                 id: "bfccbff4-bc01-41ed-aa11-be976160504c",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/22108.png",
                             },
                             {
                                 name: "Trevor Lawrence",
@@ -167,6 +182,7 @@ const Main = () => {
                                 team: "JAX",
                                 position: "QB",
                                 id: "aaa8b42c-4d87-45f6-bfd2-e31cfed9a736",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/22490.png",
                             },
                             {
                                 name: "Javonte Williams",
@@ -175,6 +191,7 @@ const Main = () => {
                                 team: "DEN",
                                 position: "RB",
                                 id: "889dcdc5-3d88-45df-9677-5ad7ff87c011",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/22558.png",
                             },
                             {
                                 name: "Rondale Moore",
@@ -186,6 +203,7 @@ const Main = () => {
                                 team: "ARI",
                                 position: "WR",
                                 id: "975555d0-fe82-4e88-90f4-d690f5000671",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/22626.png",
                             },
                             {
                                 name: "Drake London",
@@ -196,6 +214,7 @@ const Main = () => {
                                 team: "ATL",
                                 position: "WR",
                                 id: "5053f9ae-15d9-4730-833d-484886b6f890",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/23151.png",
                             },
                             {
                                 name: "Rachaad White",
@@ -207,6 +226,7 @@ const Main = () => {
                                 team: "TB",
                                 position: "RB",
                                 id: "4d3f2f57-215c-4cb4-bf75-a7ecdcdded70",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/23217.png",
                             },
                             {
                                 name: "Kenny Pickett",
@@ -218,6 +238,7 @@ const Main = () => {
                                 team: "PIT",
                                 position: "QB",
                                 id: "ef7ae1f1-4ebe-4759-bbb3-32bd177ace08",
+                                image: "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nfl/low-res/22501.png",
                             },
                             {
                                 name: "San Francisco 49ers",

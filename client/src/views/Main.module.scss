@@ -94,6 +94,7 @@
     background-color: #efefef;
     border-radius: 24px;
     margin-right: 8px;
+    overflow: hidden;
 }
 
 .team {
@@ -137,4 +138,8 @@
 .adpTooltip {
     font-size: 12px;
     font-weight: 600;
+}
+
+.img {
+    width: 75%;
 }
