@@ -2,15 +2,6 @@ import classNames from "classnames";
 import { useState } from "react";
 import styles from "./SliderSelect.module.scss";
 
-const options = [
-    "All",
-    "Drafting",
-    "Voting",
-    "Keepers",
-    "Payouts",
-    "Punishments",
-];
-
 const SliderSelectOption = ({ label, onClick, selected }) => {
     return (
         <div
@@ -25,8 +16,7 @@ const SliderSelectOption = ({ label, onClick, selected }) => {
     );
 };
 
-const SliderSelect = () => {
-    const [selected, setSelected] = useState("All");
+const SliderSelect = ({ options, setSelected, selected }) => {
     return (
         <div className={classNames(styles.sliderSelect)}>
             {options.map((option) => (

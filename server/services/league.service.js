@@ -62,3 +62,31 @@ export const getLastCompletedSeason = async () => {
 
     return allLeagueSeasons[allLeagueSeasons.length - 1];
 };
+
+// GET https://api.sleeper.app/v1/user/<user_id>/leagues/<sport>/<season>
+
+export const getLeagueManagers = async (req, res) => {
+    const currentLeagueId = await fetchFromSleeperEndpoint(
+        `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`
+    );
+
+    const cli = currentLeagueId.at(0).league_id;
+
+    const currentRosters = await fetchFromSleeperEndpoint(
+        `/league/${cli}/rosters`
+    );
+
+    const currentUsers = await fetchFromSleeperEndpoint(`/league/${cli}/users`);
+
+    return currentUsers.reduce((acc, curr) => {
+        const match = currentRosters.find(
+            ({ owner_id }) => owner_id === curr.user_id
+        );
+
+        acc[match.roster_id] = { ...match, ...curr };
+
+        return acc;
+    }, {});
+
+    return currentRosters;
+};

@@ -9,7 +9,7 @@ export const getTrendingPlayers = async () =>
 
 export const normalizePlayerName = (playerName) => {
     return playerName
-        .toUpperCase()
+        ?.toUpperCase()
         .replace(/[^a-zA-Z ]/g, "")
         .replace(/ (?:I+$|JR)/gi, "")
         .replace(/ /, "_");
@@ -25,11 +25,9 @@ export const getActivePlayers = async () => {
     );
     const data = await response.json();
 
-    return data
-        .filter(({ Status }) => Status === "Active")
-        .reduce((acc, { PhotoUrl, FirstName, LastName }) => {
-            const playerName = normalizePlayerName(`${FirstName} ${LastName}`);
-            acc[playerName] = PhotoUrl;
-            return acc;
-        }, {});
+    return data.reduce((acc, { PhotoUrl, FirstName, LastName, Position }) => {
+        const playerName = normalizePlayerName(`${FirstName} ${LastName}`);
+        acc[`${Position}_${playerName}`] = PhotoUrl;
+        return acc;
+    }, {});
 };

@@ -12,6 +12,7 @@ import {
     getAllLeaguesForUser,
     getLastCompletedSeason,
     getLeague,
+    getLeagueManagers,
     getLeagueTransactions,
 } from "./services/league.service.js";
 
@@ -28,6 +29,7 @@ import { getRostersFromLastCompletedSeason } from "./services/roster.service.js"
 const app = express();
 
 const HistoryEntry = ({
+    playerName,
     rosterId,
     season,
     week,
@@ -59,6 +61,7 @@ const HistoryEntry = ({
 const func = async () => {
     //dayjs years since
     const allLeagueSeasons = await getAllLeagueSeasons();
+    const allPlayers = await getAllPlayers();
 
     const allDrafts = await Promise.all(
         allLeagueSeasons.map(async ({ league_id }) => {
@@ -94,7 +97,7 @@ const func = async () => {
 
     const allTransacation = _.flatten(transactions)
         .filter(({ status }) => status === "complete")
-        .reduce((acc, { leg, adds, drops, type, season }) => {
+        .reduce((acc, { leg, adds, drops, type, season, ...r }) => {
             Object.entries(adds || {}).forEach(([playerId, rosterId]) => {
                 if (!acc[playerId]) {
                     acc[playerId] = [];
@@ -193,8 +196,11 @@ const func = async () => {
             const playerTransactions = allTransacation[playerId];
 
             if (!acc[playerId]) {
+                if (!allPlayers[playerId]) return acc;
+                const { first_name, last_name } = allPlayers[playerId];
+
                 acc[playerId] = {
-                    name: playerTransactions[0].player_name,
+                    name: `${first_name} ${last_name}`,
                     transactions: [],
                 };
             }
@@ -232,9 +238,10 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
     );
 
     if (sortedTransactions.at(0).type === "WAIVER_ADD") {
+        const value = adpData.adr + 1;
         return {
             name: allPlayerHistory[playerId].name,
-            value: adpData.adr + 1,
+            value: value > 19 ? 19 : value,
             playerId,
             isAdpCalculated: true,
 
@@ -287,7 +294,7 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
         )
     ) {
         const value =
-            sortedTransactions.at(0).draftMetadata.round -
+            sortedTransactions.at(0).draftMetadata?.round -
             getFibinnaci(seasonsWithOwner + 1);
 
         return {
@@ -302,9 +309,11 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
         ["TRADED_IN"].includes(sortedTransactions.at(seasonsWithOwner - 1).type)
     ) {
         if (lastNonTradeTransaction.type === "WAIVER_ADD") {
+            const value = adpData.adr - keeperValue;
+
             return {
                 name: allPlayerHistory[playerId].name,
-                value: adpData.adr - keeperValue,
+                value: value > 19 ? 19 : value,
                 playerId,
                 isAdpCalculated: true,
                 ...adpData,
@@ -342,16 +351,29 @@ app.get("/", async (req, res) => {
     const allPlayerHistory = await func();
     const playerADPs = await getPlayerADPs();
     const allPlayers = await getAllPlayers();
-    const activePlayers = await getActivePlayers();
+    const currentLeagueManagers = await getLeagueManagers();
+    //TODO:
+
+    // const activePlayers = await getActivePlayers();
 
     const rosters = await getRostersFromLastCompletedSeason();
 
+    const sortOrder = {
+        QB: 1,
+        RB: 2,
+        WR: 3,
+        TE: 4,
+        K: 5,
+        DEF: 6,
+    };
+
     const n = Object.entries(rosters).reduce((acc, [teamId, roster]) => {
-        if (!acc[teamId]) {
-            acc[teamId] = [];
+        const tid = currentLeagueManagers[teamId].metadata.team_name;
+        if (!acc[tid]) {
+            acc[tid] = [];
         }
 
-        acc[teamId] = _.uniqBy(
+        acc[tid] = _.uniqBy(
             roster
                 .map((playerId) =>
                     getKeeperValue(playerId, allPlayerHistory, playerADPs)
@@ -360,6 +382,7 @@ app.get("/", async (req, res) => {
             "playerId"
         ).map((history) => {
             const playerData = allPlayers[history.playerId];
+
             const normalizedName = normalizePlayerName(history.name);
 
             return {
@@ -367,7 +390,8 @@ app.get("/", async (req, res) => {
                 team: playerData.team,
                 position: playerData.position,
                 id: playerData.sportradar_id,
-                image: playerImages[normalizedName],
+                image: playerImages[`${playerData.position}_${normalizedName}`],
+                positionOrder: sortOrder[playerData.position],
             };
         });
 
