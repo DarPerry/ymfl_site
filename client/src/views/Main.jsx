@@ -7,6 +7,7 @@ import Tab from "../components/Tab/Tab.jsx";
 import SliderSelect from "../components/SliderSelect/SliderSelect";
 import classNames from "classnames";
 import _ from "lodash";
+import Rules from "./Rules/Rules.jsx";
 
 const getNumberSuffix = (number) => {
     const lastDigit = number % 10;
@@ -2248,6 +2249,7 @@ const Main = () => {
                 Your Mom's Favorite League Companion Site
             </div>
             <div className={styles.main}>
+                <Rules />
                 <div className={styles.tabs}>
                     {["Rules", "Keeper Lottery"].map((label) => {
                         return (
