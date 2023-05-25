@@ -104,6 +104,10 @@ const copies = [
                 title: "Incorporate Win bonus ( ie. each win, loser pays you $10)",
                 body: "Weekly rewards for highest scoring team or reward team with highest scoring player",
             },
+            {
+                title: "More TEs",
+                body: "Make 2 starting TEs in roster",
+            },
         ],
     },
 ];
