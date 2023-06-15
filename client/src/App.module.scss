@@ -1,0 +1,10 @@
+@import "./styles/theme.scss";
+
+.app {
+    background-color: $background-grey;
+}
+
+.content {
+    height: 2000px;
+    padding: 94px 16px 16px 16px;
+}

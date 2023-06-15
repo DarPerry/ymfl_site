@@ -1,0 +1,13 @@
+@import "./styles/theme.scss";
+
+:root {
+    font-family: "Poppins", Inter, system-ui, Avenir, Helvetica, Arial,
+        sans-serif;
+    background-color: $background-grey;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
