@@ -1,6 +1,8 @@
 import dayjs from "dayjs";
 import _ from "lodash";
+import axios from "axios";
 import express from "express";
+import * as cheerio from "cheerio";
 import { getAvatar } from "./services/avatar.service.js";
 import {
     getAllDraftsForLeague,
@@ -62,11 +64,22 @@ const HistoryEntry = ({
 
 const getValidPlayers = async () => {
     const allPlayers = await getAllPlayers();
+    const playerIdMap = {};
 
-    return Object.values(allPlayers).filter(
-        ({ status, position }) =>
-            status === "Active" && FANTASY_POSITIONS.includes(position)
-    );
+    const players = Object.values(allPlayers).reduce((acc, player) => {
+        const { status, position } = player;
+
+        if (status === "Active" && FANTASY_POSITIONS.includes(position)) {
+            playerIdMap[normalizePlayerName(player.full_name)] =
+                player.player_id;
+
+            return acc.concat(player);
+        }
+
+        return acc;
+    }, []);
+
+    return { players, playerIdMap };
 };
 
 const getAllDrafts = async () => {
@@ -91,10 +104,17 @@ const getDraftPicksByPlayerId = async () => {
             const draftPicks = await getDraftPicks(draft_id);
 
             const picksWithSeason = draftPicks.map((pick) => {
-                const { is_keeper, round, roster_id, pick_no, draft_slot } =
-                    pick;
+                const {
+                    is_keeper,
+                    round,
+                    roster_id,
+                    pick_no,
+                    draft_slot,
+                    player_id,
+                } = pick;
 
                 return {
+                    player_id,
                     season,
                     type: `DRAFT_${is_keeper ? "KEEPER" : "PICK"}`,
                     round,
@@ -184,31 +204,114 @@ const getTransactionByPlayerIDs = async () => {
         }, {});
 };
 
+const mergePlayerTransactions = (draftPicks = [], transactions = []) => {
+    return _.orderBy(
+        [...draftPicks, ...transactions],
+        ({ season, week, type }) => {
+            return [Number(season), Number(week || 100), type];
+        },
+        ["desc", "desc", "desc"]
+    );
+};
+
+const getPlayerKeeperValue = (transactions, player) => {
+    const nonTradedTransactions = transactions.filter(
+        ({ type }) => !type.includes("TRADE")
+    );
+
+    const lastTransaction = nonTradedTransactions?.at(0);
+
+    if (!lastTransaction) return 0;
+
+    const {
+        season: lastTransactionSeason,
+        type: lastTransactionSeasonType,
+        round: lastRoundDrafted,
+        draftedBy: lastTeamDraftedBy,
+    } = lastTransaction;
+
+    if (
+        Number(lastTransactionSeason) !== dayjs().year() - 1 ||
+        lastTransactionSeasonType === "WAIVER_DROP"
+    ) {
+        return 0;
+    } else if (lastTransactionSeasonType === "DRAFT_PICK") {
+        return lastRoundDrafted - 1;
+    } else if (lastTransactionSeasonType === "DRAFT_KEEPER") {
+        const consecutiveTimesKeptByOwner = nonTradedTransactions.findIndex(
+            ({ type, draftedBy }) =>
+                type !== "DRAFT_KEEPER" || draftedBy !== lastTeamDraftedBy
+        );
+
+        const keeperAdjustment = getFibonacciNumberFromSequence(
+            consecutiveTimesKeptByOwner
+        );
+
+        return lastRoundDrafted - keeperAdjustment;
+    } else {
+        return "TBD";
+    }
+};
+
+const getFibonacciNumberFromSequence = (sequence) =>
+    [0, 1, 2, 3, 5, 8, 13, 21][sequence + 1] || "TBD";
+
+const getPlayerAdpMap = async (playerIdMap) => {
+    const { data } = await axios.get(
+        "https://www.fantasypros.com/nfl/adp/half-point-ppr-overall.php"
+    );
+
+    const playerAdpMap = {};
+
+    const $ = cheerio.load(data);
+    $("tbody tr").each((i, el) => {
+        const $el = $(el);
+        const name = $el.find(".player-name").text();
+        const adp = Number($el.find("td").eq(-1).text());
+
+        const playerId = playerIdMap[normalizePlayerName(name)];
+
+        playerAdpMap[playerId] = adp;
+    });
+
+    return playerAdpMap;
+};
+
 const getAllPlayersTransactions = async () => {
-    const players = await getValidPlayers();
+    const { players, playerIdMap } = await getValidPlayers();
+
+    const playerAdpMap = await getPlayerAdpMap(playerIdMap);
+
     const draftPicksByPlayerId = await getDraftPicksByPlayerId();
     const transactionsByPlayerId = await getTransactionByPlayerIDs();
 
     return players.map((player) => {
-        const { player_id: playerId, full_name, position, espn_id } = player;
-        const transactions = _.orderBy(
-            [
-                ...(transactionsByPlayerId[playerId] || []),
-                ...(draftPicksByPlayerId[playerId] || []),
-            ],
-            ({ season, week, type }) => {
-                return [Number(season), Number(week || 100), type];
-            },
-            ["desc", "desc", "desc"]
+        const { player_id: playerId, full_name, position } = player;
+
+        const playerDraftPicks = draftPicksByPlayerId[playerId];
+        const playerTransactions = transactionsByPlayerId[playerId];
+
+        const transactions = mergePlayerTransactions(
+            playerDraftPicks,
+            playerTransactions
         );
+
+        const keeperValueForCurrentTeam = getPlayerKeeperValue(
+            transactions,
+            full_name
+        );
+
+        const adp = playerAdpMap[playerId] || null;
+        const adr = adp ? Math.ceil(adp / 12) : null;
 
         return {
             // ...player,
             playerId,
+            adp,
+            adr,
             name: full_name,
             position,
-            playerId,
-
+            keeperValueForCurrentTeam,
             transactions,
         };
     });
