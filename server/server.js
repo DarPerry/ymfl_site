@@ -25,6 +25,8 @@ import {
     normalizePlayerName,
 } from "./services/player.service.js";
 import { getRostersFromLastCompletedSeason } from "./services/roster.service.js";
+import { FANTASY_POSITIONS } from "./config/index.config.js";
+import { resolveSoa } from "dns";
 
 const app = express();
 
@@ -58,35 +60,66 @@ const HistoryEntry = ({
     };
 };
 
-const func = async () => {
-    //dayjs years since
-    const allLeagueSeasons = await getAllLeagueSeasons();
+const getValidPlayers = async () => {
     const allPlayers = await getAllPlayers();
 
+    return Object.values(allPlayers).filter(
+        ({ status, position }) =>
+            status === "Active" && FANTASY_POSITIONS.includes(position)
+    );
+};
+
+const getAllDrafts = async () => {
+    const allLeagueSeasons = await getAllLeagueSeasons();
+
     const allDrafts = await Promise.all(
-        allLeagueSeasons.map(async ({ league_id }) => {
-            const drafts = await getAllDraftsForLeague(league_id);
-            return drafts;
-        })
+        allLeagueSeasons.map(
+            async ({ league_id }) => await getAllDraftsForLeague(league_id)
+        )
     );
 
-    const finalAllDrafts = _.flatten(allDrafts);
+    return _.flatten(allDrafts);
+};
 
-    const draftPicksBySeason = {};
+const getDraftPicksByPlayerId = async () => {
+    const allDrafts = await getAllDrafts();
 
-    const x = await Promise.all(
-        finalAllDrafts.map(async ({ season, draft_id }) => {
+    const allDraftPicks = [];
+
+    await Promise.all(
+        allDrafts.map(async ({ season, draft_id }) => {
             const draftPicks = await getDraftPicks(draft_id);
-            draftPicksBySeason[season] = draftPicks;
+
+            const picksWithSeason = draftPicks.map((pick) => {
+                const { is_keeper, round, roster_id, pick_no, draft_slot } =
+                    pick;
+
+                return {
+                    season,
+                    type: `DRAFT_${is_keeper ? "KEEPER" : "PICK"}`,
+                    round,
+                    pick: draft_slot,
+                    overall: pick_no,
+                    draftedBy: roster_id,
+                };
+            });
+
+            allDraftPicks.push(...picksWithSeason);
         })
     );
+
+    return _.groupBy(allDraftPicks, "player_id");
+};
+
+const getTransactionByPlayerIDs = async () => {
+    const allLeagueSeasons = await getAllLeagueSeasons();
 
     const transactions = await Promise.all(
         allLeagueSeasons.map(async ({ league_id, season }) => {
             const t = [];
 
             const p = await Promise.all(
-                _.times(20).map((i) => getLeagueTransactions(league_id, i))
+                _.times(18).map((i) => getLeagueTransactions(league_id, i))
             );
 
             t.push(..._.flatten(p));
@@ -95,7 +128,7 @@ const func = async () => {
         })
     );
 
-    const allTransacation = _.flatten(transactions)
+    return _.flatten(transactions)
         .filter(({ status }) => status === "complete")
         .reduce((acc, { leg, adds, drops, type, season, ...r }) => {
             Object.entries(adds || {}).forEach(([playerId, rosterId]) => {
@@ -149,8 +182,38 @@ const func = async () => {
 
             return acc;
         }, {});
+};
 
-    const transactionMap = {};
+const getAllPlayersTransactions = async () => {
+    const players = await getValidPlayers();
+    const draftPicksByPlayerId = await getDraftPicksByPlayerId();
+    const transactionsByPlayerId = await getTransactionByPlayerIDs();
+
+    return players.map((player) => {
+        const { player_id: playerId, full_name, position, espn_id } = player;
+        const transactions = _.orderBy(
+            [
+                ...(transactionsByPlayerId[playerId] || []),
+                ...(draftPicksByPlayerId[playerId] || []),
+            ],
+            ({ season, week, type }) => {
+                return [Number(season), Number(week || 100), type];
+            },
+            ["desc", "desc", "desc"]
+        );
+
+        return {
+            // ...player,
+            playerId,
+            name: full_name,
+            position,
+            playerId,
+
+            transactions,
+        };
+    });
+
+    return { transactions, draftPicksBySeason, players };
 
     const a = Object.entries(draftPicksBySeason).reduce(
         (acc, [season, draftPicks]) => {
@@ -191,13 +254,13 @@ const func = async () => {
         {}
     );
 
-    const b = Object.entries(allTransacation).reduce(
+    const b = Object.entries(transactions).reduce(
         (acc, [playerId, transactions]) => {
-            const playerTransactions = allTransacation[playerId];
+            const playerTransactions = transactions[playerId];
 
             if (!acc[playerId]) {
-                if (!allPlayers[playerId]) return acc;
-                const { first_name, last_name } = allPlayers[playerId];
+                if (!players[playerId]) return acc;
+                const { first_name, last_name } = players[playerId];
 
                 acc[playerId] = {
                     name: `${first_name} ${last_name}`,
@@ -348,11 +411,20 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
 };
 
 app.get("/", async (req, res) => {
-    const allPlayerHistory = await func();
+    const allPlayerHistory = await getAllPlayersTransactions();
+
+    return res.send(allPlayerHistory);
     const playerADPs = await getPlayerADPs();
-    const allPlayers = await getAllPlayers();
+    // const allPlayers = await getAllPlayers();
     const currentLeagueManagers = await getLeagueManagers();
     //TODO:
+
+    return res.send({
+        allPlayerHistory,
+        playerADPs,
+        // allPlayers,
+        currentLeagueManagers,
+    });
 
     // const activePlayers = await getActivePlayers();
 

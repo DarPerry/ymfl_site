@@ -48,9 +48,12 @@
     align-items: center;
     justify-content: flex-start;
     height: 95px;
-    border-bottom: solid 1px $indy-gold;
-    padding: 16px;
+    padding: 8px;
     width: 300px;
+    border: solid 1px #e6e6e6;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .positionBadge {
@@ -66,6 +69,7 @@
     font-size: 12px;
     font-weight: 500;
     margin-top: 8px;
+    width: 30px;
 
     &.QB {
         background-color: $qb-color;
@@ -88,6 +92,10 @@
     }
 
     &.DST {
+        background-color: $dst-color;
+    }
+
+    &.DEF {
         background-color: $dst-color;
     }
 }
@@ -117,6 +125,7 @@
     padding: 4px 8px;
     font-size: 12px;
     margin-top: 4px;
+    font-weight: 600;
 
     &.cantKeep {
         background-color: $indy-red;
@@ -133,4 +142,33 @@
     align-items: center;
     flex-wrap: wrap;
     width: 900px;
+    border-bottom: solid 2px transparent;
+
+    &.QB {
+        border-bottom-color: $qb-color;
+    }
+
+    &.RB {
+        border-bottom-color: $rb-color;
+    }
+
+    &.WR {
+        border-bottom-color: $wr-color;
+    }
+
+    &.TE {
+        border-bottom-color: $te-color;
+    }
+
+    &.K {
+        border-bottom-color: $k-color;
+    }
+
+    &.DST {
+        border-bottom-color: $dst-color;
+    }
+
+    &.DEF {
+        border-bottom-color: $dst-color;
+    }
 }

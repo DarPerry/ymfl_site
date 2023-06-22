@@ -5,7 +5,7 @@ import { useState } from "react";
 import { getPlayerRoundSuffix } from "../../util/playerUtil";
 
 const MockPlayerRow = ({ name, position, value, image }) => (
-    <div className={styles.player}>
+    <div className={classNames(styles.player, styles[position])}>
         <div className={styles.left}>
             <div className={styles.imageContainer}>
                 <img className={styles.playerImage} src={image} />
@@ -80,7 +80,12 @@ const Card = ({ keeperData }) => {
                             >
                                 {position}
                             </div>
-                            <div className={styles.positionGroup}>
+                            <div
+                                className={classNames(
+                                    styles.positionGroup,
+                                    styles[position]
+                                )}
+                            >
                                 {_.orderBy(players, ({ value }) => value).map(
                                     (player) => (
                                         <MockPlayerRow {...player} />
