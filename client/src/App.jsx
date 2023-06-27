@@ -2,12 +2,55 @@ import styles from "./App.module.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Card from "./components/Card/Card";
 import _ from "lodash";
+import classNames from "classnames";
 
 const payIn = 50;
 const teamCount = 10;
 const payoutConstant = 3.26;
 
-console.log((payIn * teamCount) / payoutConstant);
+const PlayerCard = ({
+    name,
+    position,
+    team,
+    keeperValueForCurrentTeam,
+    ...r
+}) => {
+    console.log(r);
+    return (
+        <div className={styles.playerCard}>
+            <div className={styles.left}>
+                <div className={styles.imageContainer}>
+                    <img
+                        className={styles.playerImage}
+                        src="https://cdn.statmuse.com/img/nfl/players/chicago-bears-justin-fields-min--dqhrruwj.png"
+                    />
+                </div>
+
+                <div className={styles.playerInfo}>
+                    <div className={styles.playerName}>{name}</div>
+                    <div className={styles.playerDetails}>
+                        <div
+                            className={classNames(
+                                styles.position,
+                                styles[position]
+                            )}
+                        >
+                            {position}
+                        </div>
+                        <div className={styles.divider}>|</div>
+                        <div className={styles.team}>{team}</div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.right}>
+                <div className={styles.keeperCost}>
+                    {keeperValueForCurrentTeam}th
+                </div>
+                <div className={styles.roundLabel}>Round Pick</div>
+            </div>
+        </div>
+    );
+};
 
 const data = {
     1: [
@@ -9103,7 +9146,20 @@ function App() {
         <div className={styles.app}>
             <NavBar />
             <div className={styles.content}>
-                <Card keeperData={data} />
+                {[
+                    ...data[1],
+                    ...data[2],
+                    ...data[3],
+                    ...data[4],
+                    ...data[5],
+                    ...data[6],
+                    ...data[7],
+                    ...data[8],
+                    ...data[9],
+                ].map((player) => {
+                    return <PlayerCard {...player} />;
+                })}
+                {/* <Card keeperData={data} /> */}
             </div>
         </div>
     );
