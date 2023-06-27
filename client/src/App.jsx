@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Card from "./components/Card/Card";
 import _ from "lodash";
 import classNames from "classnames";
+import MobileApp from "./components/MobileApp/MobileApp";
 
 const payIn = 50;
 const teamCount = 10;
@@ -12,14 +13,50 @@ const PlayerCard = ({
     name,
     position,
     team,
-    keeperValueForCurrentTeam,
+    keeperValueForCurrentTeam: keeperCost,
     ...r
 }) => {
-    console.log(r);
+    const teamColors = {
+        ARI: "#9b2743",
+        ATL: "#a6192e",
+        BAL: "#241773",
+        BUF: "#c60c30",
+        CAR: "#0085ca",
+        CHI: "#c83803",
+        CIN: "#fc4c02",
+        CLE: "#fb4f14",
+        DAL: "#b0b7bc",
+        DEN: "#0c2340",
+        DET: "#0069b1",
+        GB: "#ffb611",
+        HOU: "#a71930",
+        IND: "#a5acaf",
+        JAX: "#9f792c",
+        KC: "#ffb611",
+        LAC: "#127dc5",
+        LAR: "#063992",
+        LV: "#87909a",
+        MIA: "#008c95",
+        MIN: "#ffc72c",
+        NE: "#c60c30",
+        NO: "#9f8958",
+        NYJ: "#115740",
+        NYG: "#a71930",
+        PHI: "#a5acaf",
+        PIT: "#ffb81c",
+        SEA: "#69be29",
+        SF: "#b3995d",
+        TB: "#c91331",
+        TEN: "#4b92db",
+    };
+
     return (
         <div className={styles.playerCard}>
             <div className={styles.left}>
-                <div className={styles.imageContainer}>
+                <div
+                    className={styles.imageContainer}
+                    style={{ backgroundColor: teamColors[team] }}
+                >
                     <img
                         className={styles.playerImage}
                         src="https://cdn.statmuse.com/img/nfl/players/chicago-bears-justin-fields-min--dqhrruwj.png"
@@ -38,14 +75,20 @@ const PlayerCard = ({
                             {position}
                         </div>
                         <div className={styles.divider}>|</div>
-                        <div className={styles.team}>{team}</div>
+                        <div
+                            className={styles.position}
+                            style={{
+                                color: teamColors[team],
+                                borderColor: teamColors[team],
+                            }}
+                        >
+                            {team}
+                        </div>
                     </div>
                 </div>
             </div>
             <div className={styles.right}>
-                <div className={styles.keeperCost}>
-                    {keeperValueForCurrentTeam}th
-                </div>
+                <div className={styles.keeperCost}>{keeperCost}th</div>
                 <div className={styles.roundLabel}>Round Pick</div>
             </div>
         </div>
@@ -9142,6 +9185,7 @@ const data = {
 };
 
 function App() {
+    return <MobileApp data={data} />;
     return (
         <div className={styles.app}>
             <NavBar />

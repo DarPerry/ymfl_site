@@ -15,14 +15,15 @@
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 650px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin: 20px 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 10px 0px;
 }
 
 .imageContainer {
     width: 60px;
     height: 60px;
-    background-color: #c83803;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -59,6 +60,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: fit-content;
 }
 
 .keeperCost {
@@ -75,6 +77,7 @@
 .playerDetails {
     display: flex;
     font-size: 16px;
+    margin-top: 2px;
 }
 
 .divider {
@@ -82,30 +85,39 @@
 }
 
 .position {
-    font-weight: 600;
+    font-weight: 700;
     padding: 2px 6px;
     border-radius: 5px;
     font-size: 14px;
     color: white;
     letter-spacing: 0.3px;
+    background-color: white;
+    // width: 40px;
+    text-align: center;
+    border: solid 2px transparent;
 
     &.QB {
-        background-color: rgb(0, 0, 0);
+        color: $qb-color;
+        border-color: $qb-color;
     }
 
     &.RB {
-        background-color: rgb(0, 0, 0);
+        color: $rb-color;
+        border-color: $rb-color;
     }
 
     &.WR {
-        background-color: rgb(0, 0, 0);
+        color: $wr-color;
+        border-color: $wr-color;
     }
 
     &.TE {
-        background-color: rgb(0, 0, 0);
+        color: $te-color;
+        border-color: $te-color;
     }
 
     &.K {
-        background-color: rgb(0, 0, 0);
+        color: $k-color;
+        border-color: $k-color;
     }
 }
