@@ -4,23 +4,40 @@ import _ from "lodash";
 import { useState } from "react";
 import { getPlayerRoundSuffix } from "../../util/playerUtil";
 
-const MockPlayerRow = ({ name, position, value, image }) => (
-    <div className={classNames(styles.player, styles[position])}>
+const getPlayerImageLink = (playerName) =>
+    `../../../public/${playerName?.split(" ").join("-")}.png`;
+
+const backgroundColorMap = {
+    NYG: "#a71930",
+};
+
+const MockPlayerRow = ({ name, position, keeperValueForCurrentTeam, team }) => (
+    <div
+        className={classNames(styles.player, styles[position])}
+        style={{ backgroundColor: backgroundColorMap[team] }}
+    >
         <div className={styles.left}>
             <div className={styles.imageContainer}>
-                <img className={styles.playerImage} src={image} />
+                <img
+                    className={styles.playerImage}
+                    // src={process.env.PUBLIC_URL + "/img/logo.png"}
+                    src={getPlayerImageLink(name)}
+                />
             </div>
             <div className={styles.playerInfo}>
                 <div className={styles.playerName}>{name}</div>
                 <div
                     className={classNames(
                         styles.keeperValue,
-                        !value && styles.cantKeep
+                        !keeperValueForCurrentTeam && styles.cantKeep
                     )}
+                    style={{ color: backgroundColorMap[team] }}
                 >
-                    {!value
+                    {!keeperValueForCurrentTeam
                         ? "Can't Be Kept"
-                        : `${value}${getPlayerRoundSuffix(value)} Round`}
+                        : `${keeperValueForCurrentTeam}${getPlayerRoundSuffix(
+                              keeperValueForCurrentTeam
+                          )} Round`}
                 </div>
             </div>
         </div>
@@ -32,12 +49,13 @@ const Card = ({ keeperData }) => {
     const teams = Object.keys(keeperData).sort();
 
     const [selectedTeam, setSelectedTeam] = useState(teams.at(0));
+    console.log(keeperData[selectedTeam]);
     const selectedTeamRosterByPosition = _.groupBy(
         keeperData[selectedTeam],
-        ({ position }) => position
+        "position"
     );
 
-    console.log("keeperData", keeperData);
+    console.log("selectedTeamRosterByPosition", selectedTeamRosterByPosition);
 
     return (
         <div className={styles.card}>
@@ -86,11 +104,12 @@ const Card = ({ keeperData }) => {
                                     styles[position]
                                 )}
                             >
-                                {_.orderBy(players, ({ value }) => value).map(
-                                    (player) => (
-                                        <MockPlayerRow {...player} />
-                                    )
-                                )}
+                                {_.orderBy(
+                                    players,
+                                    "keeperValueForCurrentTeam"
+                                ).map((player) => (
+                                    <MockPlayerRow {...player} />
+                                ))}
                             </div>
                         </div>
                     );

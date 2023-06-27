@@ -54,6 +54,8 @@
     transition: all 0.1s ease-in-out;
     cursor: pointer;
     border-radius: 4px;
+    color: white;
+    background-color: black;
 }
 
 .positionBadge {
@@ -105,21 +107,23 @@
     height: 60px;
     overflow: hidden;
     border-radius: 50%;
-    background-color: #e6e6e6;
     margin-right: 8px;
+    background-color: white;
+    border: solid 2px #0b2265;
 }
 
 .playerImage {
-    width: 85%;
+    width: 140%;
     position: relative;
-    left: 7%;
+    left: -19%;
+    top: 4%;
 }
 
 .keeperValue {
     width: 100px;
     height: 100%;
     text-align: center;
-    background-color: $indy-gold;
+    background-color: white;
     color: white;
     border-radius: 4px;
     padding: 4px 8px;

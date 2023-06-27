@@ -15,10 +15,13 @@ import {
     getLastCompletedSeason,
     getLeague,
     getLeagueManagers,
+    getLeagueRosters,
     getLeagueTransactions,
 } from "./services/league.service.js";
 
 import playerImages from "./data/players.json" assert { type: "json" };
+
+const ROUNDS_IN_DRAFT = 18;
 
 import { getUser } from "./services/user.service.js";
 import {
@@ -27,7 +30,7 @@ import {
     normalizePlayerName,
 } from "./services/player.service.js";
 import { getRostersFromLastCompletedSeason } from "./services/roster.service.js";
-import { FANTASY_POSITIONS } from "./config/index.config.js";
+import { FANTASY_POSITIONS, LEAGUE_ID } from "./config/index.config.js";
 import { resolveSoa } from "dns";
 
 const app = express();
@@ -55,7 +58,7 @@ const HistoryEntry = ({
 
     return {
         rosterId,
-        season,
+        season: Number(season),
         week,
         type,
         draftMetadata,
@@ -115,7 +118,7 @@ const getDraftPicksByPlayerId = async () => {
 
                 return {
                     player_id,
-                    season,
+                    season: Number(season),
                     type: `DRAFT_${is_keeper ? "KEEPER" : "PICK"}`,
                     round,
                     pick: draft_slot,
@@ -207,14 +210,12 @@ const getTransactionByPlayerIDs = async () => {
 const mergePlayerTransactions = (draftPicks = [], transactions = []) => {
     return _.orderBy(
         [...draftPicks, ...transactions],
-        ({ season, week, type }) => {
-            return [Number(season), Number(week || 100), type];
-        },
-        ["desc", "desc", "desc"]
+        ["season", "week"],
+        ["desc", "desc"]
     );
 };
 
-const getPlayerKeeperValue = (transactions, player) => {
+const getPlayerKeeperValue = (transactions, playerAdr) => {
     const nonTradedTransactions = transactions.filter(
         ({ type }) => !type.includes("TRADE")
     );
@@ -249,7 +250,7 @@ const getPlayerKeeperValue = (transactions, player) => {
 
         return lastRoundDrafted - keeperAdjustment;
     } else {
-        return "TBD";
+        return !playerAdr ? ROUNDS_IN_DRAFT : playerAdr - 1;
     }
 };
 
@@ -286,7 +287,10 @@ const getAllPlayersTransactions = async () => {
     const transactionsByPlayerId = await getTransactionByPlayerIDs();
 
     return players.map((player) => {
-        const { player_id: playerId, full_name, position } = player;
+        const { player_id: playerId, full_name, position, team } = player;
+
+        const adp = playerAdpMap[playerId] || null;
+        const adr = adp ? Math.ceil(adp / 12) : null;
 
         const playerDraftPicks = draftPicksByPlayerId[playerId];
         const playerTransactions = transactionsByPlayerId[playerId];
@@ -298,15 +302,13 @@ const getAllPlayersTransactions = async () => {
 
         const keeperValueForCurrentTeam = getPlayerKeeperValue(
             transactions,
-            full_name
+            adr
         );
-
-        const adp = playerAdpMap[playerId] || null;
-        const adr = adp ? Math.ceil(adp / 12) : null;
 
         return {
             // ...player,
             playerId,
+            team,
             adp,
             adr,
             name: full_name,
@@ -513,8 +515,22 @@ const getKeeperValue = (playerId, allPlayerHistory, allPLayerADPData) => {
     };
 };
 
-app.get("/", async (req, res) => {
+const getRostersByTeamId = async () => {
+    const rosters = await getLeagueRosters(LEAGUE_ID);
     const allPlayerHistory = await getAllPlayersTransactions();
+
+    const playerHistoryById = _.keyBy(allPlayerHistory, "playerId");
+
+    return rosters.reduce((acc, { roster_id, players }) => {
+        acc[roster_id] = players.map((playerId) => playerHistoryById[playerId]);
+        return acc;
+    }, {});
+};
+
+app.get("/", async (req, res) => {
+    const rostersByTeamId = await getRostersByTeamId();
+
+    return res.send(rostersByTeamId);
 
     return res.send(allPlayerHistory);
     const playerADPs = await getPlayerADPs();
