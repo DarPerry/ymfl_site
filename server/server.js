@@ -4,6 +4,9 @@ import axios from "axios";
 import express from "express";
 import * as cheerio from "cheerio";
 import { getAvatar } from "./services/avatar.service.js";
+import fs from "fs";
+import { dirname } from "path";
+import path from "path";
 import {
     getAllDraftsForLeague,
     getDraftPicks,
@@ -528,6 +531,62 @@ const getRostersByTeamId = async () => {
 };
 
 app.get("/", async (req, res) => {
+    // Import filesystem module
+
+    // List all the filenames before renaming
+
+    // Rename the file
+    // fs.rename("hello.txt", "world.txt", () => {
+    //     console.log("\nFile Renamed!\n");
+
+    //     // List all the filenames after renaming
+    //     getCurrentFilenames();
+    // });
+
+    // Function to get current filenames
+    // in directory
+
+    const dir = path.join(process.cwd(), "client/public/images2");
+
+    fs.readdirSync(dir).forEach((file) => {
+        //replace everything after "--""
+        const newFileName = file.split("-min").at(0);
+        const hypenCount = newFileName.split("-").length;
+
+        let finalFileName = newFileName;
+
+        if (hypenCount === 4) {
+            finalFileName = _.slice(newFileName.split("-"), 2, 4)
+                .join("-")
+                .replace(/\d/g, "");
+        } else if (hypenCount === 5) {
+            finalFileName = _.slice(newFileName.split("-"), 3, 5)
+                .join("-")
+                .replace(/\d/g, "");
+        } else if (hypenCount === 6) {
+            finalFileName = _.slice(newFileName.split("-"), 4, 6)
+                .join("-")
+                .replace(/\d/g, "");
+        }
+
+        if (file !== `${finalFileName}.png`) {
+            fs.rename(file, `${finalFileName}.png`, () => {
+                console.log("\nFile Renamed!\n");
+            });
+        }
+
+        console.log(file, hypenCount, "=>", `${finalFileName}.png`);
+    });
+
+    console.log(dir);
+
+    return res.send("123");
+
+    // function getCurrentFilenames() {
+    //     console.log("Current filenames:");
+
+    // }
+    return res.send("123");
     const rostersByTeamId = await getRostersByTeamId();
 
     return res.send(rostersByTeamId);

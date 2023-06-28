@@ -59,7 +59,7 @@ const PlayerCard = ({
                 >
                     <img
                         className={styles.playerImage}
-                        src="https://cdn.statmuse.com/img/nfl/players/chicago-bears-justin-fields-min--dqhrruwj.png"
+                        src="../public/images/justin-fields.png"
                     />
                 </div>
 

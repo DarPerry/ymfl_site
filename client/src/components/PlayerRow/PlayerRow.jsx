@@ -1,6 +1,9 @@
 import classNames from "classnames";
 import styles from "./PlayerRow.module.scss";
 
+const getPlayerImage = (name) =>
+    `../../../public/images/${name?.split(" ").join("-")}.png`;
+
 const PlayerRow = ({
     keeperValueForCurrentTeam: keeperCost,
     name,
@@ -12,7 +15,7 @@ const PlayerRow = ({
                 <div className={styles.imageContainer}>
                     <img
                         className={styles.playerImage}
-                        src="https://cdn.statmuse.com/img/nfl/players/chicago-bears-justin-fields-min--dqhrruwj.png"
+                        src={getPlayerImage(name)}
                     />
                 </div>
                 <div className={styles.playerInfo}>
