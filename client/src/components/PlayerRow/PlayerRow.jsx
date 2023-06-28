@@ -2,13 +2,18 @@ import classNames from "classnames";
 import styles from "./PlayerRow.module.scss";
 
 const getPlayerImage = (name) =>
-    `../../../public/images/${name?.split(" ").join("-")}.png`;
+    `../../../public/images/${name
+        ?.replaceAll(".", "")
+        ?.replaceAll("'", "")
+        ?.split(" ")
+        .join("-")}.png`;
 
 const PlayerRow = ({
     keeperValueForCurrentTeam: keeperCost,
     name,
     position,
 }) => {
+    console.log(getPlayerImage(name));
     return (
         <div className={styles.playerRow}>
             <div className={styles.left2}>

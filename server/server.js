@@ -546,39 +546,17 @@ app.get("/", async (req, res) => {
     // Function to get current filenames
     // in directory
 
-    const dir = path.join(process.cwd(), "client/public/images2");
+    const dir = path.join(process.cwd(), "client/public/images");
 
     fs.readdirSync(dir).forEach((file) => {
-        //replace everything after "--""
-        const newFileName = file.split("-min").at(0);
-        const hypenCount = newFileName.split("-").length;
-
-        let finalFileName = newFileName;
-
-        if (hypenCount === 4) {
-            finalFileName = _.slice(newFileName.split("-"), 2, 4)
-                .join("-")
-                .replace(/\d/g, "");
-        } else if (hypenCount === 5) {
-            finalFileName = _.slice(newFileName.split("-"), 3, 5)
-                .join("-")
-                .replace(/\d/g, "");
-        } else if (hypenCount === 6) {
-            finalFileName = _.slice(newFileName.split("-"), 4, 6)
-                .join("-")
-                .replace(/\d/g, "");
-        }
-
-        if (file !== `${finalFileName}.png`) {
-            fs.rename(file, `${finalFileName}.png`, () => {
-                console.log("\nFile Renamed!\n");
-            });
-        }
-
-        console.log(file, hypenCount, "=>", `${finalFileName}.png`);
+        fs.rename(
+            path.join(process.cwd(), "client/public/images", file),
+            path.join(process.cwd(), "client/public/images", `${file}.png`),
+            (error) => {
+                if (error) console.log(error);
+            }
+        );
     });
-
-    console.log(dir);
 
     return res.send("123");
 
