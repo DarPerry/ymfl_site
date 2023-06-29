@@ -3,10 +3,6 @@ import _ from "lodash";
 import axios from "axios";
 import express from "express";
 import * as cheerio from "cheerio";
-import { getAvatar } from "./services/avatar.service.js";
-import fs from "fs";
-import { dirname } from "path";
-import path from "path";
 import {
     getAllDraftsForLeague,
     getDraftPicks,
@@ -14,9 +10,6 @@ import {
 } from "./services/draft.service.js";
 import {
     getAllLeagueSeasons,
-    getAllLeaguesForUser,
-    getLastCompletedSeason,
-    getLeague,
     getLeagueManagers,
     getLeagueRosters,
     getLeagueTransactions,
@@ -26,15 +19,12 @@ import playerImages from "./data/players.json" assert { type: "json" };
 
 const ROUNDS_IN_DRAFT = 18;
 
-import { getUser } from "./services/user.service.js";
 import {
-    getActivePlayers,
     getAllPlayers,
     normalizePlayerName,
 } from "./services/player.service.js";
 import { getRostersFromLastCompletedSeason } from "./services/roster.service.js";
 import { FANTASY_POSITIONS, LEAGUE_ID } from "./config/index.config.js";
-import { resolveSoa } from "dns";
 
 const app = express();
 
@@ -70,14 +60,55 @@ const HistoryEntry = ({
 
 const getValidPlayers = async () => {
     const allPlayers = await getAllPlayers();
+
     const playerIdMap = {};
 
-    const players = Object.values(allPlayers).reduce((acc, player) => {
-        const { status, position } = player;
+    const teamNameMap = {
+        ARI: "Arizona Cardinals",
+        ATL: "Atlanta Falcons",
+        BAL: "Baltimore Ravens",
+        BUF: "Buffalo Bills",
+        CAR: "Carolina Panthers",
+        CHI: "Chicago Bears",
+        CIN: "Cincinnati Bengals",
+        CLE: "Cleveland Browns",
+        DAL: "Dallas Cowboys",
+        DEN: "Denver Broncos",
+        DET: "Detroit Lions",
+        GB: "Green Bay Packers",
+        HOU: "Houston Texans",
+        IND: "Indianapolis Colts",
+        JAX: "Jacksonville Jaguars",
+        KC: "Kansas City Chiefs",
+        LAC: "Los Angeles Chargers",
+        LAR: "Los Angeles Rams",
+        LV: "Las Vegas Raiders",
+        MIA: "Miami Dolphins",
+        MIN: "Minnesota Vikings",
+        NE: "New England Patriots",
+        NO: "New Orleans Saints",
+        NYG: "New York Giants",
+        NYJ: "New York Jets",
+        PHI: "Philadelphia Eagles",
+        PIT: "Pittsburgh Steelers",
+        SEA: "Seattle Seahawks",
+        SF: "San Francisco 49ers",
+        TB: "Tampa Bay Buccaneers",
+        TEN: "Tennessee Titans",
+        WAS: "Washington Football Team",
+    };
 
-        if (status === "Active" && FANTASY_POSITIONS.includes(position)) {
-            playerIdMap[normalizePlayerName(player.full_name)] =
-                player.player_id;
+    const players = Object.values(allPlayers).reduce((acc, player) => {
+        const { status, position, active } = player;
+        const isActive = status === "Active" || (position === "DEF" && active);
+
+        if (isActive && FANTASY_POSITIONS.includes(position)) {
+            playerIdMap[
+                normalizePlayerName(player.full_name) ||
+                    `${teamNameMap[player.team]
+                        .replaceAll(/ /g, "_")
+                        .toUpperCase()}_DST`
+            ] = player.player_id || `${player.team}_DST`;
 
             return acc.concat(player);
         }
@@ -213,8 +244,8 @@ const getTransactionByPlayerIDs = async () => {
 const mergePlayerTransactions = (draftPicks = [], transactions = []) => {
     return _.orderBy(
         [...draftPicks, ...transactions],
-        ["season", "week"],
-        ["desc", "desc"]
+        ["season", "week", "type"],
+        ["desc", "desc", "asc"]
     );
 };
 
@@ -314,7 +345,7 @@ const getAllPlayersTransactions = async () => {
             team,
             adp,
             adr,
-            name: full_name,
+            name: full_name || `${team} DST`,
             position,
             keeperValueForCurrentTeam,
             transactions,
@@ -522,49 +553,34 @@ const getRostersByTeamId = async () => {
     const rosters = await getLeagueRosters(LEAGUE_ID);
     const allPlayerHistory = await getAllPlayersTransactions();
 
+    const nameMap = {
+        1: "Darius",
+        2: "Zack",
+        3: "Nick",
+        4: "Jeremiah",
+        5: "Bob",
+        6: "Hues",
+        7: "Brayden",
+        8: "Jack",
+        9: "Quast",
+        10: "T Cool",
+        11: "Tri",
+        12: "Joel",
+    };
+
     const playerHistoryById = _.keyBy(allPlayerHistory, "playerId");
 
     return rosters.reduce((acc, { roster_id, players }) => {
-        acc[roster_id] = players.map((playerId) => playerHistoryById[playerId]);
+        acc[roster_id] = players.map((playerId) => ({
+            ...playerHistoryById[playerId],
+            rosteredBy: nameMap[roster_id],
+        }));
         return acc;
     }, {});
 };
 
 app.get("/", async (req, res) => {
-    // Import filesystem module
-
-    // List all the filenames before renaming
-
-    // Rename the file
-    // fs.rename("hello.txt", "world.txt", () => {
-    //     console.log("\nFile Renamed!\n");
-
-    //     // List all the filenames after renaming
-    //     getCurrentFilenames();
-    // });
-
-    // Function to get current filenames
-    // in directory
-
-    const dir = path.join(process.cwd(), "client/public/images");
-
-    fs.readdirSync(dir).forEach((file) => {
-        fs.rename(
-            path.join(process.cwd(), "client/public/images", file),
-            path.join(process.cwd(), "client/public/images", `${file}.png`),
-            (error) => {
-                if (error) console.log(error);
-            }
-        );
-    });
-
-    return res.send("123");
-
-    // function getCurrentFilenames() {
-    //     console.log("Current filenames:");
-
-    // }
-    return res.send("123");
+    return res.send(await getRostersByTeamId());
     const rostersByTeamId = await getRostersByTeamId();
 
     return res.send(rostersByTeamId);

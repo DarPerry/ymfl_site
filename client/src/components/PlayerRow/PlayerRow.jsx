@@ -12,8 +12,8 @@ const PlayerRow = ({
     keeperValueForCurrentTeam: keeperCost,
     name,
     position,
+    rosteredBy,
 }) => {
-    console.log(getPlayerImage(name));
     return (
         <div className={styles.playerRow}>
             <div className={styles.left2}>
@@ -37,7 +37,7 @@ const PlayerRow = ({
                     </div>
                     <div className={styles.rosteredBy}>
                         Rostered By:
-                        <span className={styles.playerOwner}>Jeremiah</span>
+                        <span className={styles.playerOwner}>{rosteredBy}</span>
                     </div>
                 </div>
             </div>
