@@ -20,15 +20,16 @@ const getNumberSuffix = (number) => {
 };
 
 const MobileApp = ({ data }) => {
-    const players = _.orderBy(
-        _.flattenDeep(Object.values(data)),
-        "keeperValueForCurrentTeam"
-    );
+    const players = _.orderBy(_.flattenDeep(Object.values(data)), [
+        // "keeperValueForCurrentTeam",
+        "diff",
+        "adp",
+    ]);
 
     return (
         <div className={styles.mobileApp}>
             <div className={styles.header}>
-                <div className={styles.left}>Left</div>
+                <div className={styles.left}></div>
                 <div className={styles.middle}>
                     <div className={styles.leagueInfo}>
                         <img className={styles.leagueImage} />
@@ -39,7 +40,7 @@ const MobileApp = ({ data }) => {
                         <div className={styles.page}>Keepers</div>
                     </div>
                 </div>
-                <div className={styles.right}>Right</div>
+                <div className={styles.right}></div>
             </div>
             <div className={styles.sectionTitle}>Keeper Costs</div>
             {players.map((player) => {

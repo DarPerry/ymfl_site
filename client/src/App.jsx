@@ -90,6 +90,7 @@ const PlayerCard = ({
             <div className={styles.right}>
                 <div className={styles.keeperCost}>{keeperCost}th</div>
                 <div className={styles.roundLabel}>Round Pick</div>
+                <div className={styles.roundLabel}>Round Pick</div>
             </div>
         </div>
     );
@@ -107,15 +108,6 @@ const data = {
             keeperValueForCurrentTeam: 1,
             transactions: [
                 {
-                    player_id: "1479",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 2,
-                    pick: 3,
-                    overall: 18,
-                    draftedBy: 6,
-                },
-                {
                     rosterId: 1,
                     season: 2022,
                     week: 7,
@@ -131,7 +123,18 @@ const data = {
                 },
                 {
                     player_id: "1479",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 2,
+                    pick: 3,
+                    overall: 18,
+                    draftedBy: 6,
+                },
+                {
+                    player_id: "1479",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 6,
@@ -141,6 +144,7 @@ const data = {
                 {
                     player_id: "1479",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 9,
@@ -150,6 +154,7 @@ const data = {
                 {
                     player_id: "1479",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 6,
@@ -157,6 +162,7 @@ const data = {
                     draftedBy: 4,
                 },
             ],
+            diff: 3,
             rosteredBy: "Darius",
         },
         {
@@ -169,15 +175,6 @@ const data = {
             keeperValueForCurrentTeam: 3,
             transactions: [
                 {
-                    player_id: "167",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 4,
-                    pick: 4,
-                    overall: 37,
-                    draftedBy: 5,
-                },
-                {
                     rosterId: 1,
                     season: 2022,
                     week: 10,
@@ -193,7 +190,18 @@ const data = {
                 },
                 {
                     player_id: "167",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 4,
+                    pick: 4,
+                    overall: 37,
+                    draftedBy: 5,
+                },
+                {
+                    player_id: "167",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 1,
@@ -203,6 +211,7 @@ const data = {
                 {
                     player_id: "167",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 10,
                     pick: 1,
@@ -212,6 +221,7 @@ const data = {
                 {
                     player_id: "167",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 11,
                     pick: 4,
@@ -219,6 +229,7 @@ const data = {
                     draftedBy: 6,
                 },
             ],
+            diff: 25,
             rosteredBy: "Darius",
         },
         {
@@ -231,15 +242,6 @@ const data = {
             keeperValueForCurrentTeam: 0,
             transactions: [
                 {
-                    player_id: "4029",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 1,
-                    pick: 4,
-                    overall: 4,
-                    draftedBy: 5,
-                },
-                {
                     rosterId: 1,
                     season: 2022,
                     week: 5,
@@ -255,7 +257,18 @@ const data = {
                 },
                 {
                     player_id: "4029",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 1,
+                    pick: 4,
+                    overall: 4,
+                    draftedBy: 5,
+                },
+                {
+                    player_id: "4029",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 2,
@@ -265,6 +278,7 @@ const data = {
                 {
                     player_id: "4029",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 5,
@@ -274,6 +288,7 @@ const data = {
                 {
                     player_id: "4029",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 5,
@@ -281,6 +296,7 @@ const data = {
                     draftedBy: 8,
                 },
             ],
+            diff: 5,
             rosteredBy: "Darius",
         },
         {
@@ -292,15 +308,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 0,
             transactions: [
-                {
-                    player_id: "4034",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 1,
-                    pick: 3,
-                    overall: 3,
-                    draftedBy: 6,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -317,12 +324,13 @@ const data = {
                 },
                 {
                     player_id: "4034",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
-                    pick: 1,
-                    overall: 1,
-                    draftedBy: 4,
+                    pick: 3,
+                    overall: 3,
+                    draftedBy: 6,
                 },
                 {
                     rosterId: 4,
@@ -333,12 +341,13 @@ const data = {
                 },
                 {
                     player_id: "4034",
-                    season: 2020,
+                    season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 1,
                     overall: 1,
-                    draftedBy: 6,
+                    draftedBy: 4,
                 },
                 {
                     rosterId: 6,
@@ -349,7 +358,18 @@ const data = {
                 },
                 {
                     player_id: "4034",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 1,
+                    pick: 1,
+                    overall: 1,
+                    draftedBy: 6,
+                },
+                {
+                    player_id: "4034",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 1,
@@ -357,6 +377,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: 1,
             rosteredBy: "Darius",
         },
         {
@@ -366,7 +387,7 @@ const data = {
             adr: 14,
             name: "Gerald Everett",
             position: "TE",
-            keeperValueForCurrentTeam: 13,
+            keeperValueForCurrentTeam: 15,
             transactions: [
                 {
                     rosterId: 1,
@@ -418,6 +439,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Darius",
         },
         {
@@ -429,15 +451,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 2,
             transactions: [
-                {
-                    player_id: "4137",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 3,
-                    pick: 4,
-                    overall: 24,
-                    draftedBy: 5,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -454,7 +467,18 @@ const data = {
                 },
                 {
                     player_id: "4137",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 3,
+                    pick: 4,
+                    overall: 24,
+                    draftedBy: 5,
+                },
+                {
+                    player_id: "4137",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 10,
@@ -464,6 +488,7 @@ const data = {
                 {
                     player_id: "4137",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 8,
@@ -473,6 +498,7 @@ const data = {
                 {
                     player_id: "4137",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 9,
@@ -480,6 +506,7 @@ const data = {
                     draftedBy: 2,
                 },
             ],
+            diff: 5,
             rosteredBy: "Darius",
         },
         {
@@ -494,6 +521,7 @@ const data = {
                 {
                     player_id: "4866",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 7,
@@ -503,20 +531,12 @@ const data = {
                 {
                     player_id: "4866",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 4,
                     overall: 17,
                     draftedBy: 8,
-                },
-                {
-                    player_id: "4866",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 1,
-                    pick: 2,
-                    overall: 2,
-                    draftedBy: 2,
                 },
                 {
                     rosterId: 2,
@@ -527,7 +547,18 @@ const data = {
                 },
                 {
                     player_id: "4866",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 1,
+                    pick: 2,
+                    overall: 2,
+                    draftedBy: 2,
+                },
+                {
+                    player_id: "4866",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 2,
@@ -535,6 +566,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 0,
             rosteredBy: "Darius",
         },
         {
@@ -549,20 +581,12 @@ const data = {
                 {
                     player_id: "5022",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 7,
                     overall: 114,
                     draftedBy: 1,
-                },
-                {
-                    player_id: "5022",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 13,
-                    pick: 7,
-                    overall: 127,
-                    draftedBy: 7,
                 },
                 {
                     rosterId: 3,
@@ -577,6 +601,16 @@ const data = {
                     week: 7,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "5022",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 13,
+                    pick: 7,
+                    overall: 127,
+                    draftedBy: 7,
                 },
                 {
                     rosterId: 8,
@@ -607,6 +641,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -4,
             rosteredBy: "Darius",
         },
         {
@@ -618,15 +653,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 4,
             transactions: [
-                {
-                    player_id: "5937",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 5,
-                    pick: 6,
-                    overall: 46,
-                    draftedBy: 2,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -643,21 +669,23 @@ const data = {
                 },
                 {
                     player_id: "5937",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 5,
+                    pick: 6,
+                    overall: 46,
+                    draftedBy: 2,
+                },
+                {
+                    player_id: "5937",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 3,
                     overall: 63,
                     draftedBy: 3,
-                },
-                {
-                    player_id: "5937",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 7,
-                    overall: 147,
-                    draftedBy: 8,
                 },
                 {
                     rosterId: 2,
@@ -673,7 +701,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "5937",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 7,
+                    overall: 147,
+                    draftedBy: 8,
+                },
             ],
+            diff: 2,
             rosteredBy: "Darius",
         },
         {
@@ -683,11 +722,40 @@ const data = {
             adr: null,
             name: "Tyler Bass",
             position: "K",
-            keeperValueForCurrentTeam: 16,
+            keeperValueForCurrentTeam: 18,
             transactions: [
+                {
+                    rosterId: 1,
+                    season: 2022,
+                    week: 11,
+                    type: "WAIVER_ADD",
+                    draftMetadata: null,
+                },
+                {
+                    rosterId: 1,
+                    season: 2022,
+                    week: 11,
+                    type: "WAIVER_DROP",
+                    draftMetadata: null,
+                },
+                {
+                    rosterId: 1,
+                    season: 2022,
+                    week: 7,
+                    type: "WAIVER_ADD",
+                    draftMetadata: null,
+                },
+                {
+                    rosterId: 1,
+                    season: 2022,
+                    week: 7,
+                    type: "WAIVER_DROP",
+                    draftMetadata: null,
+                },
                 {
                     player_id: "7042",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
                     pick: 7,
@@ -695,36 +763,9 @@ const data = {
                     draftedBy: 1,
                 },
                 {
-                    rosterId: 1,
-                    season: 2022,
-                    week: 11,
-                    type: "WAIVER_ADD",
-                    draftMetadata: null,
-                },
-                {
-                    rosterId: 1,
-                    season: 2022,
-                    week: 11,
-                    type: "WAIVER_DROP",
-                    draftMetadata: null,
-                },
-                {
-                    rosterId: 1,
-                    season: 2022,
-                    week: 7,
-                    type: "WAIVER_ADD",
-                    draftMetadata: null,
-                },
-                {
-                    rosterId: 1,
-                    season: 2022,
-                    week: 7,
-                    type: "WAIVER_DROP",
-                    draftMetadata: null,
-                },
-                {
                     player_id: "7042",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 18,
                     pick: 7,
@@ -753,6 +794,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Darius",
         },
         {
@@ -767,6 +809,7 @@ const data = {
                 {
                     player_id: "7523",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 7,
@@ -776,6 +819,7 @@ const data = {
                 {
                     player_id: "7523",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 1,
@@ -783,6 +827,7 @@ const data = {
                     draftedBy: 4,
                 },
             ],
+            diff: -4,
             rosteredBy: "Darius",
         },
         {
@@ -797,6 +842,7 @@ const data = {
                 {
                     player_id: "7588",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 7,
@@ -806,6 +852,7 @@ const data = {
                 {
                     player_id: "7588",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 8,
@@ -813,6 +860,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 3,
             rosteredBy: "Darius",
         },
         {
@@ -822,17 +870,8 @@ const data = {
             adr: 12,
             name: "Rondale Moore",
             position: "WR",
-            keeperValueForCurrentTeam: 16,
+            keeperValueForCurrentTeam: 13,
             transactions: [
-                {
-                    player_id: "7601",
-                    season: 2022,
-                    type: "DRAFT_KEEPER",
-                    round: 18,
-                    pick: 4,
-                    overall: 177,
-                    draftedBy: 5,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -863,11 +902,12 @@ const data = {
                 },
                 {
                     player_id: "7601",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 9,
-                    overall: 132,
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 18,
+                    pick: 4,
+                    overall: 177,
                     draftedBy: 5,
                 },
                 {
@@ -884,7 +924,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "7601",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 9,
+                    overall: 132,
+                    draftedBy: 5,
+                },
             ],
+            diff: -1,
             rosteredBy: "Darius",
         },
         {
@@ -896,15 +947,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 7,
             transactions: [
-                {
-                    player_id: "8112",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 6,
-                    overall: 75,
-                    draftedBy: 2,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -919,7 +961,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8112",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 6,
+                    overall: 75,
+                    draftedBy: 2,
+                },
             ],
+            diff: -2,
             rosteredBy: "Darius",
         },
         {
@@ -929,17 +982,8 @@ const data = {
             adr: 6,
             name: "Rachaad White",
             position: "RB",
-            keeperValueForCurrentTeam: 17,
+            keeperValueForCurrentTeam: 7,
             transactions: [
-                {
-                    player_id: "8136",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 18,
-                    pick: 3,
-                    overall: 178,
-                    draftedBy: 6,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -982,7 +1026,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8136",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 18,
+                    pick: 3,
+                    overall: 178,
+                    draftedBy: 6,
+                },
             ],
+            diff: -1,
             rosteredBy: "Darius",
         },
         {
@@ -992,17 +1047,8 @@ const data = {
             adr: 13,
             name: "Kenny Pickett",
             position: "QB",
-            keeperValueForCurrentTeam: 17,
+            keeperValueForCurrentTeam: 14,
             transactions: [
-                {
-                    player_id: "8160",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 18,
-                    pick: 7,
-                    overall: 174,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -1017,7 +1063,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8160",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 18,
+                    pick: 7,
+                    overall: 174,
+                    draftedBy: 1,
+                },
             ],
+            diff: -1,
             rosteredBy: "Darius",
         },
         {
@@ -1027,7 +1084,7 @@ const data = {
             adr: 16,
             name: "Brock Purdy",
             position: "QB",
-            keeperValueForCurrentTeam: 15,
+            keeperValueForCurrentTeam: 17,
             transactions: [
                 {
                     rosterId: 1,
@@ -1037,6 +1094,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Darius",
         },
         {
@@ -1046,7 +1104,7 @@ const data = {
             adr: 7,
             name: "Isiah Pacheco",
             position: "RB",
-            keeperValueForCurrentTeam: 6,
+            keeperValueForCurrentTeam: 8,
             transactions: [
                 {
                     rosterId: 1,
@@ -1084,6 +1142,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Darius",
         },
         {
@@ -1093,17 +1152,8 @@ const data = {
             adr: 13,
             name: "SF DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 16,
+            keeperValueForCurrentTeam: 14,
             transactions: [
-                {
-                    player_id: "SF",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 5,
-                    overall: 165,
-                    draftedBy: 4,
-                },
                 {
                     rosterId: 1,
                     season: 2022,
@@ -1120,12 +1170,13 @@ const data = {
                 },
                 {
                     player_id: "SF",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 18,
-                    pick: 8,
-                    overall: 173,
-                    draftedBy: 1,
+                    round: 17,
+                    pick: 5,
+                    overall: 165,
+                    draftedBy: 4,
                 },
                 {
                     rosterId: 3,
@@ -1150,7 +1201,18 @@ const data = {
                 },
                 {
                     player_id: "SF",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 18,
+                    pick: 8,
+                    overall: 173,
+                    draftedBy: 1,
+                },
+                {
+                    player_id: "SF",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 9,
@@ -1165,6 +1227,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Darius",
         },
     ],
@@ -1186,6 +1249,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Zack",
         },
         {
@@ -1197,15 +1261,6 @@ const data = {
             position: "QB",
             keeperValueForCurrentTeam: 3,
             transactions: [
-                {
-                    player_id: "4881",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 4,
-                    pick: 9,
-                    overall: 32,
-                    draftedBy: 3,
-                },
                 {
                     rosterId: 2,
                     season: 2022,
@@ -1222,7 +1277,18 @@ const data = {
                 },
                 {
                     player_id: "4881",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 4,
+                    pick: 9,
+                    overall: 32,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "4881",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 8,
@@ -1232,6 +1298,7 @@ const data = {
                 {
                     player_id: "4881",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 8,
                     pick: 9,
@@ -1241,6 +1308,7 @@ const data = {
                 {
                     player_id: "4881",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 3,
@@ -1248,6 +1316,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 1,
             rosteredBy: "Zack",
         },
         {
@@ -1262,6 +1331,7 @@ const data = {
                 {
                     player_id: "5012",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 6,
@@ -1271,6 +1341,7 @@ const data = {
                 {
                     player_id: "5012",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 5,
@@ -1280,6 +1351,7 @@ const data = {
                 {
                     player_id: "5012",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 9,
@@ -1289,6 +1361,7 @@ const data = {
                 {
                     player_id: "5012",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 15,
                     pick: 7,
@@ -1296,6 +1369,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: 0,
             rosteredBy: "Zack",
         },
         {
@@ -1343,6 +1417,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Zack",
         },
         {
@@ -1352,7 +1427,7 @@ const data = {
             adr: 17,
             name: "Parris Campbell",
             position: "WR",
-            keeperValueForCurrentTeam: 16,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 2,
@@ -1392,20 +1467,12 @@ const data = {
                 {
                     player_id: "5880",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 18,
                     pick: 7,
                     overall: 174,
                     draftedBy: 8,
-                },
-                {
-                    player_id: "5880",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 2,
-                    overall: 142,
-                    draftedBy: 7,
                 },
                 {
                     rosterId: 7,
@@ -1428,7 +1495,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "5880",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 2,
+                    overall: 142,
+                    draftedBy: 7,
+                },
             ],
+            diff: -1,
             rosteredBy: "Zack",
         },
         {
@@ -1438,17 +1516,8 @@ const data = {
             adr: 10,
             name: "Damien Harris",
             position: "RB",
-            keeperValueForCurrentTeam: 7,
+            keeperValueForCurrentTeam: 11,
             transactions: [
-                {
-                    player_id: "5890",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 3,
-                    overall: 78,
-                    draftedBy: 6,
-                },
                 {
                     rosterId: 2,
                     season: 2022,
@@ -1465,7 +1534,18 @@ const data = {
                 },
                 {
                     player_id: "5890",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 3,
+                    overall: 78,
+                    draftedBy: 6,
+                },
+                {
+                    player_id: "5890",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 1,
@@ -1480,6 +1560,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Zack",
         },
         {
@@ -1491,15 +1572,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 6,
             transactions: [
-                {
-                    player_id: "6783",
-                    season: 2022,
-                    type: "DRAFT_KEEPER",
-                    round: 8,
-                    pick: 9,
-                    overall: 72,
-                    draftedBy: 3,
-                },
                 {
                     rosterId: 2,
                     season: 2022,
@@ -1516,7 +1588,18 @@ const data = {
                 },
                 {
                     player_id: "6783",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 8,
+                    pick: 9,
+                    overall: 72,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "6783",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 3,
@@ -1526,6 +1609,7 @@ const data = {
                 {
                     player_id: "6783",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 6,
@@ -1533,6 +1617,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: -1,
             rosteredBy: "Zack",
         },
         {
@@ -1547,6 +1632,7 @@ const data = {
                 {
                     player_id: "6797",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 3,
                     pick: 6,
@@ -1556,6 +1642,7 @@ const data = {
                 {
                     player_id: "6797",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 6,
@@ -1570,6 +1657,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 5,
             rosteredBy: "Zack",
         },
         {
@@ -1581,15 +1669,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 8,
             transactions: [
-                {
-                    player_id: "6828",
-                    season: 2022,
-                    type: "DRAFT_KEEPER",
-                    round: 10,
-                    pick: 8,
-                    overall: 93,
-                    draftedBy: 9,
-                },
                 {
                     rosterId: 2,
                     season: 2022,
@@ -1606,7 +1685,18 @@ const data = {
                 },
                 {
                     player_id: "6828",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 10,
+                    pick: 8,
+                    overall: 93,
+                    draftedBy: 9,
+                },
+                {
+                    player_id: "6828",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 11,
                     pick: 10,
@@ -1614,6 +1704,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: 0,
             rosteredBy: "Zack",
         },
         {
@@ -1647,6 +1738,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Zack",
         },
         {
@@ -1656,7 +1748,7 @@ const data = {
             adr: 27,
             name: "Tyler Huntley",
             position: "QB",
-            keeperValueForCurrentTeam: 26,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 2,
@@ -1673,6 +1765,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 9,
             rosteredBy: "Zack",
         },
         {
@@ -1687,6 +1780,7 @@ const data = {
                 {
                     player_id: "7528",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 6,
@@ -1696,6 +1790,7 @@ const data = {
                 {
                     player_id: "7528",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 8,
@@ -1703,6 +1798,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 3,
             rosteredBy: "Zack",
         },
         {
@@ -1717,20 +1813,12 @@ const data = {
                 {
                     player_id: "7564",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 2,
                     pick: 6,
                     overall: 15,
                     draftedBy: 2,
-                },
-                {
-                    player_id: "7564",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 6,
-                    pick: 9,
-                    overall: 52,
-                    draftedBy: 5,
                 },
                 {
                     rosterId: 2,
@@ -1746,7 +1834,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "7564",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 6,
+                    pick: 9,
+                    overall: 52,
+                    draftedBy: 5,
+                },
             ],
+            diff: 1,
             rosteredBy: "Zack",
         },
         {
@@ -1761,19 +1860,11 @@ const data = {
                 {
                     player_id: "7611",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 6,
                     overall: 115,
-                    draftedBy: 2,
-                },
-                {
-                    player_id: "7611",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 6,
-                    overall: 106,
                     draftedBy: 2,
                 },
                 {
@@ -1790,7 +1881,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "7611",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 6,
+                    overall: 106,
+                    draftedBy: 2,
+                },
             ],
+            diff: -8,
             rosteredBy: "Zack",
         },
         {
@@ -1802,15 +1904,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 7,
             transactions: [
-                {
-                    player_id: "8129",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 7,
-                    overall: 74,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 2,
                     season: 2022,
@@ -1825,7 +1918,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8129",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 7,
+                    overall: 74,
+                    draftedBy: 1,
+                },
             ],
+            diff: -2,
             rosteredBy: "Zack",
         },
         {
@@ -1840,6 +1944,7 @@ const data = {
                 {
                     player_id: "8144",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 6,
@@ -1847,6 +1952,7 @@ const data = {
                     draftedBy: 2,
                 },
             ],
+            diff: -5,
             rosteredBy: "Zack",
         },
         {
@@ -1861,6 +1967,7 @@ const data = {
                 {
                     player_id: "BUF",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 16,
                     pick: 6,
@@ -1870,6 +1977,7 @@ const data = {
                 {
                     player_id: "BUF",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
                     pick: 5,
@@ -1879,6 +1987,7 @@ const data = {
                 {
                     player_id: "BUF",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 5,
@@ -1907,6 +2016,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 0,
             rosteredBy: "Zack",
         },
         {
@@ -1916,7 +2026,7 @@ const data = {
             adr: 14,
             name: "NE DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 13,
+            keeperValueForCurrentTeam: 15,
             transactions: [
                 {
                     rosterId: 2,
@@ -1924,15 +2034,6 @@ const data = {
                     week: 6,
                     type: "WAIVER_ADD",
                     draftMetadata: null,
-                },
-                {
-                    player_id: "NE",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 6,
-                    overall: 166,
-                    draftedBy: 2,
                 },
                 {
                     rosterId: 1,
@@ -1978,12 +2079,13 @@ const data = {
                 },
                 {
                     player_id: "NE",
-                    season: 2020,
+                    season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 15,
+                    round: 17,
                     pick: 6,
-                    overall: 146,
-                    draftedBy: 10,
+                    overall: 166,
+                    draftedBy: 2,
                 },
                 {
                     rosterId: 10,
@@ -1994,7 +2096,18 @@ const data = {
                 },
                 {
                     player_id: "NE",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 6,
+                    overall: 146,
+                    draftedBy: 10,
+                },
+                {
+                    player_id: "NE",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
                     pick: 8,
@@ -2002,6 +2115,7 @@ const data = {
                     draftedBy: 5,
                 },
             ],
+            diff: -1,
             rosteredBy: "Zack",
         },
     ],
@@ -2015,15 +2129,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 6,
             transactions: [
-                {
-                    player_id: "2309",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 7,
-                    pick: 3,
-                    overall: 63,
-                    draftedBy: 6,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2040,7 +2145,18 @@ const data = {
                 },
                 {
                     player_id: "2309",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 7,
+                    pick: 3,
+                    overall: 63,
+                    draftedBy: 6,
+                },
+                {
+                    player_id: "2309",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 10,
@@ -2050,6 +2166,7 @@ const data = {
                 {
                     player_id: "2309",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 1,
@@ -2059,6 +2176,7 @@ const data = {
                 {
                     player_id: "2309",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 10,
@@ -2066,6 +2184,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: -2,
             rosteredBy: "Nick",
         },
         {
@@ -2080,6 +2199,7 @@ const data = {
                 {
                     player_id: "3321",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 9,
@@ -2089,6 +2209,7 @@ const data = {
                 {
                     player_id: "3321",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 10,
@@ -2098,20 +2219,12 @@ const data = {
                 {
                     player_id: "3321",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 7,
                     overall: 14,
                     draftedBy: 8,
-                },
-                {
-                    player_id: "3321",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 2,
-                    pick: 4,
-                    overall: 17,
-                    draftedBy: 6,
                 },
                 {
                     rosterId: 1,
@@ -2127,7 +2240,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "3321",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 2,
+                    pick: 4,
+                    overall: 17,
+                    draftedBy: 6,
+                },
             ],
+            diff: 1,
             rosteredBy: "Nick",
         },
         {
@@ -2142,6 +2266,7 @@ const data = {
                 {
                     player_id: "4018",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 2,
                     pick: 9,
@@ -2151,6 +2276,7 @@ const data = {
                 {
                     player_id: "4018",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 3,
@@ -2160,6 +2286,7 @@ const data = {
                 {
                     player_id: "4018",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 9,
@@ -2169,6 +2296,7 @@ const data = {
                 {
                     player_id: "4018",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 3,
@@ -2176,6 +2304,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 4,
             rosteredBy: "Nick",
         },
         {
@@ -2190,6 +2319,7 @@ const data = {
                 {
                     player_id: "4046",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 9,
@@ -2199,6 +2329,7 @@ const data = {
                 {
                     player_id: "4046",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 7,
@@ -2208,6 +2339,7 @@ const data = {
                 {
                     player_id: "4046",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 4,
@@ -2217,6 +2349,7 @@ const data = {
                 {
                     player_id: "4046",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 10,
@@ -2224,6 +2357,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: 999,
             rosteredBy: "Nick",
         },
         {
@@ -2233,7 +2367,7 @@ const data = {
             adr: 16,
             name: "Curtis Samuel",
             position: "WR",
-            keeperValueForCurrentTeam: 15,
+            keeperValueForCurrentTeam: 17,
             transactions: [
                 {
                     rosterId: 3,
@@ -2241,15 +2375,6 @@ const data = {
                     week: 1,
                     type: "WAIVER_ADD",
                     draftMetadata: null,
-                },
-                {
-                    player_id: "4082",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 12,
-                    pick: 3,
-                    overall: 118,
-                    draftedBy: 3,
                 },
                 {
                     rosterId: 3,
@@ -2260,7 +2385,18 @@ const data = {
                 },
                 {
                     player_id: "4082",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 12,
+                    pick: 3,
+                    overall: 118,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "4082",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 16,
                     pick: 5,
@@ -2270,6 +2406,7 @@ const data = {
                 {
                     player_id: "4082",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 10,
@@ -2277,6 +2414,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: -1,
             rosteredBy: "Nick",
         },
         {
@@ -2286,7 +2424,7 @@ const data = {
             adr: 9,
             name: "Samaje Perine",
             position: "RB",
-            keeperValueForCurrentTeam: 8,
+            keeperValueForCurrentTeam: 10,
             transactions: [
                 {
                     rosterId: 3,
@@ -2310,6 +2448,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Nick",
         },
         {
@@ -2319,17 +2458,8 @@ const data = {
             adr: 19,
             name: "Baker Mayfield",
             position: "QB",
-            keeperValueForCurrentTeam: 13,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "4892",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 6,
-                    overall: 135,
-                    draftedBy: 2,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2346,7 +2476,18 @@ const data = {
                 },
                 {
                     player_id: "4892",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 6,
+                    overall: 135,
+                    draftedBy: 2,
+                },
+                {
+                    player_id: "4892",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 10,
@@ -2356,6 +2497,7 @@ const data = {
                 {
                     player_id: "4892",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 13,
                     pick: 7,
@@ -2365,6 +2507,7 @@ const data = {
                 {
                     player_id: "4892",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 1,
@@ -2372,6 +2515,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: 1,
             rosteredBy: "Nick",
         },
         {
@@ -2386,6 +2530,7 @@ const data = {
                 {
                     player_id: "5001",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 9,
@@ -2428,6 +2573,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 4,
             rosteredBy: "Nick",
         },
         {
@@ -2442,6 +2588,7 @@ const data = {
                 {
                     player_id: "5038",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 16,
                     pick: 9,
@@ -2451,6 +2598,7 @@ const data = {
                 {
                     player_id: "5038",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 2,
@@ -2460,6 +2608,7 @@ const data = {
                 {
                     player_id: "5038",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 12,
                     pick: 7,
@@ -2469,6 +2618,7 @@ const data = {
                 {
                     player_id: "5038",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 13,
                     pick: 5,
@@ -2476,6 +2626,7 @@ const data = {
                     draftedBy: 8,
                 },
             ],
+            diff: 0,
             rosteredBy: "Nick",
         },
         {
@@ -2485,7 +2636,7 @@ const data = {
             adr: 23,
             name: "Mike White",
             position: "QB",
-            keeperValueForCurrentTeam: 22,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 3,
@@ -2523,6 +2674,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 5,
             rosteredBy: "Nick",
         },
         {
@@ -2532,17 +2684,8 @@ const data = {
             adr: null,
             name: "Nick Folk",
             position: "K",
-            keeperValueForCurrentTeam: 16,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "650",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 2,
-                    overall: 162,
-                    draftedBy: 7,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2570,6 +2713,16 @@ const data = {
                     week: 2,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "650",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 17,
+                    pick: 2,
+                    overall: 162,
+                    draftedBy: 7,
                 },
                 {
                     rosterId: 2,
@@ -2600,6 +2753,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Nick",
         },
         {
@@ -2609,17 +2763,8 @@ const data = {
             adr: 12,
             name: "Cole Kmet",
             position: "TE",
-            keeperValueForCurrentTeam: 14,
+            keeperValueForCurrentTeam: 13,
             transactions: [
-                {
-                    player_id: "6826",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 1,
-                    overall: 141,
-                    draftedBy: 8,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2633,6 +2778,16 @@ const data = {
                     week: 7,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "6826",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 1,
+                    overall: 141,
+                    draftedBy: 8,
                 },
                 {
                     rosterId: 6,
@@ -2663,6 +2818,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Nick",
         },
         {
@@ -2674,15 +2830,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 15,
             transactions: [
-                {
-                    player_id: "6955",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 7,
-                    overall: 154,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2699,12 +2846,13 @@ const data = {
                 },
                 {
                     player_id: "6955",
-                    season: 2021,
-                    type: "DRAFT_KEEPER",
-                    round: 7,
-                    pick: 6,
-                    overall: 66,
-                    draftedBy: 2,
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 16,
+                    pick: 7,
+                    overall: 154,
+                    draftedBy: 1,
                 },
                 {
                     rosterId: 5,
@@ -2721,6 +2869,16 @@ const data = {
                     draftMetadata: null,
                 },
                 {
+                    player_id: "6955",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 7,
+                    pick: 6,
+                    overall: 66,
+                    draftedBy: 2,
+                },
+                {
                     rosterId: 2,
                     season: 2020,
                     week: 1,
@@ -2728,6 +2886,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 6,
             rosteredBy: "Nick",
         },
         {
@@ -2737,17 +2896,8 @@ const data = {
             adr: 28,
             name: "Zach Wilson",
             position: "QB",
-            keeperValueForCurrentTeam: 12,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "7538",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 13,
-                    pick: 9,
-                    overall: 129,
-                    draftedBy: 3,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2778,12 +2928,13 @@ const data = {
                 },
                 {
                     player_id: "7538",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 4,
-                    overall: 104,
-                    draftedBy: 8,
+                    round: 13,
+                    pick: 9,
+                    overall: 129,
+                    draftedBy: 3,
                 },
                 {
                     rosterId: 5,
@@ -2799,7 +2950,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "7538",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 4,
+                    overall: 104,
+                    draftedBy: 8,
+                },
             ],
+            diff: 10,
             rosteredBy: "Nick",
         },
         {
@@ -2811,15 +2973,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 5,
             transactions: [
-                {
-                    player_id: "7547",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 6,
-                    pick: 6,
-                    overall: 55,
-                    draftedBy: 2,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2836,12 +2989,13 @@ const data = {
                 },
                 {
                     player_id: "7547",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 7,
-                    overall: 154,
-                    draftedBy: 7,
+                    round: 6,
+                    pick: 6,
+                    overall: 55,
+                    draftedBy: 2,
                 },
                 {
                     rosterId: 5,
@@ -2885,7 +3039,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "7547",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 16,
+                    pick: 7,
+                    overall: 154,
+                    draftedBy: 7,
+                },
             ],
+            diff: -3,
             rosteredBy: "Nick",
         },
         {
@@ -2900,6 +3065,7 @@ const data = {
                 {
                     player_id: "8146",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 9,
@@ -2907,6 +3073,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: -6,
             rosteredBy: "Nick",
         },
         {
@@ -2918,15 +3085,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 6,
             transactions: [
-                {
-                    player_id: "8151",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 7,
-                    pick: 6,
-                    overall: 66,
-                    draftedBy: 2,
-                },
                 {
                     rosterId: 3,
                     season: 2022,
@@ -2941,7 +3099,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8151",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 7,
+                    pick: 6,
+                    overall: 66,
+                    draftedBy: 2,
+                },
             ],
+            diff: 999,
             rosteredBy: "Nick",
         },
         {
@@ -2951,7 +3120,7 @@ const data = {
             adr: 13,
             name: "PHI DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 12,
+            keeperValueForCurrentTeam: 14,
             transactions: [
                 {
                     rosterId: 3,
@@ -3080,6 +3249,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Nick",
         },
     ],
@@ -3091,7 +3261,7 @@ const data = {
             adr: 9,
             name: "Geno Smith",
             position: "QB",
-            keeperValueForCurrentTeam: 8,
+            keeperValueForCurrentTeam: 10,
             transactions: [
                 {
                     rosterId: 4,
@@ -3129,6 +3299,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3143,6 +3314,7 @@ const data = {
                 {
                     player_id: "2216",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 5,
@@ -3152,6 +3324,7 @@ const data = {
                 {
                     player_id: "2216",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 2,
@@ -3161,6 +3334,7 @@ const data = {
                 {
                     player_id: "2216",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 5,
@@ -3170,6 +3344,7 @@ const data = {
                 {
                     player_id: "2216",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 1,
@@ -3177,6 +3352,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: 4,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3191,6 +3367,7 @@ const data = {
                 {
                     player_id: "2505",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 5,
@@ -3200,6 +3377,7 @@ const data = {
                 {
                     player_id: "2505",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 5,
                     pick: 10,
@@ -3209,6 +3387,7 @@ const data = {
                 {
                     player_id: "2505",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 5,
@@ -3223,6 +3402,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 3,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3237,6 +3417,7 @@ const data = {
                 {
                     player_id: "3198",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 5,
@@ -3246,6 +3427,7 @@ const data = {
                 {
                     player_id: "3198",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 3,
                     pick: 5,
@@ -3255,6 +3437,7 @@ const data = {
                 {
                     player_id: "3198",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 5,
                     pick: 6,
@@ -3264,6 +3447,7 @@ const data = {
                 {
                     player_id: "3198",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 7,
@@ -3271,6 +3455,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: 2,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3285,6 +3470,7 @@ const data = {
                 {
                     player_id: "4035",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 5,
@@ -3294,6 +3480,7 @@ const data = {
                 {
                     player_id: "4035",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 3,
@@ -3303,6 +3490,7 @@ const data = {
                 {
                     player_id: "4035",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 3,
@@ -3312,6 +3500,7 @@ const data = {
                 {
                     player_id: "4035",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 3,
@@ -3319,6 +3508,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 8,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3333,6 +3523,7 @@ const data = {
                 {
                     player_id: "4068",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 11,
                     pick: 5,
@@ -3342,20 +3533,12 @@ const data = {
                 {
                     player_id: "4068",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 1,
                     overall: 120,
                     draftedBy: 4,
-                },
-                {
-                    player_id: "4068",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 3,
-                    overall: 158,
-                    draftedBy: 7,
                 },
                 {
                     rosterId: 4,
@@ -3387,12 +3570,13 @@ const data = {
                 },
                 {
                     player_id: "4068",
-                    season: 2019,
+                    season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 9,
-                    overall: 72,
-                    draftedBy: 2,
+                    round: 16,
+                    pick: 3,
+                    overall: 158,
+                    draftedBy: 7,
                 },
                 {
                     rosterId: 7,
@@ -3408,7 +3592,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "4068",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 9,
+                    overall: 72,
+                    draftedBy: 2,
+                },
             ],
+            diff: -4,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3418,17 +3613,8 @@ const data = {
             adr: null,
             name: "Harrison Butker",
             position: "K",
-            keeperValueForCurrentTeam: 17,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "4227",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 18,
-                    pick: 9,
-                    overall: 172,
-                    draftedBy: 3,
-                },
                 {
                     rosterId: 4,
                     season: 2022,
@@ -3473,21 +3659,23 @@ const data = {
                 },
                 {
                     player_id: "4227",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 18,
+                    pick: 9,
+                    overall: 172,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "4227",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
                     pick: 2,
                     overall: 162,
                     draftedBy: 6,
-                },
-                {
-                    player_id: "4227",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 4,
-                    overall: 137,
-                    draftedBy: 5,
                 },
                 {
                     rosterId: 10,
@@ -3505,7 +3693,18 @@ const data = {
                 },
                 {
                     player_id: "4227",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 4,
+                    overall: 137,
+                    draftedBy: 5,
+                },
+                {
+                    player_id: "4227",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 16,
                     pick: 4,
@@ -3513,6 +3712,7 @@ const data = {
                     draftedBy: 6,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3527,6 +3727,7 @@ const data = {
                 {
                     player_id: "5045",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 8,
                     pick: 5,
@@ -3536,20 +3737,12 @@ const data = {
                 {
                     player_id: "5045",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 1,
                     overall: 81,
                     draftedBy: 4,
-                },
-                {
-                    player_id: "5045",
-                    season: 2020,
-                    type: "DRAFT_KEEPER",
-                    round: 13,
-                    pick: 8,
-                    overall: 128,
-                    draftedBy: 3,
                 },
                 {
                     rosterId: 3,
@@ -3560,7 +3753,18 @@ const data = {
                 },
                 {
                     player_id: "5045",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 13,
+                    pick: 8,
+                    overall: 128,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "5045",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 10,
@@ -3568,6 +3772,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: 2,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3579,15 +3784,6 @@ const data = {
             position: "QB",
             keeperValueForCurrentTeam: 13,
             transactions: [
-                {
-                    player_id: "5870",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 7,
-                    overall: 134,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 4,
                     season: 2022,
@@ -3604,12 +3800,13 @@ const data = {
                 },
                 {
                     player_id: "5870",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 3,
-                    overall: 143,
-                    draftedBy: 3,
+                    round: 14,
+                    pick: 7,
+                    overall: 134,
+                    draftedBy: 1,
                 },
                 {
                     rosterId: 2,
@@ -3634,12 +3831,13 @@ const data = {
                 },
                 {
                     player_id: "5870",
-                    season: 2020,
+                    season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 2,
-                    overall: 79,
-                    draftedBy: 2,
+                    round: 15,
+                    pick: 3,
+                    overall: 143,
+                    draftedBy: 3,
                 },
                 {
                     rosterId: 4,
@@ -3654,6 +3852,16 @@ const data = {
                     week: 2,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "5870",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 2,
+                    overall: 79,
+                    draftedBy: 2,
                 },
                 {
                     rosterId: 4,
@@ -3691,6 +3899,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -5,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3710,6 +3919,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3724,6 +3934,7 @@ const data = {
                 {
                     player_id: "6151",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 5,
@@ -3733,6 +3944,7 @@ const data = {
                 {
                     player_id: "6151",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 4,
@@ -3742,6 +3954,7 @@ const data = {
                 {
                     player_id: "6151",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 7,
                     pick: 9,
@@ -3751,6 +3964,7 @@ const data = {
                 {
                     player_id: "6151",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 3,
@@ -3758,6 +3972,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: -4,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3772,20 +3987,12 @@ const data = {
                 {
                     player_id: "6770",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 5,
                     overall: 36,
                     draftedBy: 4,
-                },
-                {
-                    player_id: "6770",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 4,
-                    pick: 6,
-                    overall: 35,
-                    draftedBy: 2,
                 },
                 {
                     rosterId: 5,
@@ -3803,7 +4010,18 @@ const data = {
                 },
                 {
                     player_id: "6770",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 4,
+                    pick: 6,
+                    overall: 35,
+                    draftedBy: 2,
+                },
+                {
+                    player_id: "6770",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 6,
@@ -3811,6 +4029,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: 1,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3825,6 +4044,7 @@ const data = {
                 {
                     player_id: "6819",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 9,
                     pick: 5,
@@ -3834,6 +4054,7 @@ const data = {
                 {
                     player_id: "6819",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 1,
@@ -3869,6 +4090,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3883,6 +4105,7 @@ const data = {
                 {
                     player_id: "7591",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 5,
@@ -3892,6 +4115,7 @@ const data = {
                 {
                     player_id: "7591",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 8,
@@ -3899,6 +4123,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: -2,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3913,6 +4138,7 @@ const data = {
                 {
                     player_id: "7608",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 18,
                     pick: 5,
@@ -3948,6 +4174,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -8,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3962,6 +4189,7 @@ const data = {
                 {
                     player_id: "8154",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 5,
@@ -3969,6 +4197,7 @@ const data = {
                     draftedBy: 4,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jeremiah",
         },
         {
@@ -3978,17 +4207,8 @@ const data = {
             adr: 5,
             name: "Christian Watson",
             position: "WR",
-            keeperValueForCurrentTeam: 14,
+            keeperValueForCurrentTeam: 6,
             transactions: [
-                {
-                    player_id: "8167",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 2,
-                    overall: 142,
-                    draftedBy: 7,
-                },
                 {
                     rosterId: 4,
                     season: 2022,
@@ -4003,7 +4223,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8167",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 2,
+                    overall: 142,
+                    draftedBy: 7,
+                },
             ],
+            diff: -1,
             rosteredBy: "Jeremiah",
         },
         {
@@ -4013,7 +4244,7 @@ const data = {
             adr: 18,
             name: "MIA DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 17,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 4,
@@ -4093,6 +4324,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 0,
             rosteredBy: "Jeremiah",
         },
         {
@@ -4112,20 +4344,21 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "WAS",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 3,
-                    overall: 158,
-                    draftedBy: 3,
-                },
-                {
                     rosterId: 3,
                     season: 2021,
                     week: 9,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "WAS",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 16,
+                    pick: 3,
+                    overall: 158,
+                    draftedBy: 3,
                 },
                 {
                     rosterId: 7,
@@ -4156,6 +4389,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jeremiah",
         },
     ],
@@ -4169,15 +4403,6 @@ const data = {
             position: "QB",
             keeperValueForCurrentTeam: 3,
             transactions: [
-                {
-                    player_id: "1234",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 4,
-                    pick: 2,
-                    overall: 39,
-                    draftedBy: 7,
-                },
                 {
                     rosterId: 5,
                     season: 2022,
@@ -4208,7 +4433,18 @@ const data = {
                 },
                 {
                     player_id: "1234",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 4,
+                    pick: 2,
+                    overall: 39,
+                    draftedBy: 7,
+                },
+                {
+                    player_id: "1234",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 6,
@@ -4218,6 +4454,7 @@ const data = {
                 {
                     player_id: "1234",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 5,
@@ -4227,6 +4464,7 @@ const data = {
                 {
                     player_id: "1234",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 7,
@@ -4234,6 +4472,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: 7,
             rosteredBy: "Bob",
         },
         {
@@ -4248,6 +4487,7 @@ const data = {
                 {
                     player_id: "1426",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 4,
@@ -4257,6 +4497,7 @@ const data = {
                 {
                     player_id: "1426",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 9,
@@ -4266,6 +4507,7 @@ const data = {
                 {
                     player_id: "1426",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 6,
@@ -4275,6 +4517,7 @@ const data = {
                 {
                     player_id: "1426",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 7,
@@ -4282,6 +4525,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: -2,
             rosteredBy: "Bob",
         },
         {
@@ -4296,6 +4540,7 @@ const data = {
                 {
                     player_id: "1535",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 4,
@@ -4324,6 +4569,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 9,
             rosteredBy: "Bob",
         },
         {
@@ -4338,19 +4584,11 @@ const data = {
                 {
                     player_id: "2028",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 4,
                     overall: 44,
-                    draftedBy: 5,
-                },
-                {
-                    player_id: "2028",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 13,
-                    pick: 9,
-                    overall: 129,
                     draftedBy: 5,
                 },
                 {
@@ -4366,6 +4604,16 @@ const data = {
                     week: 5,
                     type: "TRADED_OUT",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "2028",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 13,
+                    pick: 9,
+                    overall: 129,
+                    draftedBy: 5,
                 },
                 {
                     rosterId: 7,
@@ -4389,15 +4637,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "2028",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 18,
-                    pick: 8,
-                    overall: 173,
-                    draftedBy: 5,
-                },
-                {
                     rosterId: 5,
                     season: 2019,
                     week: 2,
@@ -4411,7 +4650,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "2028",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 18,
+                    pick: 8,
+                    overall: 173,
+                    draftedBy: 5,
+                },
             ],
+            diff: 7,
             rosteredBy: "Bob",
         },
         {
@@ -4421,17 +4671,8 @@ const data = {
             adr: null,
             name: "Matt Ryan",
             position: "QB",
-            keeperValueForCurrentTeam: 8,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "24",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 9,
-                    pick: 1,
-                    overall: 81,
-                    draftedBy: 8,
-                },
                 {
                     rosterId: 5,
                     season: 2022,
@@ -4462,12 +4703,13 @@ const data = {
                 },
                 {
                     player_id: "24",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 3,
-                    overall: 78,
-                    draftedBy: 3,
+                    round: 9,
+                    pick: 1,
+                    overall: 81,
+                    draftedBy: 8,
                 },
                 {
                     rosterId: 7,
@@ -4478,7 +4720,18 @@ const data = {
                 },
                 {
                     player_id: "24",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 3,
+                    overall: 78,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "24",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 3,
@@ -4488,6 +4741,7 @@ const data = {
                 {
                     player_id: "24",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 2,
@@ -4495,6 +4749,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 999,
             rosteredBy: "Bob",
         },
         {
@@ -4514,20 +4769,21 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "2747",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 18,
-                    pick: 5,
-                    overall: 176,
-                    draftedBy: 10,
-                },
-                {
                     rosterId: 10,
                     season: 2021,
                     week: 8,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "2747",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 18,
+                    pick: 5,
+                    overall: 176,
+                    draftedBy: 10,
                 },
                 {
                     rosterId: 10,
@@ -4572,6 +4828,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Bob",
         },
         {
@@ -4584,15 +4841,6 @@ const data = {
             keeperValueForCurrentTeam: 2,
             transactions: [
                 {
-                    player_id: "3164",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 3,
-                    pick: 7,
-                    overall: 27,
-                    draftedBy: 1,
-                },
-                {
                     rosterId: 5,
                     season: 2022,
                     week: 5,
@@ -4608,7 +4856,18 @@ const data = {
                 },
                 {
                     player_id: "3164",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 3,
+                    pick: 7,
+                    overall: 27,
+                    draftedBy: 1,
+                },
+                {
+                    player_id: "3164",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 4,
@@ -4618,6 +4877,7 @@ const data = {
                 {
                     player_id: "3164",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 4,
@@ -4627,6 +4887,7 @@ const data = {
                 {
                     player_id: "3164",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 9,
@@ -4634,6 +4895,7 @@ const data = {
                     draftedBy: 2,
                 },
             ],
+            diff: 11,
             rosteredBy: "Bob",
         },
         {
@@ -4646,15 +4908,6 @@ const data = {
             keeperValueForCurrentTeam: 6,
             transactions: [
                 {
-                    player_id: "4037",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 7,
-                    pick: 7,
-                    overall: 67,
-                    draftedBy: 1,
-                },
-                {
                     rosterId: 5,
                     season: 2022,
                     week: 5,
@@ -4670,7 +4923,18 @@ const data = {
                 },
                 {
                     player_id: "4037",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 7,
+                    pick: 7,
+                    overall: 67,
+                    draftedBy: 1,
+                },
+                {
+                    player_id: "4037",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 10,
@@ -4680,6 +4944,7 @@ const data = {
                 {
                     player_id: "4037",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 4,
                     pick: 2,
@@ -4689,6 +4954,7 @@ const data = {
                 {
                     player_id: "4037",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 9,
@@ -4696,6 +4962,7 @@ const data = {
                     draftedBy: 2,
                 },
             ],
+            diff: -1,
             rosteredBy: "Bob",
         },
         {
@@ -4705,7 +4972,7 @@ const data = {
             adr: 12,
             name: "Zay Jones",
             position: "WR",
-            keeperValueForCurrentTeam: 11,
+            keeperValueForCurrentTeam: 13,
             transactions: [
                 {
                     rosterId: 5,
@@ -4743,6 +5010,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Bob",
         },
         {
@@ -4752,7 +5020,7 @@ const data = {
             adr: 17,
             name: "Gus Edwards",
             position: "RB",
-            keeperValueForCurrentTeam: 16,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 5,
@@ -4762,20 +5030,21 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "5248",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 4,
-                    pick: 5,
-                    overall: 36,
-                    draftedBy: 10,
-                },
-                {
                     rosterId: 10,
                     season: 2021,
                     week: 2,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "5248",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 4,
+                    pick: 5,
+                    overall: 36,
+                    draftedBy: 10,
                 },
                 {
                     rosterId: 10,
@@ -4792,6 +5061,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Bob",
         },
         {
@@ -4874,6 +5144,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Bob",
         },
         {
@@ -4883,11 +5154,12 @@ const data = {
             adr: 1,
             name: "Justin Jefferson",
             position: "WR",
-            keeperValueForCurrentTeam: -1,
+            keeperValueForCurrentTeam: 0,
             transactions: [
                 {
                     player_id: "6794",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 2,
                     pick: 4,
@@ -4897,20 +5169,12 @@ const data = {
                 {
                     player_id: "6794",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 5,
                     pick: 9,
                     overall: 49,
                     draftedBy: 5,
-                },
-                {
-                    player_id: "6794",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 7,
-                    overall: 107,
-                    draftedBy: 8,
                 },
                 {
                     rosterId: 5,
@@ -4926,7 +5190,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "6794",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 7,
+                    overall: 107,
+                    draftedBy: 8,
+                },
             ],
+            diff: 1,
             rosteredBy: "Bob",
         },
         {
@@ -4936,17 +5211,8 @@ const data = {
             adr: 16,
             name: "Mac Jones",
             position: "QB",
-            keeperValueForCurrentTeam: 10,
+            keeperValueForCurrentTeam: 17,
             transactions: [
-                {
-                    player_id: "7527",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 3,
-                    overall: 103,
-                    draftedBy: 6,
-                },
                 {
                     rosterId: 5,
                     season: 2022,
@@ -4991,7 +5257,18 @@ const data = {
                 },
                 {
                     player_id: "7527",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 3,
+                    overall: 103,
+                    draftedBy: 6,
+                },
+                {
+                    player_id: "7527",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 10,
@@ -4999,6 +5276,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: -1,
             rosteredBy: "Bob",
         },
         {
@@ -5008,7 +5286,7 @@ const data = {
             adr: 13,
             name: "Nico Collins",
             position: "WR",
-            keeperValueForCurrentTeam: 12,
+            keeperValueForCurrentTeam: 14,
             transactions: [
                 {
                     rosterId: 5,
@@ -5046,6 +5324,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Bob",
         },
         {
@@ -5060,6 +5339,7 @@ const data = {
                 {
                     player_id: "7600",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 4,
@@ -5074,6 +5354,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 1,
             rosteredBy: "Bob",
         },
         {
@@ -5083,7 +5364,7 @@ const data = {
             adr: 12,
             name: "Tyler Allgeier",
             position: "RB",
-            keeperValueForCurrentTeam: 11,
+            keeperValueForCurrentTeam: 13,
             transactions: [
                 {
                     rosterId: 5,
@@ -5135,9 +5416,30 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Bob",
         },
         {
+            playerId: "8148",
+            team: "DET",
+            adp: 112,
+            adr: 10,
+            name: "Jameson Williams",
+            position: "WR",
+            keeperValueForCurrentTeam: 13,
+            transactions: [
+                {
+                    player_id: "8148",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 4,
+                    overall: 137,
+                    draftedBy: 5,
+                },
+            ],
+            diff: -3,
             rosteredBy: "Bob",
         },
         {
@@ -5147,7 +5449,7 @@ const data = {
             adr: 16,
             name: "NYJ DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 15,
+            keeperValueForCurrentTeam: 17,
             transactions: [
                 {
                     rosterId: 5,
@@ -5185,6 +5487,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Bob",
         },
     ],
@@ -5234,15 +5537,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "1110",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 5,
-                    pick: 10,
-                    overall: 50,
-                    draftedBy: 4,
-                },
-                {
                     rosterId: 7,
                     season: 2020,
                     week: 14,
@@ -5258,7 +5552,18 @@ const data = {
                 },
                 {
                     player_id: "1110",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 5,
+                    pick: 10,
+                    overall: 50,
+                    draftedBy: 4,
+                },
+                {
+                    player_id: "1110",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 2,
@@ -5266,6 +5571,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 999,
             rosteredBy: "Hues",
         },
         {
@@ -5277,15 +5583,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 0,
             transactions: [
-                {
-                    player_id: "2133",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 1,
-                    pick: 7,
-                    overall: 7,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 6,
                     season: 2022,
@@ -5302,7 +5599,18 @@ const data = {
                 },
                 {
                     player_id: "2133",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 1,
+                    pick: 7,
+                    overall: 7,
+                    draftedBy: 1,
+                },
+                {
+                    player_id: "2133",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 5,
@@ -5312,6 +5620,7 @@ const data = {
                 {
                     player_id: "2133",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 9,
@@ -5321,6 +5630,7 @@ const data = {
                 {
                     player_id: "2133",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 5,
@@ -5328,6 +5638,7 @@ const data = {
                     draftedBy: 8,
                 },
             ],
+            diff: 2,
             rosteredBy: "Hues",
         },
         {
@@ -5368,6 +5679,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Hues",
         },
         {
@@ -5377,7 +5689,7 @@ const data = {
             adr: 9,
             name: "David Njoku",
             position: "TE",
-            keeperValueForCurrentTeam: 8,
+            keeperValueForCurrentTeam: 10,
             transactions: [
                 {
                     rosterId: 6,
@@ -5387,22 +5699,24 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "4033",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 10,
-                    pick: 4,
-                    overall: 97,
-                    draftedBy: 6,
-                },
-                {
                     rosterId: 6,
                     season: 2019,
                     week: 11,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "4033",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 10,
+                    pick: 4,
+                    overall: 97,
+                    draftedBy: 6,
+                },
             ],
+            diff: -1,
             rosteredBy: "Hues",
         },
         {
@@ -5412,7 +5726,7 @@ const data = {
             adr: 24,
             name: "Sam Darnold",
             position: "QB",
-            keeperValueForCurrentTeam: 23,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 6,
@@ -5422,20 +5736,21 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "4943",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 13,
-                    pick: 1,
-                    overall: 121,
-                    draftedBy: 4,
-                },
-                {
                     rosterId: 4,
                     season: 2021,
                     week: 14,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "4943",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 13,
+                    pick: 1,
+                    overall: 121,
+                    draftedBy: 4,
                 },
                 {
                     rosterId: 10,
@@ -5473,15 +5788,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "4943",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 7,
-                    overall: 134,
-                    draftedBy: 10,
-                },
-                {
                     rosterId: 4,
                     season: 2019,
                     week: 5,
@@ -5495,7 +5801,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "4943",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 7,
+                    overall: 134,
+                    draftedBy: 10,
+                },
             ],
+            diff: 6,
             rosteredBy: "Hues",
         },
         {
@@ -5507,15 +5824,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 3,
             transactions: [
-                {
-                    player_id: "4983",
-                    season: 2022,
-                    type: "DRAFT_KEEPER",
-                    round: 5,
-                    pick: 9,
-                    overall: 49,
-                    draftedBy: 3,
-                },
                 {
                     rosterId: 6,
                     season: 2022,
@@ -5546,7 +5854,18 @@ const data = {
                 },
                 {
                     player_id: "4983",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 5,
+                    pick: 9,
+                    overall: 49,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "4983",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 3,
@@ -5556,6 +5875,7 @@ const data = {
                 {
                     player_id: "4983",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 2,
@@ -5565,6 +5885,7 @@ const data = {
                 {
                     player_id: "4983",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 7,
@@ -5572,6 +5893,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: 2,
             rosteredBy: "Hues",
         },
         {
@@ -5586,6 +5908,7 @@ const data = {
                 {
                     player_id: "5095",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 16,
                     pick: 3,
@@ -5635,6 +5958,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Hues",
         },
         {
@@ -5649,6 +5973,7 @@ const data = {
                 {
                     player_id: "5872",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 9,
                     pick: 3,
@@ -5658,20 +5983,12 @@ const data = {
                 {
                     player_id: "5872",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 2,
                     overall: 99,
                     draftedBy: 6,
-                },
-                {
-                    player_id: "5872",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 8,
-                    overall: 108,
-                    draftedBy: 3,
                 },
                 {
                     rosterId: 5,
@@ -5709,6 +6026,16 @@ const data = {
                     draftMetadata: null,
                 },
                 {
+                    player_id: "5872",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 8,
+                    overall: 108,
+                    draftedBy: 3,
+                },
+                {
                     rosterId: 1,
                     season: 2019,
                     week: 11,
@@ -5730,6 +6057,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -3,
             rosteredBy: "Hues",
         },
         {
@@ -5741,15 +6069,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 4,
             transactions: [
-                {
-                    player_id: "5892",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 5,
-                    pick: 7,
-                    overall: 47,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 6,
                     season: 2022,
@@ -5766,7 +6085,18 @@ const data = {
                 },
                 {
                     player_id: "5892",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 5,
+                    pick: 7,
+                    overall: 47,
+                    draftedBy: 1,
+                },
+                {
+                    player_id: "5892",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 9,
@@ -5776,6 +6106,7 @@ const data = {
                 {
                     player_id: "5892",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 1,
@@ -5785,6 +6116,7 @@ const data = {
                 {
                     player_id: "5892",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 3,
@@ -5792,6 +6124,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 3,
             rosteredBy: "Hues",
         },
         {
@@ -5801,17 +6134,8 @@ const data = {
             adr: 15,
             name: "Dawson Knox",
             position: "TE",
-            keeperValueForCurrentTeam: 6,
+            keeperValueForCurrentTeam: 16,
             transactions: [
-                {
-                    player_id: "5906",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 7,
-                    pick: 8,
-                    overall: 68,
-                    draftedBy: 9,
-                },
                 {
                     rosterId: 6,
                     season: 2022,
@@ -5855,6 +6179,16 @@ const data = {
                     draftMetadata: null,
                 },
                 {
+                    player_id: "5906",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 7,
+                    pick: 8,
+                    overall: 68,
+                    draftedBy: 9,
+                },
+                {
                     rosterId: 6,
                     season: 2021,
                     week: 5,
@@ -5876,6 +6210,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Hues",
         },
         {
@@ -5887,15 +6222,6 @@ const data = {
             position: "RB",
             keeperValueForCurrentTeam: 9,
             transactions: [
-                {
-                    player_id: "5967",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 10,
-                    pick: 9,
-                    overall: 92,
-                    draftedBy: 3,
-                },
                 {
                     rosterId: 6,
                     season: 2022,
@@ -5912,20 +6238,22 @@ const data = {
                 },
                 {
                     player_id: "5967",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 10,
+                    pick: 9,
+                    overall: 92,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "5967",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 5,
                     overall: 136,
-                    draftedBy: 10,
-                },
-                {
-                    player_id: "5967",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 6,
-                    overall: 166,
                     draftedBy: 10,
                 },
                 {
@@ -5944,12 +6272,13 @@ const data = {
                 },
                 {
                     player_id: "5967",
-                    season: 2019,
+                    season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 9,
-                    overall: 132,
-                    draftedBy: 2,
+                    round: 17,
+                    pick: 6,
+                    overall: 166,
+                    draftedBy: 10,
                 },
                 {
                     rosterId: 2,
@@ -5958,7 +6287,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "5967",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 9,
+                    overall: 132,
+                    draftedBy: 2,
+                },
             ],
+            diff: -7,
             rosteredBy: "Hues",
         },
         {
@@ -5973,6 +6313,7 @@ const data = {
                 {
                     player_id: "6130",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 3,
@@ -5982,6 +6323,7 @@ const data = {
                 {
                     player_id: "6130",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 11,
                     pick: 5,
@@ -5991,19 +6333,11 @@ const data = {
                 {
                     player_id: "6130",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 8,
                     overall: 68,
-                    draftedBy: 3,
-                },
-                {
-                    player_id: "6130",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 10,
-                    overall: 150,
                     draftedBy: 3,
                 },
                 {
@@ -6020,7 +6354,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "6130",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 10,
+                    overall: 150,
+                    draftedBy: 3,
+                },
             ],
+            diff: 4,
             rosteredBy: "Hues",
         },
         {
@@ -6035,6 +6380,7 @@ const data = {
                 {
                     player_id: "6801",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 3,
@@ -6044,6 +6390,7 @@ const data = {
                 {
                     player_id: "6801",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 2,
@@ -6053,6 +6400,7 @@ const data = {
                 {
                     player_id: "6801",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 5,
@@ -6060,6 +6408,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: -1,
             rosteredBy: "Hues",
         },
         {
@@ -6069,17 +6418,8 @@ const data = {
             adr: 5,
             name: "J.K. Dobbins",
             position: "RB",
-            keeperValueForCurrentTeam: 5,
+            keeperValueForCurrentTeam: 6,
             transactions: [
-                {
-                    player_id: "6806",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 6,
-                    pick: 4,
-                    overall: 57,
-                    draftedBy: 5,
-                },
                 {
                     rosterId: 6,
                     season: 2022,
@@ -6096,12 +6436,13 @@ const data = {
                 },
                 {
                     player_id: "6806",
-                    season: 2020,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 3,
-                    overall: 78,
-                    draftedBy: 7,
+                    round: 6,
+                    pick: 4,
+                    overall: 57,
+                    draftedBy: 5,
                 },
                 {
                     rosterId: 6,
@@ -6117,7 +6458,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "6806",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 3,
+                    overall: 78,
+                    draftedBy: 7,
+                },
             ],
+            diff: -1,
             rosteredBy: "Hues",
         },
         {
@@ -6127,17 +6479,8 @@ const data = {
             adr: 7,
             name: "George Pickens",
             position: "WR",
-            keeperValueForCurrentTeam: 14,
+            keeperValueForCurrentTeam: 8,
             transactions: [
-                {
-                    player_id: "8137",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 7,
-                    overall: 147,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 6,
                     season: 2022,
@@ -6152,7 +6495,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8137",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 7,
+                    overall: 147,
+                    draftedBy: 1,
+                },
             ],
+            diff: -1,
             rosteredBy: "Hues",
         },
         {
@@ -6167,6 +6521,7 @@ const data = {
                 {
                     player_id: "96",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 3,
@@ -6176,6 +6531,7 @@ const data = {
                 {
                     player_id: "96",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 4,
                     pick: 3,
@@ -6185,20 +6541,12 @@ const data = {
                 {
                     player_id: "96",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 8,
                     overall: 48,
                     draftedBy: 3,
-                },
-                {
-                    player_id: "96",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 3,
-                    pick: 8,
-                    overall: 28,
-                    draftedBy: 5,
                 },
                 {
                     rosterId: 9,
@@ -6214,7 +6562,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "96",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 3,
+                    pick: 8,
+                    overall: 28,
+                    draftedBy: 5,
+                },
             ],
+            diff: 5,
             rosteredBy: "Hues",
         },
         {
@@ -6229,6 +6588,7 @@ const data = {
                 {
                     player_id: "DAL",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
                     pick: 3,
@@ -6271,20 +6631,21 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "DAL",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 7,
-                    overall: 167,
-                    draftedBy: 8,
-                },
-                {
                     rosterId: 8,
                     season: 2020,
                     week: 3,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "DAL",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 17,
+                    pick: 7,
+                    overall: 167,
+                    draftedBy: 8,
                 },
                 {
                     rosterId: 8,
@@ -6329,6 +6690,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -2,
             rosteredBy: "Hues",
         },
     ],
@@ -6345,6 +6707,7 @@ const data = {
                 {
                     player_id: "1166",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 2,
@@ -6354,6 +6717,7 @@ const data = {
                 {
                     player_id: "1166",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 5,
@@ -6363,6 +6727,7 @@ const data = {
                 {
                     player_id: "1166",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 10,
@@ -6372,6 +6737,7 @@ const data = {
                 {
                     player_id: "1166",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 13,
                     pick: 4,
@@ -6379,6 +6745,7 @@ const data = {
                     draftedBy: 6,
                 },
             ],
+            diff: 2,
             rosteredBy: "Brayden",
         },
         {
@@ -6388,7 +6755,7 @@ const data = {
             adr: 22,
             name: "Latavius Murray",
             position: "RB",
-            keeperValueForCurrentTeam: 21,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 7,
@@ -6466,15 +6833,6 @@ const data = {
                     week: 1,
                     type: "WAIVER_ADD",
                     draftMetadata: null,
-                },
-                {
-                    player_id: "1476",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 8,
-                    overall: 133,
-                    draftedBy: 3,
                 },
                 {
                     rosterId: 6,
@@ -6492,7 +6850,18 @@ const data = {
                 },
                 {
                     player_id: "1476",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 8,
+                    overall: 133,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "1476",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 1,
@@ -6500,6 +6869,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: 4,
             rosteredBy: "Brayden",
         },
         {
@@ -6509,7 +6879,7 @@ const data = {
             adr: 9,
             name: "Jared Goff",
             position: "QB",
-            keeperValueForCurrentTeam: 8,
+            keeperValueForCurrentTeam: 10,
             transactions: [
                 {
                     rosterId: 7,
@@ -6547,15 +6917,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "3163",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 2,
-                    overall: 139,
-                    draftedBy: 6,
-                },
-                {
                     rosterId: 4,
                     season: 2021,
                     week: 12,
@@ -6571,7 +6932,18 @@ const data = {
                 },
                 {
                     player_id: "3163",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 2,
+                    overall: 139,
+                    draftedBy: 6,
+                },
+                {
+                    player_id: "3163",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 7,
@@ -6581,6 +6953,7 @@ const data = {
                 {
                     player_id: "3163",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 4,
@@ -6588,6 +6961,7 @@ const data = {
                     draftedBy: 6,
                 },
             ],
+            diff: -1,
             rosteredBy: "Brayden",
         },
         {
@@ -6602,6 +6976,7 @@ const data = {
                 {
                     player_id: "4039",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 3,
                     pick: 2,
@@ -6611,6 +6986,7 @@ const data = {
                 {
                     player_id: "4039",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 7,
@@ -6620,6 +6996,7 @@ const data = {
                 {
                     player_id: "4039",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 5,
                     pick: 3,
@@ -6629,6 +7006,7 @@ const data = {
                 {
                     player_id: "4039",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 2,
@@ -6636,6 +7014,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 0,
             rosteredBy: "Brayden",
         },
         {
@@ -6650,20 +7029,12 @@ const data = {
                 {
                     player_id: "4040",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 2,
                     overall: 59,
                     draftedBy: 7,
-                },
-                {
-                    player_id: "4040",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 9,
-                    pick: 5,
-                    overall: 85,
-                    draftedBy: 10,
                 },
                 {
                     rosterId: 10,
@@ -6674,7 +7045,18 @@ const data = {
                 },
                 {
                     player_id: "4040",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 9,
+                    pick: 5,
+                    overall: 85,
+                    draftedBy: 10,
+                },
+                {
+                    player_id: "4040",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 9,
@@ -6684,6 +7066,7 @@ const data = {
                 {
                     player_id: "4040",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 2,
@@ -6691,6 +7074,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 4,
             rosteredBy: "Brayden",
         },
         {
@@ -6705,6 +7089,7 @@ const data = {
                 {
                     player_id: "4098",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 2,
@@ -6714,6 +7099,7 @@ const data = {
                 {
                     player_id: "4098",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 7,
@@ -6723,20 +7109,12 @@ const data = {
                 {
                     player_id: "4098",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 5,
                     overall: 45,
                     draftedBy: 9,
-                },
-                {
-                    player_id: "4098",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 8,
-                    overall: 108,
-                    draftedBy: 5,
                 },
                 {
                     rosterId: 7,
@@ -6752,7 +7130,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "4098",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 8,
+                    overall: 108,
+                    draftedBy: 5,
+                },
             ],
+            diff: 6,
             rosteredBy: "Brayden",
         },
         {
@@ -6786,6 +7175,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Brayden",
         },
         {
@@ -6800,6 +7190,7 @@ const data = {
                 {
                     player_id: "4217",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 2,
@@ -6809,6 +7200,7 @@ const data = {
                 {
                     player_id: "4217",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 1,
@@ -6818,6 +7210,7 @@ const data = {
                 {
                     player_id: "4217",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 3,
                     pick: 3,
@@ -6827,6 +7220,7 @@ const data = {
                 {
                     player_id: "4217",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 2,
@@ -6834,6 +7228,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 1,
             rosteredBy: "Brayden",
         },
         {
@@ -6848,6 +7243,7 @@ const data = {
                 {
                     player_id: "4663",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 2,
@@ -6857,6 +7253,7 @@ const data = {
                 {
                     player_id: "4663",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 1,
@@ -6866,6 +7263,7 @@ const data = {
                 {
                     player_id: "4663",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 8,
                     pick: 10,
@@ -6875,6 +7273,7 @@ const data = {
                 {
                     player_id: "4663",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 6,
@@ -6882,6 +7281,7 @@ const data = {
                     draftedBy: 4,
                 },
             ],
+            diff: 1,
             rosteredBy: "Brayden",
         },
         {
@@ -6891,17 +7291,8 @@ const data = {
             adr: null,
             name: "DJ Chark",
             position: "WR",
-            keeperValueForCurrentTeam: 13,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "4951",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 2,
-                    overall: 139,
-                    draftedBy: 7,
-                },
                 {
                     rosterId: 7,
                     season: 2022,
@@ -6918,12 +7309,13 @@ const data = {
                 },
                 {
                     player_id: "4951",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 10,
-                    pick: 9,
-                    overall: 92,
-                    draftedBy: 5,
+                    round: 14,
+                    pick: 2,
+                    overall: 139,
+                    draftedBy: 7,
                 },
                 {
                     rosterId: 5,
@@ -6934,12 +7326,13 @@ const data = {
                 },
                 {
                     player_id: "4951",
-                    season: 2020,
+                    season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 6,
-                    pick: 2,
-                    overall: 59,
-                    draftedBy: 2,
+                    round: 10,
+                    pick: 9,
+                    overall: 92,
+                    draftedBy: 5,
                 },
                 {
                     rosterId: 7,
@@ -6963,6 +7356,16 @@ const data = {
                     draftMetadata: null,
                 },
                 {
+                    player_id: "4951",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 6,
+                    pick: 2,
+                    overall: 59,
+                    draftedBy: 2,
+                },
+                {
                     rosterId: 8,
                     season: 2019,
                     week: 1,
@@ -6970,6 +7373,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Brayden",
         },
         {
@@ -6984,20 +7388,12 @@ const data = {
                 {
                     player_id: "6790",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 2,
                     overall: 19,
                     draftedBy: 7,
-                },
-                {
-                    player_id: "6790",
-                    season: 2021,
-                    type: "DRAFT_KEEPER",
-                    round: 9,
-                    pick: 9,
-                    overall: 89,
-                    draftedBy: 5,
                 },
                 {
                     rosterId: 2,
@@ -7015,7 +7411,18 @@ const data = {
                 },
                 {
                     player_id: "6790",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 9,
+                    pick: 9,
+                    overall: 89,
+                    draftedBy: 5,
+                },
+                {
+                    player_id: "6790",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 4,
@@ -7023,6 +7430,7 @@ const data = {
                     draftedBy: 5,
                 },
             ],
+            diff: 5,
             rosteredBy: "Brayden",
         },
         {
@@ -7034,15 +7442,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 8,
             transactions: [
-                {
-                    player_id: "6803",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 9,
-                    pick: 8,
-                    overall: 88,
-                    draftedBy: 9,
-                },
                 {
                     rosterId: 7,
                     season: 2022,
@@ -7059,12 +7458,13 @@ const data = {
                 },
                 {
                     player_id: "6803",
-                    season: 2021,
+                    season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 8,
+                    round: 9,
                     pick: 8,
-                    overall: 73,
-                    draftedBy: 1,
+                    overall: 88,
+                    draftedBy: 9,
                 },
                 {
                     rosterId: 9,
@@ -7095,6 +7495,16 @@ const data = {
                     draftMetadata: null,
                 },
                 {
+                    player_id: "6803",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 8,
+                    overall: 73,
+                    draftedBy: 1,
+                },
+                {
                     rosterId: 10,
                     season: 2020,
                     week: 4,
@@ -7102,6 +7512,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -2,
             rosteredBy: "Brayden",
         },
         {
@@ -7116,6 +7527,7 @@ const data = {
                 {
                     player_id: "6943",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 2,
@@ -7130,6 +7542,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 1,
             rosteredBy: "Brayden",
         },
         {
@@ -7141,15 +7554,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 6,
             transactions: [
-                {
-                    player_id: "7525",
-                    season: 2022,
-                    type: "DRAFT_KEEPER",
-                    round: 8,
-                    pick: 8,
-                    overall: 73,
-                    draftedBy: 9,
-                },
                 {
                     rosterId: 7,
                     season: 2022,
@@ -7166,7 +7570,18 @@ const data = {
                 },
                 {
                     player_id: "7525",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 8,
+                    pick: 8,
+                    overall: 73,
+                    draftedBy: 9,
+                },
+                {
+                    player_id: "7525",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 10,
@@ -7174,6 +7589,7 @@ const data = {
                     draftedBy: 9,
                 },
             ],
+            diff: -3,
             rosteredBy: "Brayden",
         },
         {
@@ -7188,6 +7604,7 @@ const data = {
                 {
                     player_id: "7526",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 9,
                     pick: 2,
@@ -7197,6 +7614,7 @@ const data = {
                 {
                     player_id: "7526",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 7,
@@ -7204,6 +7622,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: -5,
             rosteredBy: "Brayden",
         },
         {
@@ -7213,7 +7632,7 @@ const data = {
             adr: 24,
             name: "Zonovan Knight",
             position: "RB",
-            keeperValueForCurrentTeam: 23,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 7,
@@ -7230,6 +7649,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 6,
             rosteredBy: "Brayden",
         },
         {
@@ -7239,17 +7659,8 @@ const data = {
             adr: 7,
             name: "Treylon Burks",
             position: "WR",
-            keeperValueForCurrentTeam: 11,
+            keeperValueForCurrentTeam: 8,
             transactions: [
-                {
-                    player_id: "8135",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 12,
-                    pick: 3,
-                    overall: 118,
-                    draftedBy: 6,
-                },
                 {
                     rosterId: 7,
                     season: 2022,
@@ -7278,7 +7689,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8135",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 12,
+                    pick: 3,
+                    overall: 118,
+                    draftedBy: 6,
+                },
             ],
+            diff: -1,
             rosteredBy: "Brayden",
         },
         {
@@ -7288,17 +7710,8 @@ const data = {
             adr: 17,
             name: "Desmond Ridder",
             position: "QB",
-            keeperValueForCurrentTeam: 11,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "8159",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 12,
-                    pick: 4,
-                    overall: 117,
-                    draftedBy: 5,
-                },
                 {
                     rosterId: 7,
                     season: 2022,
@@ -7313,7 +7726,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "8159",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 12,
+                    pick: 4,
+                    overall: 117,
+                    draftedBy: 5,
+                },
             ],
+            diff: -1,
             rosteredBy: "Brayden",
         },
         {
@@ -7323,7 +7747,7 @@ const data = {
             adr: 22,
             name: "DET DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 21,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 7,
@@ -7361,6 +7785,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 4,
             rosteredBy: "Brayden",
         },
     ],
@@ -7377,6 +7802,7 @@ const data = {
                 {
                     player_id: "1466",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 1,
@@ -7386,6 +7812,7 @@ const data = {
                 {
                     player_id: "1466",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 6,
@@ -7395,6 +7822,7 @@ const data = {
                 {
                     player_id: "1466",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 1,
@@ -7404,6 +7832,7 @@ const data = {
                 {
                     player_id: "1466",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 3,
@@ -7411,6 +7840,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 0,
             rosteredBy: "Jack",
         },
         {
@@ -7444,6 +7874,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jack",
         },
         {
@@ -7458,6 +7889,7 @@ const data = {
                 {
                     player_id: "3199",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 8,
                     pick: 1,
@@ -7467,20 +7899,12 @@ const data = {
                 {
                     player_id: "3199",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 4,
                     overall: 84,
                     draftedBy: 8,
-                },
-                {
-                    player_id: "3199",
-                    season: 2020,
-                    type: "DRAFT_KEEPER",
-                    round: 1,
-                    pick: 8,
-                    overall: 8,
-                    draftedBy: 3,
                 },
                 {
                     rosterId: 3,
@@ -7491,7 +7915,18 @@ const data = {
                 },
                 {
                     player_id: "3199",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 1,
+                    pick: 8,
+                    overall: 8,
+                    draftedBy: 3,
+                },
+                {
+                    player_id: "3199",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 10,
@@ -7499,6 +7934,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: 3,
             rosteredBy: "Jack",
         },
         {
@@ -7518,15 +7954,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "3242",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 1,
-                    overall: 101,
-                    draftedBy: 4,
-                },
-                {
                     rosterId: 4,
                     season: 2021,
                     week: 13,
@@ -7535,7 +7962,18 @@ const data = {
                 },
                 {
                     player_id: "3242",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 1,
+                    overall: 101,
+                    draftedBy: 4,
+                },
+                {
+                    player_id: "3242",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 10,
@@ -7545,6 +7983,7 @@ const data = {
                 {
                     player_id: "3242",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 6,
@@ -7552,6 +7991,7 @@ const data = {
                     draftedBy: 4,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jack",
         },
         {
@@ -7566,6 +8006,7 @@ const data = {
                 {
                     player_id: "3294",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 1,
@@ -7575,19 +8016,11 @@ const data = {
                 {
                     player_id: "3294",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 9,
                     pick: 7,
                     overall: 87,
-                    draftedBy: 7,
-                },
-                {
-                    player_id: "3294",
-                    season: 2020,
-                    type: "DRAFT_KEEPER",
-                    round: 11,
-                    pick: 3,
-                    overall: 103,
                     draftedBy: 7,
                 },
                 {
@@ -7606,7 +8039,18 @@ const data = {
                 },
                 {
                     player_id: "3294",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 11,
+                    pick: 3,
+                    overall: 103,
+                    draftedBy: 7,
+                },
+                {
+                    player_id: "3294",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 2,
@@ -7614,6 +8058,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 4,
             rosteredBy: "Jack",
         },
         {
@@ -7628,6 +8073,7 @@ const data = {
                 {
                     player_id: "4950",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 1,
@@ -7672,6 +8118,7 @@ const data = {
                 {
                     player_id: "4950",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 4,
@@ -7681,6 +8128,7 @@ const data = {
                 {
                     player_id: "4950",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 10,
@@ -7688,6 +8136,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: -4,
             rosteredBy: "Jack",
         },
         {
@@ -7702,6 +8151,7 @@ const data = {
                 {
                     player_id: "5185",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 11,
                     pick: 1,
@@ -7723,6 +8173,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 0,
             rosteredBy: "Jack",
         },
         {
@@ -7737,6 +8188,7 @@ const data = {
                 {
                     player_id: "5846",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 1,
@@ -7746,6 +8198,7 @@ const data = {
                 {
                     player_id: "5846",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 14,
                     pick: 8,
@@ -7755,20 +8208,12 @@ const data = {
                 {
                     player_id: "5846",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 16,
                     pick: 9,
                     overall: 152,
                     draftedBy: 1,
-                },
-                {
-                    player_id: "5846",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 9,
-                    overall: 169,
-                    draftedBy: 2,
                 },
                 {
                     rosterId: 1,
@@ -7784,7 +8229,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "5846",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 17,
+                    pick: 9,
+                    overall: 169,
+                    draftedBy: 2,
+                },
             ],
+            diff: -2,
             rosteredBy: "Jack",
         },
         {
@@ -7799,6 +8255,7 @@ const data = {
                 {
                     player_id: "5927",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 1,
@@ -7808,6 +8265,7 @@ const data = {
                 {
                     player_id: "5927",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 3,
                     pick: 4,
@@ -7817,6 +8275,7 @@ const data = {
                 {
                     player_id: "5927",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 7,
@@ -7831,6 +8290,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 2,
             rosteredBy: "Jack",
         },
         {
@@ -7845,6 +8305,7 @@ const data = {
                 {
                     player_id: "5947",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 1,
@@ -7894,6 +8355,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -2,
             rosteredBy: "Jack",
         },
         {
@@ -7908,6 +8370,7 @@ const data = {
                 {
                     player_id: "5955",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 13,
                     pick: 1,
@@ -7964,6 +8427,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 6,
             rosteredBy: "Jack",
         },
         {
@@ -8011,6 +8475,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jack",
         },
         {
@@ -8025,6 +8490,7 @@ const data = {
                 {
                     player_id: "6813",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 1,
@@ -8034,6 +8500,7 @@ const data = {
                 {
                     player_id: "6813",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 10,
@@ -8043,6 +8510,7 @@ const data = {
                 {
                     player_id: "6813",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 4,
@@ -8050,6 +8518,7 @@ const data = {
                     draftedBy: 5,
                 },
             ],
+            diff: 2,
             rosteredBy: "Jack",
         },
         {
@@ -8064,6 +8533,7 @@ const data = {
                 {
                     player_id: "7543",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 1,
@@ -8071,6 +8541,7 @@ const data = {
                     draftedBy: 8,
                 },
             ],
+            diff: 999,
             rosteredBy: "Jack",
         },
         {
@@ -8085,6 +8556,7 @@ const data = {
                 {
                     player_id: "7561",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 7,
                     pick: 1,
@@ -8099,6 +8571,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 6,
             rosteredBy: "Jack",
         },
         {
@@ -8113,6 +8586,7 @@ const data = {
                 {
                     player_id: "8142",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 18,
                     pick: 1,
@@ -8120,6 +8594,7 @@ const data = {
                     draftedBy: 8,
                 },
             ],
+            diff: -3,
             rosteredBy: "Jack",
         },
         {
@@ -8129,7 +8604,7 @@ const data = {
             adr: 27,
             name: "Andy Dalton",
             position: "QB",
-            keeperValueForCurrentTeam: 26,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 8,
@@ -8237,6 +8712,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 9,
             rosteredBy: "Jack",
         },
         {
@@ -8246,7 +8722,7 @@ const data = {
             adr: 25,
             name: "ARI DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 24,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 8,
@@ -8333,6 +8809,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 7,
             rosteredBy: "Jack",
         },
         {
@@ -8394,15 +8871,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "SEA",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 10,
-                    overall: 170,
-                    draftedBy: 4,
-                },
-                {
                     rosterId: 7,
                     season: 2020,
                     week: 16,
@@ -8467,11 +8935,12 @@ const data = {
                 },
                 {
                     player_id: "SEA",
-                    season: 2019,
+                    season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 6,
-                    overall: 155,
+                    round: 17,
+                    pick: 10,
+                    overall: 170,
                     draftedBy: 4,
                 },
                 {
@@ -8502,7 +8971,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "SEA",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 16,
+                    pick: 6,
+                    overall: 155,
+                    draftedBy: 4,
+                },
             ],
+            diff: 1,
             rosteredBy: "Jack",
         },
     ],
@@ -8519,6 +8999,7 @@ const data = {
                 {
                     player_id: "1264",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 16,
                     pick: 8,
@@ -8528,6 +9009,7 @@ const data = {
                 {
                     player_id: "1264",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
                     pick: 8,
@@ -8537,6 +9019,7 @@ const data = {
                 {
                     player_id: "1264",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 7,
@@ -8546,6 +9029,7 @@ const data = {
                 {
                     player_id: "1264",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 13,
                     pick: 2,
@@ -8553,6 +9037,7 @@ const data = {
                     draftedBy: 7,
                 },
             ],
+            diff: 999,
             rosteredBy: "Quast",
         },
         {
@@ -8567,6 +9052,7 @@ const data = {
                 {
                     player_id: "2374",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 11,
                     pick: 8,
@@ -8576,6 +9062,7 @@ const data = {
                 {
                     player_id: "2374",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 1,
@@ -8585,19 +9072,11 @@ const data = {
                 {
                     player_id: "2374",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 5,
                     overall: 36,
-                    draftedBy: 9,
-                },
-                {
-                    player_id: "2374",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 7,
-                    pick: 1,
-                    overall: 61,
                     draftedBy: 9,
                 },
                 {
@@ -8614,7 +9093,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "2374",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 7,
+                    pick: 1,
+                    overall: 61,
+                    draftedBy: 9,
+                },
             ],
+            diff: -4,
             rosteredBy: "Quast",
         },
         {
@@ -8629,6 +9119,7 @@ const data = {
                 {
                     player_id: "2449",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 8,
@@ -8638,6 +9129,7 @@ const data = {
                 {
                     player_id: "2449",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 5,
@@ -8647,20 +9139,12 @@ const data = {
                 {
                     player_id: "2449",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 3,
                     pick: 4,
                     overall: 24,
                     draftedBy: 5,
-                },
-                {
-                    player_id: "2449",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 4,
-                    pick: 9,
-                    overall: 32,
-                    draftedBy: 2,
                 },
                 {
                     rosterId: 5,
@@ -8690,7 +9174,18 @@ const data = {
                     type: "TRADED_OUT",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "2449",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 4,
+                    pick: 9,
+                    overall: 32,
+                    draftedBy: 2,
+                },
             ],
+            diff: 1,
             rosteredBy: "Quast",
         },
         {
@@ -8700,7 +9195,7 @@ const data = {
             adr: 13,
             name: "Raheem Mostert",
             position: "RB",
-            keeperValueForCurrentTeam: 12,
+            keeperValueForCurrentTeam: 14,
             transactions: [
                 {
                     rosterId: 9,
@@ -8724,15 +9219,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "2749",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 8,
-                    pick: 10,
-                    overall: 71,
-                    draftedBy: 9,
-                },
-                {
                     rosterId: 9,
                     season: 2021,
                     week: 2,
@@ -8741,7 +9227,18 @@ const data = {
                 },
                 {
                     player_id: "2749",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 8,
+                    pick: 10,
+                    overall: 71,
+                    draftedBy: 9,
+                },
+                {
+                    player_id: "2749",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 1,
@@ -8770,6 +9267,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Quast",
         },
         {
@@ -8784,6 +9282,7 @@ const data = {
                 {
                     player_id: "3225",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 13,
                     pick: 8,
@@ -8793,6 +9292,7 @@ const data = {
                 {
                     player_id: "3225",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 4,
@@ -8802,6 +9302,7 @@ const data = {
                 {
                     player_id: "3225",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 6,
@@ -8811,6 +9312,7 @@ const data = {
                 {
                     player_id: "3225",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 4,
@@ -8818,6 +9320,7 @@ const data = {
                     draftedBy: 6,
                 },
             ],
+            diff: -1,
             rosteredBy: "Quast",
         },
         {
@@ -8832,6 +9335,7 @@ const data = {
                 {
                     player_id: "4017",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 18,
                     pick: 8,
@@ -8841,6 +9345,7 @@ const data = {
                 {
                     player_id: "4017",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 7,
@@ -8850,6 +9355,7 @@ const data = {
                 {
                     player_id: "4017",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 4,
                     pick: 10,
@@ -8859,6 +9365,7 @@ const data = {
                 {
                     player_id: "4017",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 6,
@@ -8866,6 +9373,7 @@ const data = {
                     draftedBy: 4,
                 },
             ],
+            diff: -10,
             rosteredBy: "Quast",
         },
         {
@@ -8875,7 +9383,7 @@ const data = {
             adr: 9,
             name: "Jamaal Williams",
             position: "RB",
-            keeperValueForCurrentTeam: 8,
+            keeperValueForCurrentTeam: 10,
             transactions: [
                 {
                     rosterId: 9,
@@ -8911,15 +9419,6 @@ const data = {
                     week: 3,
                     type: "WAIVER_ADD",
                     draftMetadata: null,
-                },
-                {
-                    player_id: "4149",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 14,
-                    pick: 10,
-                    overall: 131,
-                    draftedBy: 9,
                 },
                 {
                     rosterId: 10,
@@ -8943,6 +9442,16 @@ const data = {
                     draftMetadata: null,
                 },
                 {
+                    player_id: "4149",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 14,
+                    pick: 10,
+                    overall: 131,
+                    draftedBy: 9,
+                },
+                {
                     rosterId: 6,
                     season: 2020,
                     week: 16,
@@ -8964,6 +9473,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Quast",
         },
         {
@@ -8973,7 +9483,7 @@ const data = {
             adr: 26,
             name: "Robert Tonyan",
             position: "TE",
-            keeperValueForCurrentTeam: 25,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 9,
@@ -9011,20 +9521,21 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "4602",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 13,
-                    pick: 10,
-                    overall: 130,
-                    draftedBy: 9,
-                },
-                {
                     rosterId: 9,
                     season: 2021,
                     week: 9,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
+                },
+                {
+                    player_id: "4602",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 13,
+                    pick: 10,
+                    overall: 130,
+                    draftedBy: 9,
                 },
                 {
                     rosterId: 8,
@@ -9034,6 +9545,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 8,
             rosteredBy: "Quast",
         },
         {
@@ -9043,7 +9555,7 @@ const data = {
             adr: 17,
             name: "Hayden Hurst",
             position: "TE",
-            keeperValueForCurrentTeam: 16,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 9,
@@ -9095,15 +9607,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "4973",
-                    season: 2020,
-                    type: "DRAFT_PICK",
-                    round: 9,
-                    pick: 7,
-                    overall: 87,
-                    draftedBy: 8,
-                },
-                {
                     rosterId: 1,
                     season: 2020,
                     week: 7,
@@ -9117,7 +9620,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "4973",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 9,
+                    pick: 7,
+                    overall: 87,
+                    draftedBy: 8,
+                },
             ],
+            diff: -1,
             rosteredBy: "Quast",
         },
         {
@@ -9132,6 +9646,7 @@ const data = {
                 {
                     player_id: "4988",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 8,
@@ -9141,6 +9656,7 @@ const data = {
                 {
                     player_id: "4988",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 9,
@@ -9150,6 +9666,7 @@ const data = {
                 {
                     player_id: "4988",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 6,
@@ -9159,6 +9676,7 @@ const data = {
                 {
                     player_id: "4988",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 7,
@@ -9166,6 +9684,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: 1,
             rosteredBy: "Quast",
         },
         {
@@ -9177,15 +9696,6 @@ const data = {
             position: "WR",
             keeperValueForCurrentTeam: 7,
             transactions: [
-                {
-                    player_id: "5848",
-                    season: 2022,
-                    type: "DRAFT_KEEPER",
-                    round: 9,
-                    pick: 7,
-                    overall: 87,
-                    draftedBy: 1,
-                },
                 {
                     rosterId: 9,
                     season: 2022,
@@ -9202,12 +9712,13 @@ const data = {
                 },
                 {
                     player_id: "5848",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 15,
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_KEEPER",
+                    round: 9,
                     pick: 7,
-                    overall: 147,
-                    draftedBy: 7,
+                    overall: 87,
+                    draftedBy: 1,
                 },
                 {
                     rosterId: 1,
@@ -9225,11 +9736,12 @@ const data = {
                 },
                 {
                     player_id: "5848",
-                    season: 2020,
+                    season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
-                    round: 7,
-                    pick: 3,
-                    overall: 63,
+                    round: 15,
+                    pick: 7,
+                    overall: 147,
                     draftedBy: 7,
                 },
                 {
@@ -9262,7 +9774,18 @@ const data = {
                 },
                 {
                     player_id: "5848",
+                    season: 2020,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 7,
+                    pick: 3,
+                    overall: 63,
+                    draftedBy: 7,
+                },
+                {
+                    player_id: "5848",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 16,
                     pick: 8,
@@ -9270,6 +9793,7 @@ const data = {
                     draftedBy: 5,
                 },
             ],
+            diff: -1,
             rosteredBy: "Quast",
         },
         {
@@ -9284,6 +9808,7 @@ const data = {
                 {
                     player_id: "5849",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 8,
@@ -9293,6 +9818,7 @@ const data = {
                 {
                     player_id: "5849",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 4,
                     pick: 9,
@@ -9302,6 +9828,7 @@ const data = {
                 {
                     player_id: "5849",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 4,
@@ -9311,6 +9838,7 @@ const data = {
                 {
                     player_id: "5849",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 8,
@@ -9318,6 +9846,7 @@ const data = {
                     draftedBy: 5,
                 },
             ],
+            diff: 10,
             rosteredBy: "Quast",
         },
         {
@@ -9332,20 +9861,12 @@ const data = {
                 {
                     player_id: "5850",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 8,
                     overall: 48,
                     draftedBy: 9,
-                },
-                {
-                    player_id: "5850",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 2,
-                    pick: 7,
-                    overall: 14,
-                    draftedBy: 7,
                 },
                 {
                     rosterId: 1,
@@ -9363,7 +9884,18 @@ const data = {
                 },
                 {
                     player_id: "5850",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 2,
+                    pick: 7,
+                    overall: 14,
+                    draftedBy: 7,
+                },
+                {
+                    player_id: "5850",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 10,
@@ -9373,6 +9905,7 @@ const data = {
                 {
                     player_id: "5850",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 7,
@@ -9380,6 +9913,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: -2,
             rosteredBy: "Quast",
         },
         {
@@ -9448,6 +9982,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 999,
             rosteredBy: "Quast",
         },
         {
@@ -9457,7 +9992,7 @@ const data = {
             adr: 13,
             name: "Donovan Peoples-Jones",
             position: "WR",
-            keeperValueForCurrentTeam: 12,
+            keeperValueForCurrentTeam: 14,
             transactions: [
                 {
                     rosterId: 9,
@@ -9481,6 +10016,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Quast",
         },
         {
@@ -9495,6 +10031,7 @@ const data = {
                 {
                     player_id: "6904",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 6,
                     pick: 8,
@@ -9504,6 +10041,7 @@ const data = {
                 {
                     player_id: "6904",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 7,
                     pick: 10,
@@ -9518,6 +10056,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -2,
             rosteredBy: "Quast",
         },
         {
@@ -9527,7 +10066,7 @@ const data = {
             adr: 12,
             name: "Greg Dulcich",
             position: "TE",
-            keeperValueForCurrentTeam: 11,
+            keeperValueForCurrentTeam: 13,
             transactions: [
                 {
                     rosterId: 9,
@@ -9551,6 +10090,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "Quast",
         },
         {
@@ -9560,7 +10100,7 @@ const data = {
             adr: 18,
             name: "DEN DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 17,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 9,
@@ -9598,15 +10138,6 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "DEN",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 7,
-                    overall: 167,
-                    draftedBy: 7,
-                },
-                {
                     rosterId: 4,
                     season: 2021,
                     week: 13,
@@ -9622,12 +10153,13 @@ const data = {
                 },
                 {
                     player_id: "DEN",
-                    season: 2020,
+                    season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
-                    pick: 8,
-                    overall: 168,
-                    draftedBy: 3,
+                    pick: 7,
+                    overall: 167,
+                    draftedBy: 7,
                 },
                 {
                     rosterId: 3,
@@ -9638,12 +10170,13 @@ const data = {
                 },
                 {
                     player_id: "DEN",
-                    season: 2019,
+                    season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
-                    pick: 3,
-                    overall: 163,
-                    draftedBy: 1,
+                    pick: 8,
+                    overall: 168,
+                    draftedBy: 3,
                 },
                 {
                     rosterId: 4,
@@ -9659,7 +10192,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "DEN",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 17,
+                    pick: 3,
+                    overall: 163,
+                    draftedBy: 1,
+                },
             ],
+            diff: 0,
             rosteredBy: "Quast",
         },
         {
@@ -9669,17 +10213,8 @@ const data = {
             adr: 21,
             name: "TB DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 15,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "TB",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 1,
-                    overall: 160,
-                    draftedBy: 8,
-                },
                 {
                     rosterId: 9,
                     season: 2022,
@@ -9710,7 +10245,18 @@ const data = {
                 },
                 {
                     player_id: "TB",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 16,
+                    pick: 1,
+                    overall: 160,
+                    draftedBy: 8,
+                },
+                {
+                    player_id: "TB",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 15,
                     pick: 10,
@@ -9739,6 +10285,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 3,
             rosteredBy: "Quast",
         },
     ],
@@ -9755,6 +10302,7 @@ const data = {
                 {
                     player_id: "1049",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 12,
                     pick: 10,
@@ -9764,6 +10312,7 @@ const data = {
                 {
                     player_id: "1049",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 7,
                     pick: 4,
@@ -9799,6 +10348,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 7,
             rosteredBy: "T Cool",
         },
         {
@@ -9813,6 +10363,7 @@ const data = {
                 {
                     player_id: "1689",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 9,
                     pick: 10,
@@ -9822,6 +10373,7 @@ const data = {
                 {
                     player_id: "1689",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 3,
@@ -9831,6 +10383,7 @@ const data = {
                 {
                     player_id: "1689",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 6,
@@ -9840,6 +10393,7 @@ const data = {
                 {
                     player_id: "1689",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 7,
@@ -9847,6 +10401,7 @@ const data = {
                     draftedBy: 10,
                 },
             ],
+            diff: 4,
             rosteredBy: "T Cool",
         },
         {
@@ -9856,7 +10411,7 @@ const data = {
             adr: 11,
             name: "Jerick McKinnon",
             position: "RB",
-            keeperValueForCurrentTeam: 10,
+            keeperValueForCurrentTeam: 12,
             transactions: [
                 {
                     rosterId: 10,
@@ -9887,22 +10442,24 @@ const data = {
                     draftMetadata: null,
                 },
                 {
-                    player_id: "2161",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 7,
-                    overall: 167,
-                    draftedBy: 10,
-                },
-                {
                     rosterId: 10,
                     season: 2019,
                     week: 2,
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "2161",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 17,
+                    pick: 7,
+                    overall: 167,
+                    draftedBy: 10,
+                },
             ],
+            diff: -1,
             rosteredBy: "T Cool",
         },
         {
@@ -9917,6 +10474,7 @@ const data = {
                 {
                     player_id: "3969",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 7,
                     pick: 10,
@@ -9926,6 +10484,7 @@ const data = {
                 {
                     player_id: "3969",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 5,
@@ -9935,6 +10494,7 @@ const data = {
                 {
                     player_id: "3969",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 1,
@@ -9944,6 +10504,7 @@ const data = {
                 {
                     player_id: "3969",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 9,
@@ -9951,6 +10512,7 @@ const data = {
                     draftedBy: 2,
                 },
             ],
+            diff: 9,
             rosteredBy: "T Cool",
         },
         {
@@ -9960,7 +10522,7 @@ const data = {
             adr: 12,
             name: "D'Onta Foreman",
             position: "RB",
-            keeperValueForCurrentTeam: 11,
+            keeperValueForCurrentTeam: 13,
             transactions: [
                 {
                     rosterId: 10,
@@ -9991,6 +10553,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: -1,
             rosteredBy: "T Cool",
         },
         {
@@ -10000,7 +10563,7 @@ const data = {
             adr: 24,
             name: "Mack Hollins",
             position: "WR",
-            keeperValueForCurrentTeam: 23,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 10,
@@ -10024,6 +10587,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 6,
             rosteredBy: "T Cool",
         },
         {
@@ -10038,6 +10602,7 @@ const data = {
                 {
                     player_id: "4199",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 10,
@@ -10047,6 +10612,7 @@ const data = {
                 {
                     player_id: "4199",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 1,
                     pick: 8,
@@ -10056,6 +10622,7 @@ const data = {
                 {
                     player_id: "4199",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 3,
@@ -10065,6 +10632,7 @@ const data = {
                 {
                     player_id: "4199",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 3,
                     pick: 10,
@@ -10072,6 +10640,7 @@ const data = {
                     draftedBy: 3,
                 },
             ],
+            diff: 4,
             rosteredBy: "T Cool",
         },
         {
@@ -10086,6 +10655,7 @@ const data = {
                 {
                     player_id: "4984",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 3,
                     pick: 10,
@@ -10095,6 +10665,7 @@ const data = {
                 {
                     player_id: "4984",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 5,
                     pick: 5,
@@ -10104,6 +10675,7 @@ const data = {
                 {
                     player_id: "4984",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 6,
@@ -10113,6 +10685,7 @@ const data = {
                 {
                     player_id: "4984",
                     season: 2019,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 13,
                     pick: 3,
@@ -10120,6 +10693,7 @@ const data = {
                     draftedBy: 1,
                 },
             ],
+            diff: 2,
             rosteredBy: "T Cool",
         },
         {
@@ -10134,6 +10708,7 @@ const data = {
                 {
                     player_id: "5844",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 10,
@@ -10143,6 +10718,7 @@ const data = {
                 {
                     player_id: "5844",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 4,
@@ -10152,19 +10728,11 @@ const data = {
                 {
                     player_id: "5844",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 2,
                     overall: 139,
-                    draftedBy: 2,
-                },
-                {
-                    player_id: "5844",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 15,
-                    pick: 9,
-                    overall: 149,
                     draftedBy: 2,
                 },
                 {
@@ -10188,7 +10756,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "5844",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 15,
+                    pick: 9,
+                    overall: 149,
+                    draftedBy: 2,
+                },
             ],
+            diff: -3,
             rosteredBy: "T Cool",
         },
         {
@@ -10203,6 +10782,7 @@ const data = {
                 {
                     player_id: "5859",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 4,
                     pick: 10,
@@ -10212,6 +10792,7 @@ const data = {
                 {
                     player_id: "5859",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 5,
                     pick: 4,
@@ -10221,20 +10802,12 @@ const data = {
                 {
                     player_id: "5859",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 7,
                     overall: 54,
                     draftedBy: 8,
-                },
-                {
-                    player_id: "5859",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 11,
-                    pick: 1,
-                    overall: 101,
-                    draftedBy: 9,
                 },
                 {
                     rosterId: 10,
@@ -10250,7 +10823,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "5859",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 11,
+                    pick: 1,
+                    overall: 101,
+                    draftedBy: 9,
+                },
             ],
+            diff: -1,
             rosteredBy: "T Cool",
         },
         {
@@ -10260,7 +10844,7 @@ const data = {
             adr: 20,
             name: "Darius Slayton",
             position: "WR",
-            keeperValueForCurrentTeam: 19,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 10,
@@ -10286,6 +10870,7 @@ const data = {
                 {
                     player_id: "6149",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 15,
                     pick: 8,
@@ -10307,6 +10892,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 2,
             rosteredBy: "T Cool",
         },
         {
@@ -10321,20 +10907,12 @@ const data = {
                 {
                     player_id: "6768",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 6,
                     pick: 10,
                     overall: 51,
                     draftedBy: 10,
-                },
-                {
-                    player_id: "6768",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 13,
-                    pick: 8,
-                    overall: 128,
-                    draftedBy: 1,
                 },
                 {
                     rosterId: 3,
@@ -10351,6 +10929,16 @@ const data = {
                     draftMetadata: null,
                 },
                 {
+                    player_id: "6768",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 13,
+                    pick: 8,
+                    overall: 128,
+                    draftedBy: 1,
+                },
+                {
                     rosterId: 1,
                     season: 2020,
                     week: 6,
@@ -10358,6 +10946,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 3,
             rosteredBy: "T Cool",
         },
         {
@@ -10372,6 +10961,7 @@ const data = {
                 {
                     player_id: "6786",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 10,
@@ -10381,6 +10971,7 @@ const data = {
                 {
                     player_id: "6786",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 2,
                     pick: 3,
@@ -10390,6 +10981,7 @@ const data = {
                 {
                     player_id: "6786",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 10,
@@ -10397,6 +10989,7 @@ const data = {
                     draftedBy: 4,
                 },
             ],
+            diff: 0,
             rosteredBy: "T Cool",
         },
         {
@@ -10406,17 +10999,8 @@ const data = {
             adr: 18,
             name: "Chase Claypool",
             position: "WR",
-            keeperValueForCurrentTeam: 12,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "6886",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 13,
-                    pick: 3,
-                    overall: 123,
-                    draftedBy: 6,
-                },
                 {
                     rosterId: 10,
                     season: 2022,
@@ -10433,7 +11017,18 @@ const data = {
                 },
                 {
                     player_id: "6886",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 13,
+                    pick: 3,
+                    overall: 123,
+                    draftedBy: 6,
+                },
+                {
+                    player_id: "6886",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 8,
                     pick: 6,
@@ -10448,6 +11043,7 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 0,
             rosteredBy: "T Cool",
         },
         {
@@ -10462,6 +11058,7 @@ const data = {
                 {
                     player_id: "6945",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 5,
                     pick: 10,
@@ -10471,6 +11068,7 @@ const data = {
                 {
                     player_id: "6945",
                     season: 2021,
+                    week: 0,
                     type: "DRAFT_KEEPER",
                     round: 5,
                     pick: 6,
@@ -10480,6 +11078,7 @@ const data = {
                 {
                     player_id: "6945",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 10,
                     pick: 2,
@@ -10487,6 +11086,7 @@ const data = {
                     draftedBy: 2,
                 },
             ],
+            diff: 5,
             rosteredBy: "T Cool",
         },
         {
@@ -10496,17 +11096,8 @@ const data = {
             adr: null,
             name: "Evan McPherson",
             position: "K",
-            keeperValueForCurrentTeam: 15,
+            keeperValueForCurrentTeam: 18,
             transactions: [
-                {
-                    player_id: "7839",
-                    season: 2022,
-                    type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 5,
-                    overall: 156,
-                    draftedBy: 4,
-                },
                 {
                     rosterId: 10,
                     season: 2022,
@@ -10521,7 +11112,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "7839",
+                    season: 2022,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 16,
+                    pick: 5,
+                    overall: 156,
+                    draftedBy: 4,
+                },
             ],
+            diff: 999,
             rosteredBy: "T Cool",
         },
         {
@@ -10536,20 +11138,12 @@ const data = {
                 {
                     player_id: "BAL",
                     season: 2022,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 17,
                     pick: 10,
                     overall: 170,
                     draftedBy: 10,
-                },
-                {
-                    player_id: "BAL",
-                    season: 2021,
-                    type: "DRAFT_PICK",
-                    round: 17,
-                    pick: 4,
-                    overall: 164,
-                    draftedBy: 8,
                 },
                 {
                     rosterId: 4,
@@ -10574,21 +11168,23 @@ const data = {
                 },
                 {
                     player_id: "BAL",
+                    season: 2021,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 17,
+                    pick: 4,
+                    overall: 164,
+                    draftedBy: 8,
+                },
+                {
+                    player_id: "BAL",
                     season: 2020,
+                    week: 0,
                     type: "DRAFT_PICK",
                     round: 14,
                     pick: 1,
                     overall: 140,
                     draftedBy: 6,
-                },
-                {
-                    player_id: "BAL",
-                    season: 2019,
-                    type: "DRAFT_PICK",
-                    round: 16,
-                    pick: 9,
-                    overall: 152,
-                    draftedBy: 2,
                 },
                 {
                     rosterId: 7,
@@ -10646,7 +11242,18 @@ const data = {
                     type: "WAIVER_DROP",
                     draftMetadata: null,
                 },
+                {
+                    player_id: "BAL",
+                    season: 2019,
+                    week: 0,
+                    type: "DRAFT_PICK",
+                    round: 16,
+                    pick: 9,
+                    overall: 152,
+                    draftedBy: 2,
+                },
             ],
+            diff: 0,
             rosteredBy: "T Cool",
         },
         {
@@ -10656,7 +11263,7 @@ const data = {
             adr: 21,
             name: "NYG DST",
             position: "DEF",
-            keeperValueForCurrentTeam: 20,
+            keeperValueForCurrentTeam: 18,
             transactions: [
                 {
                     rosterId: 10,
@@ -10722,11 +11329,11 @@ const data = {
                     draftMetadata: null,
                 },
             ],
+            diff: 3,
             rosteredBy: "T Cool",
         },
     ],
 };
-
 function App() {
     return <MobileApp data={data} />;
     return (

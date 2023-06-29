@@ -13,13 +13,17 @@ const PlayerRow = ({
     name,
     position,
     rosteredBy,
+    adr,
 }) => {
     return (
         <div className={styles.playerRow}>
             <div className={styles.left2}>
                 <div className={styles.imageContainer}>
                     <img
-                        className={styles.playerImage}
+                        className={classNames(
+                            styles.playerImage,
+                            position === "DEF" && styles.defense
+                        )}
                         src={getPlayerImage(name)}
                     />
                 </div>
@@ -42,12 +46,19 @@ const PlayerRow = ({
                 </div>
             </div>
             <div className={styles.keeperCost}>
-                <div className={styles.keeperValue}>
-                    {keeperCost}
-                    <span className={styles.valueSuffix}>th</span>
-                </div>
+                {keeperCost ? (
+                    <div className={styles.keeperValue}>
+                        {keeperCost}
+                        <span className={styles.valueSuffix}>th</span>
+                    </div>
+                ) : (
+                    <div>x</div>
+                )}
                 <div className={styles.keeperLabel}>
                     {!keeperCost ? "Can't Be Kept" : " Round Pick"}
+                </div>
+                <div className={styles.keeperLabel}>
+                    {!adr ? "N/A" : keeperCost - adr}
                 </div>
             </div>
         </div>

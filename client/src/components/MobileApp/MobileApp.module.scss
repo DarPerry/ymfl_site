@@ -15,7 +15,8 @@ $image-size: 18px;
     display: flex;
     justify-content: space-between;
     padding: 10px 10px;
-    color: $iu-cream;
+    background-color: $iu-cream;
+    color: $iu-base-black;
 }
 
 .left {
