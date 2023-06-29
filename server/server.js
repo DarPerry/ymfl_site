@@ -15,8 +15,6 @@ import {
     getLeagueTransactions,
 } from "./services/league.service.js";
 
-import playerImages from "./data/players.json" assert { type: "json" };
-
 const ROUNDS_IN_DRAFT = 18;
 
 import {
