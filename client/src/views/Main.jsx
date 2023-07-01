@@ -9147,7 +9147,7 @@ const PlayerRow = ({
                             <div> {getNumberSuffix(value)}</div>
                         </>
                     ) : (
-                        "X"
+                        <i class="fa-duotone fa-ban" />
                     )}
                     {isAdpCalculated && (
                         <div className={styles.adpTooltip}>*</div>

@@ -21,10 +21,31 @@ const getNumberSuffix = (number) => {
 
 const MobileApp = ({ data }) => {
     const players = _.orderBy(_.flattenDeep(Object.values(data)), [
-        // "keeperValueForCurrentTeam",
-        "diff",
+        "keeperValueForCurrentTeam",
+        // "diff",
         "adp",
     ]);
+
+    const hcThreshold = 25;
+
+    const filtered = _.flattenDeep(Object.values(data)).filter(
+        ({ adp, keeperValueForCurrentTeam }) => adp && keeperValueForCurrentTeam
+    );
+
+    const hotColdPlayers = _.orderBy(filtered, ["diff", "adp"]).reduce(
+        (acc, { playerId }, index) => {
+            if (index < hcThreshold) {
+                acc[playerId] = "HOT";
+            } else if (index > filtered.length - hcThreshold) {
+                acc[playerId] = "COLD";
+            } else {
+                acc[playerId] = null;
+            }
+
+            return acc;
+        },
+        {}
+    );
 
     return (
         <div className={styles.mobileApp}>
@@ -45,7 +66,12 @@ const MobileApp = ({ data }) => {
             <div className={styles.sectionTitle}>Keeper Costs</div>
             <body className={styles.body}>
                 {players.map((player) => {
-                    return <PlayerRow {...player} />;
+                    return (
+                        <PlayerRow
+                            {...player}
+                            hotColdPlayers={hotColdPlayers}
+                        />
+                    );
                 })}
             </body>
         </div>

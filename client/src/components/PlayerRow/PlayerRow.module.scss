@@ -7,7 +7,6 @@ $player-image-size: 63px;
     display: flex;
     margin-top: 12px;
     justify-content: space-between;
-    height: 105px;
     padding: 8px 10px;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px 0px,
@@ -17,7 +16,7 @@ $player-image-size: 63px;
 .imageContainer {
     width: $player-image-size;
     height: $player-image-size;
-    background-color: $bsu-light-gray;
+    background-color: #dadedf;
     border: solid 2px $bsu-dark-gray;
     overflow: hidden;
     border-radius: 5px;
@@ -60,29 +59,47 @@ $player-image-size: 63px;
     text-align: center;
     background-color: $bsu-light-gray;
     color: $bsu-dark-gray;
+    border: solid 2px $bsu-dark-gray;
 
     &.QB {
         background-color: $qb-color;
+        border-color: $qb-color;
+        color: $iu-cream;
     }
 
     &.RB {
         background-color: $rb-color;
+        border-color: $rb-color;
+
+        color: $iu-cream;
     }
 
     &.WR {
         background-color: $wr-color;
+        border-color: $wr-color;
+
+        color: $iu-cream;
     }
 
     &.TE {
         background-color: $te-color;
+        border-color: $te-color;
+
+        color: $iu-cream;
     }
 
     &.K {
         background-color: $k-color;
+        border-color: $k-color;
+
+        color: $iu-cream;
     }
 
     &.DEF {
         background-color: $def-color;
+        border-color: $def-color;
+
+        color: $iu-cream;
     }
 }
 .rosteredBy {
@@ -103,7 +120,7 @@ $player-image-size: 63px;
     flex-direction: column;
     color: $iu-cream;
     border-radius: 4px;
-    background-color: $iu-crimson;
+    background-color: $bsu-cardinal-red;
     height: fit-content;
     padding: 6px;
     width: fit-content;
@@ -156,4 +173,40 @@ $player-image-size: 63px;
 .badges {
     display: flex;
     gap: 4px;
+    align-items: center;
+}
+
+.hcIcon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px transparent;
+    box-sizing: border-box;
+
+    i {
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &.cold {
+        background-color: #eaf6fe;
+        border-color: #36a7f4;
+
+        i {
+            color: #36a7f4;
+        }
+    }
+
+    &.hot {
+        background-color: #fff6e5;
+        border-color: #ffaa00;
+
+        i {
+            color: #ffaa00;
+        }
+    }
 }

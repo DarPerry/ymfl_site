@@ -11,7 +11,7 @@ export const normalizePlayerName = (playerName) => {
     return playerName
         ?.toUpperCase()
         .replaceAll(/[ -]/g, "_")
-        .replace(/ (?:I+$|JR)/gi, "");
+        .replaceAll(/ (?:I+$|JR)/gi, "");
     // .replace(/\s+/g, " ") // remove suffixes
     // .replace(/[^a-zA-Z ]/g, "")
     // .replace(/\s+/g, " ") // remove suffixes

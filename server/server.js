@@ -117,7 +117,7 @@ const getValidPlayers = async () => {
         return acc;
     }, []);
 
-    return { players, playerIdMap };
+    return { players, playerIdMap, playerIdMap };
 };
 
 const getAllDrafts = async () => {
@@ -331,6 +331,8 @@ const getAllPlayersTransactions = async () => {
 
     const playerAdpMap = await getPlayerAdpMap(playerIdMap);
 
+    // return playerAdpMap;
+
     const draftPicksByPlayerId = await getDraftPicksByPlayerId();
     const transactionsByPlayerId = await getTransactionByPlayerIDs();
 
@@ -362,8 +364,13 @@ const getAllPlayersTransactions = async () => {
             name: full_name || `${team} DST`,
             position,
             keeperValueForCurrentTeam,
-            transactions,
-            diff: adr ? adr - keeperValueForCurrentTeam : 999,
+            // transactions,
+            diff:
+                keeperValueForCurrentTeam <= 0
+                    ? 999
+                    : adr
+                    ? adr - keeperValueForCurrentTeam
+                    : 999,
         };
     });
 };
