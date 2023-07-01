@@ -90,7 +90,7 @@ const getValidPlayers = async () => {
         SF: "San Francisco 49ers",
         TB: "Tampa Bay Buccaneers",
         TEN: "Tennessee Titans",
-        WAS: "Washington Football Team",
+        WAS: "Washington Commanders",
     };
 
     const additionalIdsToInclude = ["jamesonwilliams"];
@@ -359,7 +359,7 @@ const getAllPlayersTransactions = async () => {
             // ...player,
             playerId,
             team,
-            adp: adp || "UDFA",
+            adp,
             adr,
             name: full_name || `${team} DST`,
             position,

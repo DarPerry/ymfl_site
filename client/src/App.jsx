@@ -101,7 +101,7 @@ const data = {
         {
             playerId: "1479",
             team: "LAC",
-            adp: 39.3,
+            adp: 39,
             adr: 4,
             name: "Keenan Allen",
             position: "WR",
@@ -145,7 +145,7 @@ const data = {
         {
             playerId: "4089",
             team: "LAC",
-            adp: 162.7,
+            adp: 162.3,
             adr: 14,
             name: "Gerald Everett",
             position: "TE",
@@ -222,7 +222,7 @@ const data = {
         {
             playerId: "7588",
             team: "DEN",
-            adp: 81.7,
+            adp: 81.3,
             adr: 7,
             name: "Javonte Williams",
             position: "RB",
@@ -233,7 +233,7 @@ const data = {
         {
             playerId: "7601",
             team: "ARI",
-            adp: 136.3,
+            adp: 137.3,
             adr: 12,
             name: "Rondale Moore",
             position: "WR",
@@ -244,7 +244,7 @@ const data = {
         {
             playerId: "8112",
             team: "ATL",
-            adp: 54.7,
+            adp: 55,
             adr: 5,
             name: "Drake London",
             position: "WR",
@@ -277,7 +277,7 @@ const data = {
         {
             playerId: "8183",
             team: "SF",
-            adp: 184.7,
+            adp: 183.7,
             adr: 16,
             name: "Brock Purdy",
             position: "QB",
@@ -288,7 +288,7 @@ const data = {
         {
             playerId: "8205",
             team: "KC",
-            adp: 78,
+            adp: 77.7,
             adr: 7,
             name: "Isiah Pacheco",
             position: "RB",
@@ -356,7 +356,7 @@ const data = {
         {
             playerId: "5880",
             team: "NYG",
-            adp: 198,
+            adp: 196,
             adr: 17,
             name: "Parris Campbell",
             position: "WR",
@@ -389,7 +389,7 @@ const data = {
         {
             playerId: "6797",
             team: "LAC",
-            adp: 49,
+            adp: 48.3,
             adr: 5,
             name: "Justin Herbert",
             position: "QB",
@@ -466,7 +466,7 @@ const data = {
         {
             playerId: "8129",
             team: "HOU",
-            adp: 55.7,
+            adp: 56.3,
             adr: 5,
             name: "Dameon Pierce",
             position: "RB",
@@ -488,7 +488,7 @@ const data = {
         {
             playerId: "BUF",
             team: "BUF",
-            adp: 176,
+            adp: 178,
             adr: 15,
             name: "BUF DST",
             position: "DEF",
@@ -499,7 +499,7 @@ const data = {
         {
             playerId: "NE",
             team: "NE",
-            adp: 164.5,
+            adp: 166,
             adr: 14,
             name: "NE DST",
             position: "DEF",
@@ -534,7 +534,7 @@ const data = {
         {
             playerId: "4018",
             team: "CIN",
-            adp: 47.3,
+            adp: 46.7,
             adr: 4,
             name: "Joe Mixon",
             position: "RB",
@@ -545,12 +545,12 @@ const data = {
         {
             playerId: "4046",
             team: "KC",
-            adp: null,
-            adr: null,
+            adp: 20,
+            adr: 2,
             name: "Patrick Mahomes",
             position: "QB",
             keeperValueForCurrentTeam: 2,
-            diff: 999,
+            diff: 0,
             rosteredBy: "Nick",
         },
         {
@@ -567,7 +567,7 @@ const data = {
         {
             playerId: "4147",
             team: "DEN",
-            adp: 103.3,
+            adp: 103,
             adr: 9,
             name: "Samaje Perine",
             position: "RB",
@@ -578,7 +578,7 @@ const data = {
         {
             playerId: "4892",
             team: "TB",
-            adp: 217.3,
+            adp: 218,
             adr: 19,
             name: "Baker Mayfield",
             position: "QB",
@@ -589,7 +589,7 @@ const data = {
         {
             playerId: "5001",
             team: "HOU",
-            adp: 120.3,
+            adp: 121.7,
             adr: 11,
             name: "Dalton Schultz",
             position: "TE",
@@ -611,7 +611,7 @@ const data = {
         {
             playerId: "5089",
             team: "MIA",
-            adp: 270,
+            adp: 275,
             adr: 23,
             name: "Mike White",
             position: "QB",
@@ -633,7 +633,7 @@ const data = {
         {
             playerId: "6826",
             team: "CHI",
-            adp: 135,
+            adp: 135.7,
             adr: 12,
             name: "Cole Kmet",
             position: "TE",
@@ -644,12 +644,12 @@ const data = {
         {
             playerId: "6955",
             team: null,
-            adp: 251,
-            adr: 21,
+            adp: 253.5,
+            adr: 22,
             name: "James Robinson",
             position: "RB",
             keeperValueForCurrentTeam: 15,
-            diff: 6,
+            diff: 7,
             rosteredBy: "Nick",
         },
         {
@@ -688,12 +688,12 @@ const data = {
         {
             playerId: "8151",
             team: "SEA",
-            adp: null,
-            adr: null,
+            adp: 39.3,
+            adr: 4,
             name: "Kenneth Walker",
             position: "RB",
             keeperValueForCurrentTeam: 6,
-            diff: 999,
+            diff: -2,
             rosteredBy: "Nick",
         },
         {
@@ -712,7 +712,7 @@ const data = {
         {
             playerId: "1373",
             team: "SEA",
-            adp: 104.3,
+            adp: 104,
             adr: 9,
             name: "Geno Smith",
             position: "QB",
@@ -723,7 +723,7 @@ const data = {
         {
             playerId: "2216",
             team: "TB",
-            adp: 69.7,
+            adp: 70,
             adr: 6,
             name: "Mike Evans",
             position: "WR",
@@ -789,7 +789,7 @@ const data = {
         {
             playerId: "5045",
             team: "DEN",
-            adp: 92.7,
+            adp: 93,
             adr: 8,
             name: "Courtland Sutton",
             position: "WR",
@@ -800,7 +800,7 @@ const data = {
         {
             playerId: "5870",
             team: "NYG",
-            adp: 95.3,
+            adp: 95,
             adr: 8,
             name: "Daniel Jones",
             position: "QB",
@@ -822,7 +822,7 @@ const data = {
         {
             playerId: "6151",
             team: "CAR",
-            adp: 58.3,
+            adp: 58.7,
             adr: 5,
             name: "Miles Sanders",
             position: "RB",
@@ -833,7 +833,7 @@ const data = {
         {
             playerId: "6770",
             team: "CIN",
-            adp: 37.3,
+            adp: 37,
             adr: 4,
             name: "Joe Burrow",
             position: "QB",
@@ -844,12 +844,12 @@ const data = {
         {
             playerId: "6819",
             team: "IND",
-            adp: null,
-            adr: null,
+            adp: 58,
+            adr: 5,
             name: "Michael Pittman",
             position: "WR",
             keeperValueForCurrentTeam: 7,
-            diff: 999,
+            diff: -2,
             rosteredBy: "Jeremiah",
         },
         {
@@ -866,7 +866,7 @@ const data = {
         {
             playerId: "7608",
             team: "CHI",
-            adp: 108.3,
+            adp: 108.7,
             adr: 10,
             name: "Khalil Herbert",
             position: "RB",
@@ -877,12 +877,12 @@ const data = {
         {
             playerId: "8154",
             team: "WAS",
-            adp: null,
-            adr: null,
+            adp: 97.7,
+            adr: 9,
             name: "Brian Robinson",
             position: "RB",
             keeperValueForCurrentTeam: 11,
-            diff: 999,
+            diff: -2,
             rosteredBy: "Jeremiah",
         },
         {
@@ -910,12 +910,12 @@ const data = {
         {
             playerId: "WAS",
             team: "WAS",
-            adp: null,
-            adr: null,
+            adp: 244.5,
+            adr: 21,
             name: "WAS DST",
             position: "DEF",
             keeperValueForCurrentTeam: 18,
-            diff: 999,
+            diff: 3,
             rosteredBy: "Jeremiah",
         },
     ],
@@ -923,7 +923,7 @@ const data = {
         {
             playerId: "1234",
             team: "DEN",
-            adp: 115,
+            adp: 114.7,
             adr: 10,
             name: "Russell Wilson",
             position: "QB",
@@ -945,7 +945,7 @@ const data = {
         {
             playerId: "1535",
             team: "ATL",
-            adp: 203.7,
+            adp: 202.3,
             adr: 17,
             name: "Cordarrelle Patterson",
             position: "RB",
@@ -956,7 +956,7 @@ const data = {
         {
             playerId: "2028",
             team: "NO",
-            adp: 127.3,
+            adp: 127.7,
             adr: 11,
             name: "Derek Carr",
             position: "QB",
@@ -989,7 +989,7 @@ const data = {
         {
             playerId: "3164",
             team: null,
-            adp: 154.7,
+            adp: 154.3,
             adr: 13,
             name: "Ezekiel Elliott",
             position: "RB",
@@ -1000,7 +1000,7 @@ const data = {
         {
             playerId: "4037",
             team: "TB",
-            adp: 56,
+            adp: 55.7,
             adr: 5,
             name: "Chris Godwin",
             position: "WR",
@@ -1011,7 +1011,7 @@ const data = {
         {
             playerId: "4080",
             team: "JAX",
-            adp: 141.3,
+            adp: 142,
             adr: 12,
             name: "Zay Jones",
             position: "WR",
@@ -1033,12 +1033,12 @@ const data = {
         {
             playerId: "5284",
             team: "MIA",
-            adp: null,
-            adr: null,
+            adp: 174.7,
+            adr: 15,
             name: "Jeff Wilson",
             position: "RB",
-            keeperValueForCurrentTeam: 18,
-            diff: 999,
+            keeperValueForCurrentTeam: 16,
+            diff: -1,
             rosteredBy: "Bob",
         },
         {
@@ -1077,7 +1077,7 @@ const data = {
         {
             playerId: "7600",
             team: "PIT",
-            adp: 101.3,
+            adp: 101.7,
             adr: 9,
             name: "Pat Freiermuth",
             position: "TE",
@@ -1110,7 +1110,7 @@ const data = {
         {
             playerId: "NYJ",
             team: "NYJ",
-            adp: 193,
+            adp: 194.5,
             adr: 17,
             name: "NYJ DST",
             position: "DEF",
@@ -1145,7 +1145,7 @@ const data = {
         {
             playerId: "2711",
             team: "ATL",
-            adp: 281,
+            adp: 282,
             adr: 24,
             name: "Taylor Heinicke",
             position: "QB",
@@ -1156,7 +1156,7 @@ const data = {
         {
             playerId: "4033",
             team: "CLE",
-            adp: 105,
+            adp: 105.3,
             adr: 9,
             name: "David Njoku",
             position: "TE",
@@ -1222,7 +1222,7 @@ const data = {
         {
             playerId: "5906",
             team: "BUF",
-            adp: 171,
+            adp: 172,
             adr: 15,
             name: "Dawson Knox",
             position: "TE",
@@ -1266,7 +1266,7 @@ const data = {
         {
             playerId: "6806",
             team: "BAL",
-            adp: 53.3,
+            adp: 54,
             adr: 5,
             name: "J.K. Dobbins",
             position: "RB",
@@ -1277,7 +1277,7 @@ const data = {
         {
             playerId: "8137",
             team: "PIT",
-            adp: 75.3,
+            adp: 75,
             adr: 7,
             name: "George Pickens",
             position: "WR",
@@ -1288,7 +1288,7 @@ const data = {
         {
             playerId: "96",
             team: "NYJ",
-            adp: 108.7,
+            adp: 108.3,
             adr: 10,
             name: "Aaron Rodgers",
             position: "QB",
@@ -1299,7 +1299,7 @@ const data = {
         {
             playerId: "DAL",
             team: "DAL",
-            adp: 160,
+            adp: 161,
             adr: 14,
             name: "DAL DST",
             position: "DEF",
@@ -1323,7 +1323,7 @@ const data = {
         {
             playerId: "1476",
             team: "BUF",
-            adp: 265,
+            adp: 266.3,
             adr: 23,
             name: "Latavius Murray",
             position: "RB",
@@ -1356,18 +1356,18 @@ const data = {
         {
             playerId: "4040",
             team: "NE",
-            adp: 107.7,
-            adr: 9,
+            adp: 108.3,
+            adr: 10,
             name: "JuJu Smith-Schuster",
             position: "WR",
             keeperValueForCurrentTeam: 5,
-            diff: 4,
+            diff: 5,
             rosteredBy: "Brayden",
         },
         {
             playerId: "4098",
             team: null,
-            adp: 173,
+            adp: 173.3,
             adr: 15,
             name: "Kareem Hunt",
             position: "RB",
@@ -1389,7 +1389,7 @@ const data = {
         {
             playerId: "4217",
             team: "SF",
-            adp: 58.7,
+            adp: 59,
             adr: 5,
             name: "George Kittle",
             position: "TE",
@@ -1411,12 +1411,12 @@ const data = {
         {
             playerId: "4951",
             team: "CAR",
-            adp: null,
-            adr: null,
+            adp: 175,
+            adr: 15,
             name: "DJ Chark",
             position: "WR",
-            keeperValueForCurrentTeam: 18,
-            diff: 999,
+            keeperValueForCurrentTeam: 16,
+            diff: -1,
             rosteredBy: "Brayden",
         },
         {
@@ -1444,7 +1444,7 @@ const data = {
         {
             playerId: "6943",
             team: "BUF",
-            adp: 90,
+            adp: 90.7,
             adr: 8,
             name: "Gabe Davis",
             position: "WR",
@@ -1488,7 +1488,7 @@ const data = {
         {
             playerId: "8135",
             team: "TEN",
-            adp: 78.7,
+            adp: 78,
             adr: 7,
             name: "Treylon Burks",
             position: "WR",
@@ -1510,7 +1510,7 @@ const data = {
         {
             playerId: "DET",
             team: "DET",
-            adp: 253.5,
+            adp: 253,
             adr: 22,
             name: "DET DST",
             position: "DEF",
@@ -1633,7 +1633,7 @@ const data = {
         {
             playerId: "5955",
             team: "LV",
-            adp: 196,
+            adp: 196.7,
             adr: 17,
             name: "Hunter Renfrow",
             position: "WR",
@@ -1655,7 +1655,7 @@ const data = {
         {
             playerId: "6813",
             team: "IND",
-            adp: 12.3,
+            adp: 12.7,
             adr: 2,
             name: "Jonathan Taylor",
             position: "RB",
@@ -1666,18 +1666,18 @@ const data = {
         {
             playerId: "7543",
             team: "JAX",
-            adp: null,
-            adr: null,
+            adp: 35.3,
+            adr: 3,
             name: "Travis Etienne",
             position: "RB",
             keeperValueForCurrentTeam: 4,
-            diff: 999,
+            diff: -1,
             rosteredBy: "Jack",
         },
         {
             playerId: "7561",
             team: "SF",
-            adp: 125,
+            adp: 125.3,
             adr: 11,
             name: "Elijah Mitchell",
             position: "RB",
@@ -1721,7 +1721,7 @@ const data = {
         {
             playerId: "SEA",
             team: "SEA",
-            adp: 224,
+            adp: 226,
             adr: 19,
             name: "SEA DST",
             position: "DEF",
@@ -1745,7 +1745,7 @@ const data = {
         {
             playerId: "2374",
             team: "SEA",
-            adp: 68.3,
+            adp: 68,
             adr: 6,
             name: "Tyler Lockett",
             position: "WR",
@@ -1767,18 +1767,18 @@ const data = {
         {
             playerId: "2749",
             team: "MIA",
-            adp: 155.7,
-            adr: 13,
+            adp: 156.3,
+            adr: 14,
             name: "Raheem Mostert",
             position: "RB",
-            keeperValueForCurrentTeam: 14,
+            keeperValueForCurrentTeam: 15,
             diff: -1,
             rosteredBy: "Quast",
         },
         {
             playerId: "3225",
             team: "CIN",
-            adp: 131,
+            adp: 130.7,
             adr: 11,
             name: "Tyler Boyd",
             position: "WR",
@@ -1833,7 +1833,7 @@ const data = {
         {
             playerId: "4988",
             team: "CLE",
-            adp: 16.7,
+            adp: 16.3,
             adr: 2,
             name: "Nick Chubb",
             position: "RB",
@@ -1844,18 +1844,18 @@ const data = {
         {
             playerId: "5848",
             team: "ARI",
-            adp: 71.7,
-            adr: 6,
+            adp: 72.3,
+            adr: 7,
             name: "Marquise Brown",
             position: "WR",
             keeperValueForCurrentTeam: 7,
-            diff: -1,
+            diff: 0,
             rosteredBy: "Quast",
         },
         {
             playerId: "5849",
             team: "ARI",
-            adp: 154.7,
+            adp: 155.3,
             adr: 13,
             name: "Kyler Murray",
             position: "QB",
@@ -1877,12 +1877,12 @@ const data = {
         {
             playerId: "6011",
             team: "IND",
-            adp: null,
-            adr: null,
+            adp: 257,
+            adr: 22,
             name: "Gardner Minshew",
             position: "QB",
             keeperValueForCurrentTeam: 18,
-            diff: 999,
+            diff: 4,
             rosteredBy: "Quast",
         },
         {
@@ -1910,7 +1910,7 @@ const data = {
         {
             playerId: "8172",
             team: "DEN",
-            adp: 137,
+            adp: 136.7,
             adr: 12,
             name: "Greg Dulcich",
             position: "TE",
@@ -1921,7 +1921,7 @@ const data = {
         {
             playerId: "DEN",
             team: "DEN",
-            adp: 208.5,
+            adp: 210.5,
             adr: 18,
             name: "DEN DST",
             position: "DEF",
@@ -1932,7 +1932,7 @@ const data = {
         {
             playerId: "TB",
             team: "TB",
-            adp: 248.5,
+            adp: 249,
             adr: 21,
             name: "TB DST",
             position: "DEF",
@@ -1945,7 +1945,7 @@ const data = {
         {
             playerId: "1049",
             team: "TEN",
-            adp: 213.3,
+            adp: 213,
             adr: 18,
             name: "Ryan Tannehill",
             position: "QB",
@@ -1956,7 +1956,7 @@ const data = {
         {
             playerId: "1689",
             team: "CAR",
-            adp: 136.7,
+            adp: 136,
             adr: 12,
             name: "Adam Thielen",
             position: "WR",
@@ -1978,7 +1978,7 @@ const data = {
         {
             playerId: "3969",
             team: null,
-            adp: 168.3,
+            adp: 168.7,
             adr: 15,
             name: "Leonard Fournette",
             position: "RB",
@@ -2000,7 +2000,7 @@ const data = {
         {
             playerId: "4177",
             team: "ATL",
-            adp: 277,
+            adp: 277.3,
             adr: 24,
             name: "Mack Hollins",
             position: "WR",
@@ -2022,7 +2022,7 @@ const data = {
         {
             playerId: "4984",
             team: "BUF",
-            adp: 21,
+            adp: 21.3,
             adr: 2,
             name: "Josh Allen",
             position: "QB",
@@ -2055,7 +2055,7 @@ const data = {
         {
             playerId: "6149",
             team: "NYG",
-            adp: 232.3,
+            adp: 231.7,
             adr: 20,
             name: "Darius Slayton",
             position: "WR",
@@ -2066,7 +2066,7 @@ const data = {
         {
             playerId: "6768",
             team: "MIA",
-            adp: 95.3,
+            adp: 94.7,
             adr: 8,
             name: "Tua Tagovailoa",
             position: "QB",
@@ -2088,7 +2088,7 @@ const data = {
         {
             playerId: "6886",
             team: "CHI",
-            adp: 207,
+            adp: 208.7,
             adr: 18,
             name: "Chase Claypool",
             position: "WR",
@@ -2121,23 +2121,23 @@ const data = {
         {
             playerId: "BAL",
             team: "BAL",
-            adp: 192,
-            adr: 16,
+            adp: 192.5,
+            adr: 17,
             name: "BAL DST",
             position: "DEF",
             keeperValueForCurrentTeam: 16,
-            diff: 0,
+            diff: 1,
             rosteredBy: "T Cool",
         },
         {
             playerId: "NYG",
             team: "NYG",
-            adp: 250,
-            adr: 21,
+            adp: 254,
+            adr: 22,
             name: "NYG DST",
             position: "DEF",
             keeperValueForCurrentTeam: 18,
-            diff: 3,
+            diff: 4,
             rosteredBy: "T Cool",
         },
     ],
