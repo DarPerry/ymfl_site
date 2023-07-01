@@ -359,7 +359,7 @@ const getAllPlayersTransactions = async () => {
             // ...player,
             playerId,
             team,
-            adp,
+            adp: adp || "UDFA",
             adr,
             name: full_name || `${team} DST`,
             position,

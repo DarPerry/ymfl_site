@@ -83,6 +83,7 @@ const PlayerRow = ({
     adp,
     hotColdPlayers,
     playerId: id,
+    diff,
 }) => {
     return (
         <div className={styles.playerRow}>
@@ -156,8 +157,8 @@ const PlayerRow = ({
                 <div
                     className={classNames(
                         styles.value,
-                        keeperCost && keeperCost - adr > 0 && styles.green,
-                        keeperCost && keeperCost - adr < 0 && styles.red
+                        adp && keeperCost - adr > 0 && styles.green,
+                        adp && keeperCost - adr < 0 && styles.red
                     )}
                 >
                     {!adr || !keeperCost ? "N/A" : keeperCost - adr} Round Value
