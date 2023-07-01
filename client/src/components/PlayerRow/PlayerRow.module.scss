@@ -123,7 +123,7 @@ $player-image-size: 63px;
     background-color: $bsu-cardinal-red;
     height: fit-content;
     padding: 6px;
-    width: fit-content;
+    width: 61px;
 }
 
 .keeperValue {
@@ -154,6 +154,7 @@ $player-image-size: 63px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 68px;
 }
 
 .value {

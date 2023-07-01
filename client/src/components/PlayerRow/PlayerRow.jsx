@@ -33,6 +33,7 @@ const teamColors = {
     TEN: "#4b92db",
     BUF: "#c60c30",
     WAS: "#ffb611",
+    LAR: "#063992",
 };
 
 const getPlayerImage = (name) =>
