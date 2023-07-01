@@ -1,7 +1,8 @@
 import PlayerRow from "../PlayerRow/PlayerRow";
 import styles from "./MobileApp.module.scss";
-
+import Select from "react-select";
 import _ from "lodash";
+import { useState } from "react";
 
 const getNumberSuffix = (number) => {
     const lastDigit = number % 10;
@@ -20,11 +21,18 @@ const getNumberSuffix = (number) => {
 };
 
 const MobileApp = ({ data }) => {
+    const [filterOutIneligiblePlayers, setFilterOutIneligiblePlayers] =
+        useState(true);
+
     const players = _.orderBy(_.flattenDeep(Object.values(data)), [
         "keeperValueForCurrentTeam",
         // "diff",
         "adp",
-    ]);
+    ]).filter(
+        ({ adp, keeperValueForCurrentTeam }) =>
+            !filterOutIneligiblePlayers ||
+            (filterOutIneligiblePlayers && keeperValueForCurrentTeam)
+    );
 
     const hcThreshold = 25;
 
@@ -47,6 +55,12 @@ const MobileApp = ({ data }) => {
         {}
     );
 
+    const options = [
+        { value: "chocolate", label: "Chocolate" },
+        { value: "strawberry", label: "Strawberry" },
+        { value: "vanilla", label: "Vanilla" },
+    ];
+
     return (
         <div className={styles.mobileApp}>
             <div className={styles.header}>
@@ -64,6 +78,35 @@ const MobileApp = ({ data }) => {
                 <div className={styles.right}></div>
             </div>
             <div className={styles.sectionTitle}>Keeper Costs</div>
+            <div className={styles.toolbar}>
+                <div>
+                    Filters
+                    <div>Position</div>
+                    <Select options={options} />
+                    <div>Rostered By</div>
+                    <Select options={options} />
+                    <div>Team</div>
+                    <Select options={options} />
+                </div>
+                <div>
+                    <div>Sort</div>
+                </div>
+                <div>
+                    <div>Check Boxes</div>
+                    <input
+                        type="checkbox"
+                        value={filterOutIneligiblePlayers}
+                        onChange={(checked) => {
+                            console.log(checked);
+                            setFilterOutIneligiblePlayers(checked);
+                        }}
+                        defaultChecked
+                    />
+                    Only Show Players Who Can Be Kept
+                </div>
+                <div>Search</div>
+            </div>
+
             <body className={styles.body}>
                 {players.map((player) => {
                     return (

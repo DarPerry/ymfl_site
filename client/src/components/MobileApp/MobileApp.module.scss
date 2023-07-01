@@ -77,3 +77,10 @@ $image-size: 18px;
 .body {
     padding: 0 25px;
 }
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1px 0;
+}

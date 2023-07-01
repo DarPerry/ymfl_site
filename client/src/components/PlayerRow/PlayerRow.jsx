@@ -56,6 +56,22 @@ const HotColdIcon = ({ type }) => {
     );
 };
 
+const getNumberSuffix = (number) => {
+    const lastDigit = number % 10;
+
+    if (lastDigit === 1) {
+        return "st";
+    } else if (lastDigit === 2) {
+        return "nd";
+    } else if (lastDigit === 3) {
+        return "rd";
+    } else {
+        return "th";
+    }
+
+    return "";
+};
+
 const PlayerRow = ({
     keeperValueForCurrentTeam: keeperCost,
     name,
@@ -124,7 +140,7 @@ const PlayerRow = ({
                                 <div>
                                     {keeperCost}
                                     <span className={styles.valueSuffix}>
-                                        th
+                                        {getNumberSuffix(keeperCost)}
                                     </span>
                                 </div>
                             ) : (
@@ -139,11 +155,11 @@ const PlayerRow = ({
                 <div
                     className={classNames(
                         styles.value,
-                        keeperCost - adr > 0 && styles.green,
-                        keeperCost - adr < 0 && styles.red
+                        keeperCost && keeperCost - adr > 0 && styles.green,
+                        keeperCost && keeperCost - adr < 0 && styles.red
                     )}
                 >
-                    {!adr ? "N/A" : keeperCost - adr} Round Value
+                    {!adr || !keeperCost ? "N/A" : keeperCost - adr} Round Value
                 </div>
             </div>
         </div>
