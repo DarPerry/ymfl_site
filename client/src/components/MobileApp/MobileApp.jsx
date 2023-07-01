@@ -90,6 +90,7 @@ const MobileApp = ({ data }) => {
         const keyMap = {
             Cost: "keeperValueForCurrentTeam",
             Value: "diff",
+            ADP: "adp",
         };
 
         return (
@@ -311,6 +312,7 @@ const MobileApp = ({ data }) => {
                     <div className={styles.sortOptions}>
                         <SortOption label="Cost" />
                         <SortOption label="Value" />
+                        <SortOption label="ADP" />
                     </div>
                 </div>
                 {/* <div className={styles.filters}>

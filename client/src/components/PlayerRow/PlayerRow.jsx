@@ -128,7 +128,7 @@ const PlayerRow = ({
                             {team || "FA"}
                         </div>
                         <div className={classNames(styles.playerPosition)}>
-                            ADP {adp}
+                            ADP {adp || "UDFA"}
                         </div>
                         <HotColdIcon type={hotColdPlayers[id]} />
                     </div>
