@@ -200,7 +200,7 @@ const MobileApp = ({ data }) => {
                 <div className={styles.middle}>
                     <img
                         className={styles.leagueImage}
-                        src="../../../dist/images/league-picture.jpg"
+                        src="/images/league-picture.jpg"
                     />
                     <div>
                         <div className={styles.leagueInfo}>

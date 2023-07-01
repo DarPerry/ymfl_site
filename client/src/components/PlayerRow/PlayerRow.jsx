@@ -36,12 +36,16 @@ const teamColors = {
     LAR: "#063992",
 };
 
-const getPlayerImage = (name) =>
-    `../../../public/images/${name
+const getPlayerImage = (name) => {
+    const path = `/images/${name
+        .toLowerCase()
         ?.replaceAll(".", "")
         ?.replaceAll("'", "")
         ?.split(" ")
         .join("-")}.png`;
+
+    return path;
+};
 
 const HotColdIcon = ({ type }) => {
     if (!type) return;
@@ -102,8 +106,7 @@ const PlayerRow = ({
                         src={getPlayerImage(name)}
                         onError={(e) => {
                             e.target.onerror = null;
-                            e.target.src =
-                                "../../../public/images/missing-player.png";
+                            e.target.src = "/images/missing-player.png";
                         }}
                     />
                 </div>

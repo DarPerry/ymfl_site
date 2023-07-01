@@ -1,6 +1,5 @@
 import { useState } from "react";
 import reactLogo from "../assets/react.svg";
-import viteLogo from "../../public/vite.svg";
 
 import styles from "./Main.module.scss";
 import Tab from "../components/Tab/Tab.jsx";
