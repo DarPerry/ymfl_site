@@ -70,12 +70,12 @@ const MobileApp = ({ data }) => {
                         <img className={styles.leagueImage} />
                         <div className={styles.leagueName}>The Usubi Boys</div>
                     </div>
-                    <div className={styles.pages}>
-                        <div className={styles.page}>Rules</div>
-                        <div className={styles.page}>Keepers</div>
-                    </div>
                 </div>
                 <div className={styles.right}></div>
+            </div>
+            <div className={styles.pages}>
+                {/* <div className={styles.page}>Rules</div> */}
+                <div className={styles.page}>Keepers Prices</div>
             </div>
             <div className={styles.sectionTitle}>Keeper Costs</div>
             <div className={styles.toolbar}>
@@ -103,6 +103,16 @@ const MobileApp = ({ data }) => {
                         defaultChecked
                     />
                     Only Show Players Who Can Be Kept
+                    <input
+                        type="checkbox"
+                        value={filterOutIneligiblePlayers}
+                        onChange={(checked) => {
+                            console.log(checked);
+                            setFilterOutIneligiblePlayers(checked);
+                        }}
+                        defaultChecked
+                    />
+                    Only Show Postive Value Players
                 </div>
                 <div>Search</div>
             </div>
