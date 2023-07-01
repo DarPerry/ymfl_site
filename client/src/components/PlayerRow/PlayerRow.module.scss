@@ -1,12 +1,17 @@
 @import "../../styles/theme.scss";
 
-$player-image-size: 45px;
+$player-image-size: 63px;
 
 .playerRow {
     background-color: $iu-cream;
     display: flex;
-    padding: 6px 12px 12px 12px;
+    margin-top: 12px;
     justify-content: space-between;
+    height: 105px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px 0px,
+        rgba(192, 192, 192, 0.3) 0px 0px 24px 0px;
 }
 
 .imageContainer {
@@ -16,14 +21,12 @@ $player-image-size: 45px;
     border: solid 2px $bsu-dark-gray;
     overflow: hidden;
     border-radius: 5px;
-    margin-right: 10px;
+    margin-right: 8px;
     display: flex;
     justify-content: center;
 }
 
 .playerImage {
-    height: 41px;
-    width: 55px;
     position: relative;
     // right: 16%;
     top: 12%;
@@ -34,7 +37,7 @@ $player-image-size: 45px;
 }
 .left2 {
     display: flex;
-    align-items: center;
+    // align-items: center;
 }
 
 .player {
@@ -47,13 +50,40 @@ $player-image-size: 45px;
 }
 
 .playerPosition {
-    background-color: #e773a1;
     color: $iu-cream;
     padding: 2px 4px;
     border-radius: 4px;
     font-weight: 700;
     font-size: 0.65rem;
-    margin: 0px 6px;
+    min-width: 25px;
+    margin: 4px 0;
+    text-align: center;
+    background-color: $bsu-light-gray;
+    color: $bsu-dark-gray;
+
+    &.QB {
+        background-color: $qb-color;
+    }
+
+    &.RB {
+        background-color: $rb-color;
+    }
+
+    &.WR {
+        background-color: $wr-color;
+    }
+
+    &.TE {
+        background-color: $te-color;
+    }
+
+    &.K {
+        background-color: $k-color;
+    }
+
+    &.DEF {
+        background-color: $def-color;
+    }
 }
 .rosteredBy {
     font-size: 0.65rem;
@@ -71,29 +101,59 @@ $player-image-size: 45px;
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: $iu-cream;
+    border-radius: 4px;
+    background-color: $iu-crimson;
+    height: fit-content;
+    padding: 6px;
+    width: fit-content;
 }
 
 .keeperValue {
-    background-color: $iu-cream;
-    padding: 6px;
-    color: $iu-crimson;
-    font-weight: 700;
-    border-radius: 4px;
-    width: 40px;
-    height: 40px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 2px $iu-crimson;
-    background-color: $bsu-light-gray;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
 }
 
 .keeperLabel {
     font-size: 0.5rem;
-    color: $bsu-dark-gray;
     margin-top: 4px;
+    font-size: 8px;
 }
 
 .valueSuffix {
     font-size: 0.6rem;
+}
+
+.inside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.value {
+    margin-top: 4px;
+    font-size: 9px;
+    color: $bsu-dark-gray;
+    &.green {
+        color: green;
+    }
+
+    &.red {
+        color: red;
+    }
+}
+
+.badges {
+    display: flex;
+    gap: 4px;
 }

@@ -14,6 +14,8 @@ const PlayerRow = ({
     position,
     rosteredBy,
     adr,
+    team,
+    adp,
 }) => {
     return (
         <div className={styles.playerRow}>
@@ -25,11 +27,22 @@ const PlayerRow = ({
                             position === "DEF" && styles.defense
                         )}
                         src={getPlayerImage(name)}
+                        onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                                "../../../public/images/missing-player.png";
+                        }}
                     />
                 </div>
                 <div className={styles.playerInfo}>
                     <div className={styles.player}>
                         <div className={styles.playerName}>{name}</div>
+                    </div>
+                    <div className={styles.rosteredBy}>
+                        Rostered By:
+                        <span className={styles.playerOwner}>{rosteredBy}</span>
+                    </div>
+                    <div className={styles.badges}>
                         <div
                             className={classNames(
                                 styles.playerPosition,
@@ -38,27 +51,37 @@ const PlayerRow = ({
                         >
                             {position}
                         </div>
-                    </div>
-                    <div className={styles.rosteredBy}>
-                        Rostered By:
-                        <span className={styles.playerOwner}>{rosteredBy}</span>
+                        <div className={classNames(styles.playerPosition)}>
+                            {team}
+                        </div>
+                        <div className={classNames(styles.playerPosition)}>
+                            ADP {adp}
+                        </div>
+                        <div></div>
+                        <div></div>
                     </div>
                 </div>
             </div>
-            <div className={styles.keeperCost}>
-                {keeperCost ? (
-                    <div className={styles.keeperValue}>
-                        {keeperCost}
-                        <span className={styles.valueSuffix}>th</span>
+            <div className={styles.right}>
+                <div className={styles.keeperCost}>
+                    <div className={styles.inside}>
+                        <div className={styles.keeperValue}>
+                            {keeperCost ? keeperCost : "X"}
+                            <span className={styles.valueSuffix}>th</span>
+                        </div>
+                        <div className={styles.keeperLabel}>
+                            {!keeperCost ? "Can't Be Kept" : " Round Pick"}
+                        </div>
                     </div>
-                ) : (
-                    <div>x</div>
-                )}
-                <div className={styles.keeperLabel}>
-                    {!keeperCost ? "Can't Be Kept" : " Round Pick"}
                 </div>
-                <div className={styles.keeperLabel}>
-                    {!adr ? "N/A" : keeperCost - adr}
+                <div
+                    className={classNames(
+                        styles.value,
+                        keeperCost - adr > 0 && styles.green,
+                        keeperCost - adr < 0 && styles.red
+                    )}
+                >
+                    {!adr ? "N/A" : keeperCost - adr} Round Value
                 </div>
             </div>
         </div>

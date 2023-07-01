@@ -43,9 +43,11 @@ const MobileApp = ({ data }) => {
                 <div className={styles.right}></div>
             </div>
             <div className={styles.sectionTitle}>Keeper Costs</div>
-            {players.map((player) => {
-                return <PlayerRow {...player} />;
-            })}
+            <body className={styles.body}>
+                {players.map((player) => {
+                    return <PlayerRow {...player} />;
+                })}
+            </body>
         </div>
     );
 };

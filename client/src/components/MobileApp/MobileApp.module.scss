@@ -1,7 +1,7 @@
 @import "../../styles/theme.scss";
 
 .mobileApp {
-    background-color: $iu-crimson;
+    background-color: $bsu-dark-gray;
     height: 100vh;
     color: $bsu-cardinal-red;
     font-size: 14px;
@@ -15,8 +15,8 @@ $image-size: 18px;
     display: flex;
     justify-content: space-between;
     padding: 10px 10px;
-    background-color: $iu-cream;
-    color: $iu-base-black;
+    color: $iu-cream;
+    background-color: $iu-crimson;
 }
 
 .left {
@@ -40,6 +40,7 @@ $image-size: 18px;
 .leagueName {
     font-weight: 700;
     letter-spacing: 0.1px;
+    font-size: 15px;
 }
 
 .pages {
@@ -47,6 +48,8 @@ $image-size: 18px;
     justify-content: space-around;
     align-items: center;
     margin-top: 4px;
+    background-color: $iu-cream;
+    width: 100%;
 }
 
 .page {
@@ -65,4 +68,14 @@ $image-size: 18px;
     font-weight: 700;
     margin: 10px 10px;
     color: $iu-cream;
+}
+
+.divider {
+    background-color: $bsu-cardinal-red;
+    height: 1px;
+    width: 80%;
+}
+
+.body {
+    padding: 0 25px;
 }
