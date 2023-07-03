@@ -1,4 +1,6 @@
 import dayjs from "dayjs";
+import cors from "cors";
+
 import _ from "lodash";
 import axios from "axios";
 import express from "express";
@@ -23,6 +25,8 @@ import {
 import { FANTASY_POSITIONS, LEAGUE_ID } from "./config/index.config.js";
 
 const app = express();
+
+app.use(cors());
 
 const HistoryEntry = ({
     playerName,

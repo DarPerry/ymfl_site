@@ -2,7 +2,7 @@ import PlayerRow from "../PlayerRow/PlayerRow";
 import styles from "./MobileApp.module.scss";
 import Select from "react-select";
 import _ from "lodash";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
 import Header from "../Header/Header";
 
@@ -56,7 +56,24 @@ const SelectFilter = ({ title, options, width, filter, setFilter }) => {
     );
 };
 
-const MobileApp = ({ data }) => {
+const MobileApp = () => {
+    const [data, setData] = useState(null);
+
+    console.log("datata");
+
+    useEffect(() => {
+        const getData = async () => {
+            const response = await fetch(
+                "https://indy-ff-site-server.onrender.com/"
+            );
+            const data = await response.json();
+            setData(data);
+        };
+
+        getData();
+    }, []);
+
+    console.log("data", data);
     const [rosterFilter, setRosterFilter] = useState("All");
     const [positionFilter, setPositionFilter] = useState("All");
 
@@ -108,6 +125,8 @@ const MobileApp = ({ data }) => {
             </div>
         );
     };
+
+    if (data === null) return 123;
 
     const { key: sortProp, direction: sortDirection } = sort;
 
@@ -319,7 +338,7 @@ const MobileApp = ({ data }) => {
                         <SelectFilter
                             title="Rostered By"
                             options={[
-                                { value: "All", label: "All" },
+                                { value: "XF", label: "All" },
                                 { value: "Darius", label: "Darius" },
                                 { value: "Nick", label: "Nick" },
                                 { value: "Jack", label: "Jack" },
