@@ -14,6 +14,7 @@ import {
 } from "./services/league.service.js";
 
 const ROUNDS_IN_DRAFT = 18;
+const PORT = process.env.PORT || 1739;
 
 import {
     getAllPlayers,
@@ -407,6 +408,6 @@ app.get("/", async (req, res) => {
     return res.send(await getRostersByTeamId());
 });
 
-// app.listen("0.0.0.0", () => {
-//     console.log("Server is running on port 1738");
-// });
+app.listen(PORT, () => {
+    console.log("Server is running on port 1738");
+});
