@@ -91,6 +91,7 @@ const MobileApp = ({ data }) => {
             Cost: "keeperValueForCurrentTeam",
             Value: "diff",
             ADP: "adp",
+            Name: "name",
         };
 
         return (
@@ -112,7 +113,7 @@ const MobileApp = ({ data }) => {
                     <i
                         className={classNames(
                             `fa-solid fa-caret-${
-                                sort.direction === "asc" ? "up" : "down"
+                                sort.direction === "asc" ? "down" : "up"
                             }`
                         )}
                     />
@@ -310,6 +311,7 @@ const MobileApp = ({ data }) => {
                 <div className={styles.filters}>
                     <div className={styles.filterTitle}>Sort By</div>
                     <div className={styles.sortOptions}>
+                        <SortOption label="Name" />
                         <SortOption label="Cost" />
                         <SortOption label="Value" />
                         <SortOption label="ADP" />
