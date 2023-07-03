@@ -407,6 +407,6 @@ app.get("/", async (req, res) => {
     return res.send(await getRostersByTeamId());
 });
 
-app.listen("0.0.0.0", () => {
-    console.log("Server is running on port 1738");
-});
+// app.listen("0.0.0.0", () => {
+//     console.log("Server is running on port 1738");
+// });
