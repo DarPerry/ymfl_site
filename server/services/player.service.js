@@ -1,11 +1,12 @@
 import { fetchFromSleeperEndpoint } from "../util/api.util.js";
 
-const getAllPlayers = async () => fetchFromSleeperEndpoint(`/players/nfl`);
+export const getAllPlayers = async () =>
+    fetchFromSleeperEndpoint(`/players/nfl`);
 
 const getTrendingPlayers = async () =>
     fetchFromSleeperEndpoint(`/players/nfl/trending`);
 
-const normalizePlayerName = (playerName) => {
+export const normalizePlayerName = (playerName) => {
     return playerName
         ?.replaceAll(/ (?:I+$|JR)/gi, "")
         ?.replaceAll(/[.]/gi, "")

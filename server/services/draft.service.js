@@ -6,13 +6,13 @@ import { normalizePlayerName } from "./player.service.js";
 const getAllDraftsForUser = async (userId, season) =>
     fetchFromSleeperEndpoint(`/user/${userId}/drafts/nfl/${season}`);
 
-const getAllDraftsForLeague = async (leagueId) =>
+export const getAllDraftsForLeague = async (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/drafts`);
 
 const getDraft = async (draftId) =>
     fetchFromSleeperEndpoint(`/draft/${draftId}`);
 
-const getDraftPicks = async (draftId) =>
+export const getDraftPicks = async (draftId) =>
     fetchFromSleeperEndpoint(`/draft/${draftId}/picks`);
 
 const getDraftTradedPicks = async (draftId) =>

@@ -14,7 +14,7 @@ const getAllLeaguesForUser = async (userId, season) =>
 
 const getLeague = (leagueId) => fetchFromSleeperEndpoint(`/league/${leagueId}`);
 
-const getLeagueRosters = (leagueId) =>
+export const getLeagueRosters = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/rosters`);
 
 const getLeagueUsers = (leagueId) =>
@@ -27,7 +27,7 @@ const getLeagueMatchups = (leagueId, week) =>
 const getPlayoffBracket = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/winners_bracket`);
 
-const getLeagueTransactions = (leagueId, week) =>
+export const getLeagueTransactions = (leagueId, week) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/transactions/${week}`);
 
 const getLeagueTradedPicks = (leagueId) =>
@@ -35,7 +35,7 @@ const getLeagueTradedPicks = (leagueId) =>
 
 const getNflState = () => fetchFromSleeperEndpoint(`/state/nfl`);
 
-const getAllLeagueSeasons = async () => {
+export const getAllLeagueSeasons = async () => {
     const yearsLeagueHasExisted = dayjs().diff(
         dayjs(`${YEAR_STARTED}-01-01`),
         "year"

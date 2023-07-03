@@ -1,1 +1,1 @@
-const DOMAIN = "https://api.sleeper.app/v1";
+export const DOMAIN = "https://api.sleeper.app/v1";
