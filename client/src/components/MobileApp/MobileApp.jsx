@@ -79,7 +79,7 @@ const MobileApp = ({ data }) => {
     const [ineligibleFilter, setIneligibleFilter] = useState(true);
 
     const [sort, setSort] = useState({
-        key: "keeperValueForCurrentTeam",
+        key: "name",
         direction: "asc",
     });
 
@@ -110,7 +110,7 @@ const MobileApp = ({ data }) => {
                     <i
                         className={classNames(
                             `fa-solid fa-caret-${
-                                sort.direction === "asc" ? "down" : "up"
+                                sort.direction === "asc" ? "up" : "down"
                             }`
                         )}
                     />
@@ -244,19 +244,22 @@ const MobileApp = ({ data }) => {
                                 console.log(x, rosterFilter);
                                 setRosterFilter(x);
                             }}
-                            options={[
-                                { value: "All", label: "All" },
-                                { value: "Darius", label: "Darius" },
-                                { value: "Nick", label: "Nick" },
-                                { value: "Jack", label: "Jack" },
-                                { value: "Hues", label: "Hues" },
-                                { value: "Quast", label: "Quast" },
-                                { value: "Jeremiah", label: "Jeremiah" },
-                                { value: "Brayden", label: "Brayden" },
-                                { value: "T Cool", label: "T Cool" },
-                                { value: "Bob", label: "Bob" },
-                                { value: "Zack", label: "Zack" },
-                            ]}
+                            options={_.orderBy(
+                                [
+                                    { value: "All", label: "All" },
+                                    { value: "Darius", label: "Darius" },
+                                    { value: "Nick", label: "Nick" },
+                                    { value: "Jack", label: "Jack" },
+                                    { value: "Hues", label: "Hues" },
+                                    { value: "Quast", label: "Quast" },
+                                    { value: "Jeremiah", label: "Jeremiah" },
+                                    { value: "Brayden", label: "Brayden" },
+                                    { value: "T Cool", label: "T Cool" },
+                                    { value: "Bob", label: "Bob" },
+                                    { value: "Zack", label: "Zack" },
+                                ],
+                                "label"
+                            )}
                         />
                         <SelectFilter
                             title="Position"
