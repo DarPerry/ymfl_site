@@ -7,59 +7,6 @@
 
 //Header
 
-$image-size: 38px;
-
-.header {
-    display: flex;
-    padding: 14px 1px;
-    color: $iu-cream;
-    background-color: $iu-crimson;
-}
-
-.middle {
-    display: flex;
-    align-items: center;
-}
-
-.leagueInfo {
-    display: flex;
-}
-
-.leagueImage {
-    background-color: white;
-    width: $image-size;
-    height: $image-size;
-    border-radius: 50%;
-    margin: 0 12px;
-    border: solid 2px white;
-}
-
-.leagueName {
-    font-weight: 700;
-    letter-spacing: 0.1px;
-    font-size: 15px;
-}
-
-.pages {
-    display: flex;
-    align-items: center;
-    background-color: $bsu-white;
-    width: 100%;
-    padding: 6px 15px 0 15px;
-    font-size: 12px;
-    color: $bsu-dark-gray;
-    font-weight: 600;
-    border-bottom: solid 1.5px rgb(229, 229, 229);
-}
-
-.page {
-    // font-size: 0.7rem;
-    // font-weight: 700;
-    // text-transform: uppercase;
-    border-bottom: solid 2px $bsu-cardinal-red;
-    padding: 0 8px 4px 8px;
-}
-
 .sectionTitle {
     font-size: 1rem;
     font-weight: 700;
@@ -84,21 +31,6 @@ $image-size: 38px;
     flex-direction: column;
     padding: 0px 24px;
     margin-top: 10px;
-}
-
-.champ {
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 2px;
-}
-
-.champName {
-    font-weight: 700;
-    margin-left: 4px;
-}
-
-.crownIcon {
-    margin-right: 4px;
 }
 
 .filters2 {

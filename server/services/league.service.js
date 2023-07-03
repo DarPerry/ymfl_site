@@ -9,34 +9,33 @@ const YMFL_LEAGUE_ID = "837484548060192768";
 const LEAGUE_NAME = "Your Mom's Favorite League";
 const JUSTIN_JEFFERSON_PLAYER_ID = "6794";
 
-export const getAllLeaguesForUser = async (userId, season) =>
+const getAllLeaguesForUser = async (userId, season) =>
     fetchFromSleeperEndpoint(`/user/${userId}/leagues/nfl/${season}`);
 
-export const getLeague = (leagueId) =>
-    fetchFromSleeperEndpoint(`/league/${leagueId}`);
+const getLeague = (leagueId) => fetchFromSleeperEndpoint(`/league/${leagueId}`);
 
-export const getLeagueRosters = (leagueId) =>
+const getLeagueRosters = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/rosters`);
 
-export const getLeagueUsers = (leagueId) =>
+const getLeagueUsers = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/users`);
 
-export const getLeagueMatchups = (leagueId, week) =>
+const getLeagueMatchups = (leagueId, week) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/matchups/${week}`);
 
 //TODO: Getting the Playoff Bracket
-export const getPlayoffBracket = (leagueId) =>
+const getPlayoffBracket = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/winners_bracket`);
 
-export const getLeagueTransactions = (leagueId, week) =>
+const getLeagueTransactions = (leagueId, week) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/transactions/${week}`);
 
-export const getLeagueTradedPicks = (leagueId) =>
+const getLeagueTradedPicks = (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/traded_picks`);
 
-export const getNflState = () => fetchFromSleeperEndpoint(`/state/nfl`);
+const getNflState = () => fetchFromSleeperEndpoint(`/state/nfl`);
 
-export const getAllLeagueSeasons = async () => {
+const getAllLeagueSeasons = async () => {
     const yearsLeagueHasExisted = dayjs().diff(
         dayjs(`${YEAR_STARTED}-01-01`),
         "year"
@@ -57,7 +56,7 @@ export const getAllLeagueSeasons = async () => {
     return leaguesSinceInception;
 };
 
-export const getLastCompletedSeason = async () => {
+const getLastCompletedSeason = async () => {
     const allLeagueSeasons = await getAllLeagueSeasons();
 
     return allLeagueSeasons[allLeagueSeasons.length - 1];
@@ -65,7 +64,7 @@ export const getLastCompletedSeason = async () => {
 
 // GET https://api.sleeper.app/v1/user/<user_id>/leagues/<sport>/<season>
 
-export const getLeagueManagers = async (req, res) => {
+const getLeagueManagers = async (req, res) => {
     const currentLeagueId = await fetchFromSleeperEndpoint(
         `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`
     );
@@ -87,6 +86,4 @@ export const getLeagueManagers = async (req, res) => {
 
         return acc;
     }, {});
-
-    return currentRosters;
 };

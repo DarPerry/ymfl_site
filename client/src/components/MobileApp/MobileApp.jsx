@@ -4,19 +4,7 @@ import Select from "react-select";
 import _ from "lodash";
 import { useState } from "react";
 import classNames from "classnames";
-
-const getNumberSuffix = (number) => {
-    switch (number) {
-        case 1:
-            return "st";
-        case 2:
-            return "nd";
-        case 3:
-            return "rd";
-        default:
-            return "th";
-    }
-};
+import Header from "../Header/Header";
 
 const SelectFilter = ({ title, options, width, filter, setFilter }) => {
     return (
@@ -69,9 +57,6 @@ const SelectFilter = ({ title, options, width, filter, setFilter }) => {
 };
 
 const MobileApp = ({ data }) => {
-    const [filterOutIneligiblePlayers, setFilterOutIneligiblePlayers] =
-        useState(true);
-
     const [rosterFilter, setRosterFilter] = useState("All");
     const [positionFilter, setPositionFilter] = useState("All");
 
@@ -166,10 +151,6 @@ const MobileApp = ({ data }) => {
         ({ adp, keeperValueForCurrentTeam }) => adp && keeperValueForCurrentTeam
     );
 
-    const selectStyles = {};
-
-    const FilterRow = () => {};
-
     const hotColdPlayers = _.orderBy(filtered, ["diff", "adp"]).reduce(
         (acc, { playerId }, index) => {
             if (index < hcThreshold) {
@@ -185,53 +166,9 @@ const MobileApp = ({ data }) => {
         {}
     );
 
-    const options = [
-        { value: "chocolate", label: "Chocolate" },
-        { value: "strawberry", label: "Strawberry" },
-        { value: "vanilla", label: "Vanilla" },
-    ];
-
     return (
         <div className={styles.mobileApp}>
-            <div className={styles.header}>
-                <div className={styles.left}></div>
-                <div className={styles.middle}>
-                    <img
-                        className={styles.leagueImage}
-                        src="/images/league-picture.jpg"
-                    />
-                    <div>
-                        <div className={styles.leagueInfo}>
-                            <div className={styles.leagueName}>
-                                The Usubi Boys
-                            </div>
-                        </div>
-                        <div className={styles.champ}>
-                            <i
-                                className={classNames(
-                                    "fa-solid fa-user-crown",
-                                    styles.crownIcon
-                                )}
-                            />
-                            <span>Reigning Champion:</span>
-                            <span className={styles.champName}>
-                                {/* <i
-                                className={classNames(
-                                    "fa-solid fa-crown",
-                                    styles.crownIcon
-                                )}
-                            ></i> */}
-                                Brayden
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.right}></div>
-            </div>
-            <div className={styles.pages}>
-                {/* <div className={styles.page}>Rules</div> */}
-                <div className={styles.page}>Keepers Prices</div>
-            </div>
+            <Header />
             <div className={styles.toolbar}>
                 <div className={styles.filters}>
                     <div className={styles.filterTitle}>Filters</div>
@@ -315,6 +252,7 @@ const MobileApp = ({ data }) => {
                         <SortOption label="Cost" />
                         <SortOption label="Value" />
                         <SortOption label="ADP" />
+                        {/* <SortOption label="Position" /> */}
                     </div>
                 </div>
                 {/* <div className={styles.filters}>

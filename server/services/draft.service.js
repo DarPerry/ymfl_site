@@ -3,22 +3,22 @@ import got from "got";
 import { fetchFromSleeperEndpoint } from "../util/api.util.js";
 import { normalizePlayerName } from "./player.service.js";
 
-export const getAllDraftsForUser = async (userId, season) =>
+const getAllDraftsForUser = async (userId, season) =>
     fetchFromSleeperEndpoint(`/user/${userId}/drafts/nfl/${season}`);
 
-export const getAllDraftsForLeague = async (leagueId) =>
+const getAllDraftsForLeague = async (leagueId) =>
     fetchFromSleeperEndpoint(`/league/${leagueId}/drafts`);
 
-export const getDraft = async (draftId) =>
+const getDraft = async (draftId) =>
     fetchFromSleeperEndpoint(`/draft/${draftId}`);
 
-export const getDraftPicks = async (draftId) =>
+const getDraftPicks = async (draftId) =>
     fetchFromSleeperEndpoint(`/draft/${draftId}/picks`);
 
-export const getDraftTradedPicks = async (draftId) =>
+const getDraftTradedPicks = async (draftId) =>
     fetchFromSleeperEndpoint(`/draft/${draftId}/traded_picks`);
 
-export const getPlayerADPs = async () => {
+const getPlayerADPs = async () => {
     const playerAdpMap = {};
 
     const { body: html } = await got(

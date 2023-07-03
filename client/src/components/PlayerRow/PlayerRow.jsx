@@ -52,11 +52,11 @@ const HotColdIcon = ({ type }) => {
 
     return type === "HOT" ? (
         <div className={classNames(styles.hot, styles.hcIcon)}>
-            <i class="fa-duotone fa-fire" />
+            <i className="fa-duotone fa-fire" />
         </div>
     ) : (
         <div className={classNames(styles.cold, styles.hcIcon)}>
-            <i class="fa-duotone fa-snowflake" />
+            <i className="fa-duotone fa-snowflake" />
         </div>
     );
 };
@@ -84,7 +84,6 @@ const PlayerRow = ({
     adp,
     hotColdPlayers,
     playerId: id,
-    diff,
 }) => {
     return (
         <div className={styles.playerRow}>
@@ -146,7 +145,7 @@ const PlayerRow = ({
                                     </span>
                                 </div>
                             ) : (
-                                <i class="fa-solid fa-ban" />
+                                <i className="fa-solid fa-ban" />
                             )}
                         </div>
                         <div className={styles.keeperLabel}>

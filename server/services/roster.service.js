@@ -1,7 +1,6 @@
-import _ from "lodash";
 import { getLastCompletedSeason, getLeagueRosters } from "./league.service.js";
 
-export const getRostersFromLastCompletedSeason = async () => {
+const getRostersFromLastCompletedSeason = async () => {
     const { league_id } = await getLastCompletedSeason();
 
     const leagueRosters = await getLeagueRosters(league_id);
