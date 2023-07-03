@@ -96,7 +96,7 @@ const getValidPlayers = async () => {
     const additionalIdsToInclude = ["jamesonwilliams"];
 
     const players = Object.values(allPlayers).reduce((acc, player) => {
-        const { status, position, active, search_full_name } = player;
+        const { status, position, active } = player;
 
         const isActive =
             additionalIdsToInclude.includes(player.search_full_name) ||
@@ -189,7 +189,7 @@ const getTransactionByPlayerIDs = async () => {
 
     return _.flatten(transactions)
         .filter(({ status }) => status === "complete")
-        .reduce((acc, { leg, adds, drops, type, season, ...r }) => {
+        .reduce((acc, { leg, adds, drops, type, season }) => {
             Object.entries(adds || {}).forEach(([playerId, rosterId]) => {
                 if (!acc[playerId]) {
                     acc[playerId] = [];
@@ -366,11 +366,9 @@ const getAllPlayersTransactions = async () => {
             keeperValueForCurrentTeam,
             // transactions,
             diff:
-                keeperValueForCurrentTeam <= 0
+                keeperValueForCurrentTeam <= 0 || !adr
                     ? 999
-                    : adr
-                    ? adr - keeperValueForCurrentTeam
-                    : 999,
+                    : adr - keeperValueForCurrentTeam,
         };
     });
 };

@@ -1,20 +1,15 @@
-import styles from "./App.module.scss";
-import NavBar from "./components/NavBar/NavBar";
-import Card from "./components/Card/Card";
-import _ from "lodash";
+import PropTypes from "prop-types";
 import classNames from "classnames";
-import MobileApp from "./components/MobileApp/MobileApp";
 
-const payIn = 50;
-const teamCount = 10;
-const payoutConstant = 3.26;
+import styles from "./App.module.scss";
+
+import MobileApp from "./components/MobileApp/MobileApp";
 
 const PlayerCard = ({
     name,
     position,
     team,
     keeperValueForCurrentTeam: keeperCost,
-    ...r
 }) => {
     const teamColors = {
         ARI: "#9b2743",
@@ -94,6 +89,13 @@ const PlayerCard = ({
             </div>
         </div>
     );
+};
+
+PlayerCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    team: PropTypes.string.isRequired,
+    keeperValueForCurrentTeam: PropTypes.number.isRequired,
 };
 
 const data = {
@@ -2142,30 +2144,8 @@ const data = {
         },
     ],
 };
-function App() {
-    return <MobileApp data={data} />;
-    return (
-        <div className={styles.app}>
-            <NavBar />
-            <div className={styles.content}>
-                {[
-                    ...data[1],
-                    ...data[2],
-                    ...data[3],
-                    ...data[4],
-                    ...data[5],
-                    ...data[6],
-                    ...data[7],
-                    ...data[8],
-                    ...data[9],
-                ].map((player) => {
-                    return <PlayerCard {...player} />;
-                })}
-                {/* <Card keeperData={data} /> */}
-            </div>
-        </div>
-    );
-}
+
+const App = () => <MobileApp data={data} />;
 
 export default App;
 
