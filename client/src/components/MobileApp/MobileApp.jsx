@@ -6,19 +6,16 @@ import { useState } from "react";
 import classNames from "classnames";
 
 const getNumberSuffix = (number) => {
-    const lastDigit = number % 10;
-
-    if (lastDigit === 1) {
-        return "st";
-    } else if (lastDigit === 2) {
-        return "nd";
-    } else if (lastDigit === 3) {
-        return "rd";
-    } else {
-        return "th";
+    switch (number) {
+        case 1:
+            return "st";
+        case 2:
+            return "nd";
+        case 3:
+            return "rd";
+        default:
+            return "th";
     }
-
-    return "";
 };
 
 const SelectFilter = ({ title, options, width, filter, setFilter }) => {
