@@ -96,3 +96,24 @@
     font-size: 10px;
     color: #eeeeee;
 }
+
+.loader {
+    // font-size: 140px;
+    // margin: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.loaderText {
+    font-size: 16px;
+    font-weight: 700;
+    color: $bsu-dark-gray;
+}
+
+.loaderIcon {
+    margin-top: 42px;
+    font-size: 48px;
+    width: fit-content;
+}
