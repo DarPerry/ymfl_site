@@ -58,13 +58,21 @@ $image-size: 38px;
     color: $bsu-dark-gray;
     font-weight: 600;
     border-bottom: solid 1.5px rgb(229, 229, 229);
+    gap: 20px;
 }
 
 .page {
     // font-size: 0.7rem;
     // font-weight: 700;
     // text-transform: uppercase;
-    border-bottom: solid 2px $bsu-cardinal-red;
+    border-bottom: solid 2px transparent;
     padding: 0 8px 4px 8px;
     line-height: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: $bsu-dark-gray;
+
+    &.active {
+        border-color: $bsu-cardinal-red;
+    }
 }

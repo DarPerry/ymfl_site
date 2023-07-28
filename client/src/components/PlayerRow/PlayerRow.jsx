@@ -149,7 +149,7 @@ const PlayerRow = ({
                             )}
                         </div>
                         <div className={styles.keeperLabel}>
-                            {!keeperCost ? "Can't Be Kept" : " Round Pick"}
+                            {!keeperCost ? "Ineligible" : " Round Pick"}
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,9 @@ const PlayerRow = ({
                         adp && keeperCost - adr < 0 && styles.red
                     )}
                 >
-                    {!adr || !keeperCost ? "N/A" : keeperCost - adr} Round Value
+                    {!adr || !keeperCost
+                        ? " "
+                        : `${keeperCost - adr} Round Value`}
                 </div>
             </div>
         </div>

@@ -1,8 +1,32 @@
 import classNames from "classnames";
 
 import styles from "./Header.module.scss";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const pageLabelMap = {
+    keeperPrices: "Keeper Prices",
+    rules: "Rules",
+};
 
 const Header = () => {
+    const [activePage, setActivePage] = useState("keeperPrices");
+    console.log(activePage);
+
+    const PageNavOption = ({ pageKey }) => {
+        const active = activePage === pageKey;
+
+        return (
+            <Link
+                className={classNames(styles.page, active && styles.active)}
+                onClick={() => setActivePage(pageKey)}
+                to={pageKey}
+            >
+                {pageLabelMap[pageKey]}
+            </Link>
+        );
+    };
+
     return (
         <header>
             <div className={styles.header}>
@@ -31,8 +55,8 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.pages}>
-                {/* <div className={styles.page}>Rules</div> */}
-                <div className={styles.page}>Keepers Prices</div>
+                <PageNavOption pageKey="keeperPrices" />
+                <PageNavOption pageKey="rules" />
             </div>
         </header>
     );
