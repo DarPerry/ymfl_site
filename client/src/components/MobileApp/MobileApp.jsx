@@ -1,7 +1,7 @@
 import styles from "./MobileApp.module.scss";
 
 import { useEffect, useState } from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 
 import Page from "../Page/Page";
 import Header from "../Header/Header";
@@ -24,22 +24,24 @@ const MobileApp = () => {
     }, []);
 
     return (
-        <div className={styles.mobileApp}>
-            <Header />
-            <Routes>
-                <Route
-                    path="/"
-                    element={<Page isLoading={data === null} data={data} />}
-                />
-                <Route
-                    index
-                    path="keeperPrices"
-                    element={<KeeperPricesPage data={data} />}
-                />
-                <Route path="rules" element={<RulesPage />} />
-            </Routes>
-            <Outlet />
-        </div>
+        <BrowserRouter>
+            <div className={styles.mobileApp}>
+                <Header />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<Page isLoading={data === null} data={data} />}
+                    />
+                    <Route
+                        index
+                        path="keeperPrices"
+                        element={<KeeperPricesPage data={data} />}
+                    />
+                    <Route path="rules" element={<RulesPage />} />
+                </Routes>
+                <Outlet />
+            </div>
+        </BrowserRouter>
     );
 };
 
