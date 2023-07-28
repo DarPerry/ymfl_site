@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import PositionBadge from "../PositionBadge/PositionBadge";
 import styles from "./PlayerRow.module.scss";
 
 const teamColors = {
@@ -115,14 +116,8 @@ const PlayerRow = ({
                         <span className={styles.playerOwner}>{rosteredBy}</span>
                     </div>
                     <div className={styles.badges}>
-                        <div
-                            className={classNames(
-                                styles.playerPosition,
-                                styles[position]
-                            )}
-                        >
-                            {position}
-                        </div>
+                        <PositionBadge position={position} filled  />
+
                         <div className={classNames(styles.playerPosition)}>
                             {team || "FA"}
                         </div>

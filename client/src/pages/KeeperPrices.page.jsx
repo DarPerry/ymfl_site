@@ -7,6 +7,7 @@ import Page from "../components/Page/Page";
 import PlayerRow from "../components/PlayerRow/PlayerRow";
 import { getPlayersFromApiResponse } from "../helpers/players.helper";
 import classNames from "classnames";
+import PositionBadge from "../components/PositionBadge/PositionBadge";
 
 const SelectFilter = ({ title, options, width, filter, setFilter }) => {
     return (
@@ -62,7 +63,7 @@ const KeeperPricesPage = ({ data }) => {
     console.log("data", data);
 
     const [rosterFilter, setRosterFilter] = useState("All");
-    const [positionFilter, setPositionFilter] = useState("All");
+    const [positionFilter, setPositionFilter] = useState("ALL");
 
     const [valueFilter, setValueFilter] = useState(false);
     const [ineligibleFilter, setIneligibleFilter] = useState(true);
@@ -185,22 +186,28 @@ const KeeperPricesPage = ({ data }) => {
                                     "label"
                                 )}
                             />
-                            <SelectFilter
-                                title="Position"
-                                width={75}
-                                filter={positionFilter}
-                                setFilter={(x) => setPositionFilter(x)}
-                                options={[
-                                    { value: "All", label: "All" },
-                                    { value: "QB", label: "QB" },
-                                    { value: "RB", label: "RB" },
-                                    { value: "WR", label: "WR" },
-                                    { value: "TE", label: "TE" },
-                                    { value: "FLEX", label: "FLEX" },
-                                    { value: "K", label: "K" },
-                                    { value: "DEF", label: "DEF" },
-                                ]}
-                            />
+                        </div>
+                        <div className={styles.filter}>
+                            <div className={styles.filterLabel}>Position</div>
+                            <div className={styles.filterBadges}>
+                                {[
+                                    "ALL",
+                                    "QB",
+                                    "RB",
+                                    "WR",
+                                    "TE",
+                                    "K",
+                                    "DEF",
+                                ].map((position) => (
+                                    <PositionBadge
+                                        position={position}
+                                        filled={positionFilter === position}
+                                        onClick={() =>
+                                            setPositionFilter(position)
+                                        }
+                                    />
+                                ))}
+                            </div>
                         </div>
                         <div className={styles.checkboxes}>
                             <div>
@@ -242,122 +249,6 @@ const KeeperPricesPage = ({ data }) => {
                             {/* <SortOption label="Position" /> */}
                         </div>
                     </div>
-                    {/* <div className={styles.filters}>
-  Filters
-  <div className={styles.filters2}>
-      <SelectFilter
-          title="Sort By"
-          options={[
-              { value: "All", label: "All" },
-              { value: "Darius", label: "Darius" },
-              { value: "Nick", label: "Nick" },
-              { value: "Jack", label: "Jack" },
-              { value: "Hues", label: "Hues" },
-              { value: "Quast", label: "Quast" },
-              { value: "Jeremiah", label: "Jeremiah" },
-              { value: "Brayden", label: "Brayden" },
-              { value: "T Cool", label: "T Cool" },
-              { value: "Bob", label: "Bob" },
-              { value: "Zack", label: "Zack" },
-          ]}
-      />
-      <SelectFilter
-          title="Position"
-          options={[
-              { value: "All", label: "All" },
-              { value: "QB", label: "QB" },
-              { value: "RB", label: "RB" },
-              { value: "WR", label: "WR" },
-              { value: "TE", label: "TE" },
-              { value: "FlEX", label: "FLEX" },
-              { value: "K", label: "K" },
-              { value: "DEF", label: "DEF" },
-          ]}
-      />
-      <div>
-          <input
-              type="checkbox"
-              value={filterOutIneligiblePlayers}
-              onChange={(checked) => {
-                  console.log(checked);
-                  setFilterOutIneligiblePlayers(checked);
-              }}
-              defaultChecked
-          />
-          Only Show Players Who Can Be Kept
-      </div>
-      <div>
-          <input
-              type="checkbox"
-              value={filterOutIneligiblePlayers}
-              onChange={(checked) => {
-                  console.log(checked);
-                  setFilterOutIneligiblePlayers(checked);
-              }}
-              defaultChecked
-          />
-          Only Show Postive Value Players
-      </div>
-  </div>
-</div>
-<div className={styles.filters}>
-  Filters
-  <div className={styles.filters2}>
-      <SelectFilter
-          title="Rostered By"
-          options={[
-              { value: "XF", label: "All" },
-              { value: "Darius", label: "Darius" },
-              { value: "Nick", label: "Nick" },
-              { value: "Jack", label: "Jack" },
-              { value: "Hues", label: "Hues" },
-              { value: "Quast", label: "Quast" },
-              { value: "Jeremiah", label: "Jeremiah" },
-              { value: "Brayden", label: "Brayden" },
-              { value: "T Cool", label: "T Cool" },
-              { value: "Bob", label: "Bob" },
-              { value: "Zack", label: "Zack" },
-          ]}
-      />
-      <SelectFilter
-          title="Position"
-          options={[
-              { value: "All", label: "All" },
-              { value: "QB", label: "QB" },
-              { value: "RB", label: "RB" },
-              { value: "WR", label: "WR" },
-              { value: "TE", label: "TE" },
-              { value: "FlEX", label: "FLEX" },
-              { value: "K", label: "K" },
-              { value: "DEF", label: "DEF" },
-          ]}
-      />
-      <div>
-          <input
-              type="checkbox"
-              value={filterOutIneligiblePlayers}
-              onChange={(checked) => {
-                  console.log(checked);
-                  setFilterOutIneligiblePlayers(checked);
-              }}
-              defaultChecked
-          />
-          Only Show Players Who Can Be Kept
-      </div>
-      <div>
-          <input
-              type="checkbox"
-              value={filterOutIneligiblePlayers}
-              onChange={(checked) => {
-                  console.log(checked);
-                  setFilterOutIneligiblePlayers(checked);
-              }}
-              defaultChecked
-          />
-          Only Show Postive Value Players
-      </div>
-  </div>
-</div> */}
                 </div>
                 <body className={styles.body}>
                     {players.map((player) => {

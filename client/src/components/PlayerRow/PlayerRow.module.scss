@@ -60,47 +60,6 @@ $player-image-size: 63px;
     background-color: $bsu-light-gray;
     color: $bsu-dark-gray;
     border: solid 2px $bsu-dark-gray;
-
-    &.QB {
-        background-color: $qb-color;
-        border-color: $qb-color;
-        color: $iu-cream;
-    }
-
-    &.RB {
-        background-color: $rb-color;
-        border-color: $rb-color;
-
-        color: $iu-cream;
-    }
-
-    &.WR {
-        background-color: $wr-color;
-        border-color: $wr-color;
-
-        color: $iu-cream;
-    }
-
-    &.TE {
-        background-color: $te-color;
-        border-color: $te-color;
-
-        color: $iu-cream;
-    }
-
-    &.K {
-        background-color: $k-color;
-        border-color: $k-color;
-
-        color: $iu-cream;
-    }
-
-    &.DEF {
-        background-color: $def-color;
-        border-color: $def-color;
-
-        color: $iu-cream;
-    }
 }
 .rosteredBy {
     font-size: 0.65rem;

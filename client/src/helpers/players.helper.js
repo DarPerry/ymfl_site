@@ -37,7 +37,7 @@ export const getPlayersFromApiResponse = (
             const value = keeperValueForCurrentTeam - adr;
 
             return (
-                (positionFilter === "All" || isFilteredPosition) &&
+                (positionFilter === "ALL" || isFilteredPosition) &&
                 (rosterFilter === "All" || rosteredBy === rosterFilter) &&
                 (!ineligibleFilter || keeperValueForCurrentTeam) &&
                 (!valueFilter || (value >= 0 && adp))
