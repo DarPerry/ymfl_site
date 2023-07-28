@@ -1,7 +1,7 @@
 import styles from "./MobileApp.module.scss";
 
 import { useEffect, useState } from "react";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 import Page from "../Page/Page";
 import Header from "../Header/Header";
@@ -24,7 +24,6 @@ const MobileApp = () => {
     }, []);
 
     return (
-        <BrowserRouter>
             <div className={styles.mobileApp}>
                 <Header />
                 <Routes>
@@ -41,7 +40,6 @@ const MobileApp = () => {
                 </Routes>
                 <Outlet />
             </div>
-        </BrowserRouter>
     );
 };
 
