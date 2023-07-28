@@ -148,16 +148,12 @@ const KeeperPricesPage = ({ data }) => {
                 <div className={styles.toolbar}>
                     <div className={styles.filters}>
                         <div className={styles.filterTitle}>Filters</div>
-                        <div className={styles.filters2}>
-                            <SelectFilter
-                                title="Rostered By"
-                                width={115}
-                                filter={rosterFilter}
-                                setFilter={(x) => {
-                                    console.log(x, rosterFilter);
-                                    setRosterFilter(x);
-                                }}
-                                options={_.orderBy(
+                        <div className={styles.filter}>
+                            <div className={styles.filterLabel}>
+                                Rostered By
+                            </div>
+                            <div className={styles.filterBadges}>
+                                {_.orderBy(
                                     [
                                         { value: "All", label: "All" },
                                         {
@@ -182,10 +178,18 @@ const KeeperPricesPage = ({ data }) => {
                                         },
                                         { value: "Bob", label: "Bob" },
                                         { value: "Zack", label: "Zack" },
+                                        // { value: "Joel", label: "Joel" },
+                                        // { value: "Tri", label: "Tri" },
                                     ],
                                     "label"
-                                )}
-                            />
+                                ).map(({ value }) => (
+                                    <PositionBadge
+                                        position={value}
+                                        filled={rosterFilter === value}
+                                        onClick={() => setRosterFilter(value)}
+                                    />
+                                ))}
+                            </div>
                         </div>
                         <div className={styles.filter}>
                             <div className={styles.filterLabel}>Position</div>

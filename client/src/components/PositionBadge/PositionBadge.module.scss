@@ -13,17 +13,15 @@
     border: solid 2px $bsu-dark-gray;
     cursor: pointer;
 
-    &.ALL {
-        &.filled {
-            background-color: $bsu-dark-gray;
-            border-color: $bsu-dark-gray;
-            color: $iu-cream;
-        }
-
+    &.filled {
+        background-color: $bsu-dark-gray;
         border-color: $bsu-dark-gray;
-        background-color: $iu-cream;
-        color: $bsu-dark-gray;
+        color: $iu-cream;
     }
+
+    border-color: $bsu-dark-gray;
+    background-color: $iu-cream;
+    color: $bsu-dark-gray;
 
     &.QB {
         &.filled {
