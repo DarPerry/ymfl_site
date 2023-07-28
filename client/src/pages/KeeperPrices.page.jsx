@@ -59,6 +59,8 @@ const SelectFilter = ({ title, options, width, filter, setFilter }) => {
 };
 
 const KeeperPricesPage = ({ data }) => {
+    console.log("data", data);
+
     const [rosterFilter, setRosterFilter] = useState("All");
     const [positionFilter, setPositionFilter] = useState("All");
 

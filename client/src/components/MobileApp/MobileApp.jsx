@@ -23,23 +23,22 @@ const MobileApp = () => {
         getData();
     }, []);
 
+    console.log(1, data);
+
     return (
-            <div className={styles.mobileApp}>
-                <Header />
-                <Routes>
-                    <Route
-                        path="/"
-                        element={<Page isLoading={data === null} data={data} />}
-                    />
-                    <Route
-                        index
-                        path="keeperPrices"
-                        element={<KeeperPricesPage data={data} />}
-                    />
-                    <Route path="rules" element={<RulesPage />} />
-                </Routes>
-                <Outlet />
-            </div>
+        <div className={styles.mobileApp}>
+            <Header />
+            <Routes>
+                <Route path="/" element={<KeeperPricesPage data={data} />} />
+                <Route
+                    index
+                    path="keeperPrices"
+                    element={<KeeperPricesPage data={data} />}
+                />
+                <Route path="rules" element={<RulesPage />} />
+            </Routes>
+            <Outlet />
+        </div>
     );
 };
 
