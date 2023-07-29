@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import PositionBadge from "../PositionBadge/PositionBadge";
 import styles from "./PlayerRow.module.scss";
+import { getSnakeDraftPick } from "../../helpers/draft.helper";
 
 const teamColors = {
     CLE: "#fb4f14",
@@ -75,6 +76,21 @@ const getNumberSuffix = (number) => {
     }
 };
 
+const rosteredByPickMap = {
+    Joel: 1,
+    Tri: 2,
+    Hues: 3,
+    Jack: 4,
+    Jeremiah: 5,
+    Bob: 6,
+    "T Cool": 7,
+    Darius: 8,
+    Quast: 9,
+    Zack: 10,
+    Nick: 11,
+    Brayden: 12,
+};
+
 const PlayerRow = ({
     keeperValueForCurrentTeam: keeperCost,
     name,
@@ -86,6 +102,13 @@ const PlayerRow = ({
     hotColdPlayers,
     playerId: id,
 }) => {
+    console.log(name);
+
+    const keeperAdpCost = getSnakeDraftPick(
+        rosteredByPickMap[rosteredBy],
+        keeperCost
+    );
+
     return (
         <div className={styles.playerRow}>
             <div className={styles.left2}>
@@ -116,20 +139,22 @@ const PlayerRow = ({
                         <span className={styles.playerOwner}>{rosteredBy}</span>
                     </div>
                     <div className={styles.badges}>
-                        <PositionBadge position={position} filled  />
+                        <PositionBadge position={position} filled />
 
                         <div className={classNames(styles.playerPosition)}>
                             {team || "FA"}
                         </div>
                         <div className={classNames(styles.playerPosition)}>
-                            ADP {adp || "UDFA"}
+                            ADP {adp || "UDFA"} ({adr}
+                            {getNumberSuffix(adr)})
                         </div>
-                        <HotColdIcon type={hotColdPlayers[id]} />
                     </div>
                 </div>
             </div>
             <div className={styles.right}>
                 <div className={styles.keeperCost}>
+                    <HotColdIcon type={hotColdPlayers[id]} />
+
                     <div className={styles.inside}>
                         <div className={styles.keeperValue}>
                             {keeperCost ? (

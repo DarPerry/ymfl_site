@@ -83,6 +83,7 @@ $player-image-size: 63px;
     height: fit-content;
     padding: 6px;
     width: 61px;
+    position: relative;
 }
 
 .keeperValue {
@@ -144,7 +145,10 @@ $player-image-size: 63px;
     align-items: center;
     border: solid 2px transparent;
     box-sizing: border-box;
-
+    position: absolute;
+    left: 46px;
+    top: -4px;
+    
     i {
         font-size: 10px;
         display: flex;
