@@ -9,59 +9,7 @@ import { getPlayersFromApiResponse } from "../helpers/players.helper";
 import classNames from "classnames";
 import PositionBadge from "../components/PositionBadge/PositionBadge";
 
-const SelectFilter = ({ title, options, width, filter, setFilter }) => {
-    return (
-        <div>
-            <div className={styles.filterLabel}>{title}</div>
-            <Select
-                styles={{
-                    control: (baseStyles, state) => ({
-                        ...baseStyles,
-                        borderColor: "gray",
-                        backgroundColor: "#eeeeee",
-                        color: "rgb(102, 102, 102)",
-                        fontSize: "12px",
-                        fontWeight: "400",
-                        width: `${width}px`,
-                        height: "fit-content",
-                        minHeight: "0",
-                    }),
-                    valueContainer: (baseStyles, state) => ({
-                        ...baseStyles,
-                        padding: "0 10px",
-                    }),
-
-                    indicatorsContainer: (baseStyles, state) => ({
-                        padding: "0px",
-                        "> div": {
-                            padding: "0px",
-                        },
-                    }),
-
-                    input: (baseStyles, state) => ({
-                        ...baseStyles,
-                        padding: "2px",
-                        margin: "0",
-                    }),
-                    indicatorSeparator: (baseStyles, state) => ({
-                        ...baseStyles,
-                        display: "none",
-                    }),
-                }}
-                options={options}
-                value={{ value: filter, label: filter }}
-                defaultValue={{ value: "All", label: "All" }}
-                onChange={({ value }) => {
-                    setFilter(value);
-                }}
-            />
-        </div>
-    );
-};
-
 const KeeperPricesPage = ({ data }) => {
-    console.log("data", data);
-
     const [rosterFilter, setRosterFilter] = useState("All");
     const [positionFilter, setPositionFilter] = useState("ALL");
 
@@ -72,6 +20,13 @@ const KeeperPricesPage = ({ data }) => {
         key: "adp",
         direction: "asc",
     });
+
+    const keyMap = {
+        Cost: "keeperValueForCurrentTeam",
+        Value: "diff",
+        ADP: "adp",
+        Name: "name",
+    };
 
     const SortOption = ({ label }) => {
         const keyMap = {
@@ -246,10 +201,55 @@ const KeeperPricesPage = ({ data }) => {
                     <div className={styles.filters}>
                         <div className={styles.filterTitle}>Sort By</div>
                         <div className={styles.sortOptions}>
-                            <SortOption label="Name" />
-                            <SortOption label="Cost" />
-                            <SortOption label="Value" />
-                            <SortOption label="ADP" />
+                            <div className={styles.left}>
+                                {["Name", "Cost", "Value", "ADP"].map(
+                                    (label) => (
+                                        <PositionBadge
+                                            position={label}
+                                            filled={sort.key === keyMap[label]}
+                                            onClick={() =>
+                                                setSort({
+                                                    ...sort,
+                                                    key: keyMap[label],
+                                                })
+                                            }
+                                        />
+                                    )
+                                )}
+                            </div>
+
+                            <PositionBadge
+                                sortBadge
+                                position={
+                                    <>
+                                        <i
+                                            className={classNames(
+                                                `fa-solid fa-caret-${
+                                                    sort.direction === "asc"
+                                                        ? "up"
+                                                        : "down"
+                                                }`,
+                                                styles.arrow
+                                            )}
+                                        />
+
+                                        {sort.direction === "asc"
+                                            ? "ASC"
+                                            : "DESC"}
+                                    </>
+                                }
+                                filled={true}
+                                onClick={() =>
+                                    setSort({
+                                        ...sort,
+                                        direction:
+                                            sort.direction === "desc"
+                                                ? "asc"
+                                                : "desc",
+                                    })
+                                }
+                            />
+
                             {/* <SortOption label="Position" /> */}
                         </div>
                     </div>

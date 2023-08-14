@@ -12,6 +12,8 @@
     color: $bsu-dark-gray;
     border: solid 2px $bsu-dark-gray;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
 
     &.filled {
         background-color: $bsu-dark-gray;
@@ -94,4 +96,8 @@
         background-color: $iu-cream;
         color: $def-color;
     }
+}
+
+.sortBadge {
+    width: 50px;
 }
