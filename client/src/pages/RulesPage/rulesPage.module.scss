@@ -5,7 +5,7 @@
     display: flex;
     margin-top: 12px;
     justify-content: space-between;
-    padding: 8px 10px;
+    padding: 10px 12px;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px 0px,
         rgba(192, 192, 192, 0.3) 0px 0px 24px 0px;
@@ -18,7 +18,7 @@
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 4px;
-    color: $bsu-cardinal-red;
+    color: $iu-crimson;
 }
 
 .body {
@@ -30,4 +30,48 @@
 .list {
     display: flex;
     flex-direction: column;
+    gap: 6px;
+}
+.listHeader {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: $bsu-cardinal-red;
+    margin-bottom: 8px;
+}
+
+.newBadge {
+    background-color: $iu-midnight;
+    color: $iu-cream;
+    font-size: 8px;
+    font-weight: 600;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-right: 4px;
+    width: fit-content;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    height: fit-content;
+
+    &:before {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "";
+        margin-right: 6px;
+        font-size: 24px;
+        width: 5px;
+        height: 5px;
+        background-color: $bsu-dark-gray;
+        border-radius: 100%;
+    }
+}
+
+.bolded {
+    margin-left: 4px;
 }
