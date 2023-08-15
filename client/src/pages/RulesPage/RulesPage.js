@@ -3,6 +3,7 @@ import Page from "../../components/Page/Page";
 
 import styles from "./RulesPage.module.scss";
 
+// eslint-disable-next-line react/prop-types
 const RuleCard = ({ children, title }) => {
     return (
         <div className={styles.rule}>
