@@ -14,7 +14,7 @@ const RuleCard = ({ children, title }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={styles.rule} onClick={() => setIsOpen(true)}>
+        <div className={styles.rule} onClick={() => setIsOpen(!isOpen)}>
             <div className={styles.title}>
                 <i
                     className={classNames(
