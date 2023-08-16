@@ -1,8 +1,10 @@
 import classNames from "classnames";
-import Page from "../../components/Page/Page";
 
 import styles from "./RulesPage.module.scss";
 
+import Page from "../../components/Page/Page";
+
+// eslint-disable-next-line react/prop-types
 const RuleCard = ({ children, title }) => {
     return (
         <div className={styles.rule}>
@@ -23,10 +25,6 @@ const RulesList = ({ header, children, showDivider }) => {
             <ul className={styles.list}>{children}</ul>
         </div>
     );
-};
-
-const RulesDivider = () => {
-    return <div className={styles.divider} />;
 };
 
 const RulesListItem = ({ text, bolded, isNew, isUpdated }) => {
