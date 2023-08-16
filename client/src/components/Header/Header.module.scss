@@ -71,6 +71,7 @@ $image-size: 38px;
     cursor: pointer;
     text-decoration: none;
     color: $bsu-dark-gray;
+    width: fit-content;
 
     &.active {
         border-color: $bsu-cardinal-red;
