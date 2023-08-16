@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 import Page from "../../components/Page/Page";
-import styles from "./RulesPage.module.scss";
+import styles from "../RulesPage.module.scss";
 
 // const styles = {};
 
