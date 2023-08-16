@@ -36,8 +36,6 @@ const RulesListItem = ({ text, bolded, isNew, isUpdated }) => {
 };
 
 const RulesPage = () => {
-    return 1;
-
     return (
         <Page>
             <RuleCard title={"Entry Fee & Payouts"}>
