@@ -14,14 +14,13 @@ const RuleCard = ({ children, title }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={styles.rule}>
+        <div className={styles.rule} onClick={() => setIsOpen(!isOpen)}>
             <div className={styles.title}>
                 <i
                     className={classNames(
                         `fa fa-${isOpen ? "minus" : "plus"}`,
                         styles.icon
                     )}
-                    onClick={() => setIsOpen(!isOpen)}
                 />
                 <div>{title}</div>
             </div>
@@ -206,6 +205,69 @@ const RulesPage = () => {
                     <RulesListItem text={"Fumble"} bolded={-1} />
                     <RulesListItem text={"Fumble Lost"} bolded={-1} />
                     <RulesListItem text={"Fumble Recovery TD"} bolded={6} />
+                </RulesList>
+            </RuleCard>
+
+            <RuleCard title={"Keeper Rules"}>
+                <RulesList header="Overview" showDivider>
+                    <RulesListItem
+                        text={"Passing Yards"}
+                        bolded={"0.04 per Yard / 1 per 25 Yards"}
+                    />
+                    <RulesListItem text={"Passing TD"} bolded={6} />
+                    <RulesListItem text={"Pass Intercepted"} bolded={-2} />
+                    <RulesListItem text={"2-PT Conversion"} bolded={2} />
+                    <RulesListItem text={"Pass Completed"} bolded={0.1} isNew />
+                    <RulesListItem
+                        text={"40+ Yard TD Bonus"}
+                        bolded={2}
+                        isNew
+                    />
+                    <RulesListItem
+                        text={"Pick 6 Thrown"}
+                        bolded={-2}
+                        isProposed
+                    />
+                </RulesList>
+                <RulesList header="Player Costs" showDivider>
+                    <RulesListItem
+                        text={"Passing Yards"}
+                        bolded={"0.04 per Yard / 1 per 25 Yards"}
+                    />
+                    <RulesListItem text={"Passing TD"} bolded={6} />
+                    <RulesListItem text={"Pass Intercepted"} bolded={-2} />
+                    <RulesListItem text={"2-PT Conversion"} bolded={2} />
+                    <RulesListItem text={"Pass Completed"} bolded={0.1} isNew />
+                    <RulesListItem
+                        text={"40+ Yard TD Bonus"}
+                        bolded={2}
+                        isNew
+                    />
+                    <RulesListItem
+                        text={"Pick 6 Thrown"}
+                        bolded={-2}
+                        isProposed
+                    />
+                </RulesList>
+                <RulesList header="Draft Lottery" showDivider>
+                    <RulesListItem
+                        text={"Passing Yards"}
+                        bolded={"0.04 per Yard / 1 per 25 Yards"}
+                    />
+                    <RulesListItem text={"Passing TD"} bolded={6} />
+                    <RulesListItem text={"Pass Intercepted"} bolded={-2} />
+                    <RulesListItem text={"2-PT Conversion"} bolded={2} />
+                    <RulesListItem text={"Pass Completed"} bolded={0.1} isNew />
+                    <RulesListItem
+                        text={"40+ Yard TD Bonus"}
+                        bolded={2}
+                        isNew
+                    />
+                    <RulesListItem
+                        text={"Pick 6 Thrown"}
+                        bolded={-2}
+                        isProposed
+                    />
                 </RulesList>
             </RuleCard>
         </Page>
