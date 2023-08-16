@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 import Page from "../../components/Page/Page";
 import styles from "../RulesPage.module.scss";
+import { useState } from "react";
 
 // const styles = {};
 
@@ -10,10 +11,21 @@ import styles from "../RulesPage.module.scss";
 
 // eslint-disable-next-line react/prop-types
 const RuleCard = ({ children, title }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className={styles.rule}>
-            <div className={styles.title}>{title}</div>
-            <div className={styles.body}>{children}</div>
+            <div className={styles.title}>
+                <i
+                    className={classNames(
+                        `fa fa-${isOpen ? "minus" : "plus"}`,
+                        styles.icon
+                    )}
+                    onClick={() => setIsOpen(!isOpen)}
+                />
+                <div>{title}</div>
+            </div>
+            {isOpen && <div className={styles.body}>{children}</div>}
         </div>
     );
 };
@@ -62,7 +74,10 @@ const RulesPage = () => {
                     <RulesListItem text={"Entry Cost"} bolded={"$50"} />
                     <RulesListItem text={"Champion"} bolded={"$400"} />
                     <RulesListItem text={"Runner-Up"} bolded={"$125"} />
-                    <RulesListItem text={"Entry Cost"} bolded={"$75"} />
+                    <RulesListItem
+                        text={"Regular Season Point Leader"}
+                        bolded={"$75"}
+                    />
                 </RulesList>
             </RuleCard>
             <RuleCard title={"Scoring"}>
@@ -93,7 +108,11 @@ const RulesPage = () => {
                     />
                     <RulesListItem text={"Rushing TD"} bolded={6} />
                     <RulesListItem text={"2-PT Conversion"} bolded={2} />
-                    <RulesListItem text={"Rush Attempts"} bolded={0.1} isNew />
+                    <RulesListItem
+                        text={"Rush Attempts"}
+                        bolded={"0.1 or 0.2"}
+                        isNew
+                    />
                     <RulesListItem
                         text={"40+ Yard TD Bonus"}
                         bolded={2}

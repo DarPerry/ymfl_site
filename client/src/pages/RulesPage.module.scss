@@ -1,7 +1,7 @@
 @import "../styles/theme.scss";
 
 .rule {
-    background-color: $iu-cream;
+    background-color: white;
     display: flex;
     margin-top: 12px;
     justify-content: space-between;
@@ -17,11 +17,15 @@
 .title {
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 4px;
     color: $iu-crimson;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .body {
+    margin-top: 4px;
+
     font-size: 12px;
     margin-top: 4px;
     padding: 0 14px;
@@ -84,4 +88,8 @@
     border-bottom: solid 2px $iu-crimson;
     padding-bottom: 12px;
     margin-bottom: 12px;
+}
+
+.icon {
+    cursor: pointer;
 }
