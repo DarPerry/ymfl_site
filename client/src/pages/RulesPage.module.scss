@@ -5,7 +5,7 @@
     display: flex;
     margin-top: 12px;
     justify-content: space-between;
-    padding: 10px 12px;
+    padding: 18px;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px 0px,
         rgba(192, 192, 192, 0.3) 0px 0px 24px 0px;
@@ -49,6 +49,10 @@
     border-radius: 4px;
     margin-right: 4px;
     width: fit-content;
+}
+
+.proposed {
+    background-color: $iu-majestic;
 }
 
 .listItem {

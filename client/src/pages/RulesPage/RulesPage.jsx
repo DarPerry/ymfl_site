@@ -5,6 +5,9 @@ import styles from "../RulesPage.module.scss";
 
 // const styles = {};
 
+//https://draftysports.com/news/you-deserve-better-defense-scoring#tldr
+//https://www.thefantasyfootballers.com/articles/ballers-preferred-league-format/
+
 // eslint-disable-next-line react/prop-types
 const RuleCard = ({ children, title }) => {
     return (
@@ -15,7 +18,15 @@ const RuleCard = ({ children, title }) => {
     );
 };
 
-const NewBadge = ({ isNew, isUpdated }) => {
+const NewBadge = ({ isNew, isUpdated, isProposed }) => {
+    console.log("isProposed", isProposed);
+    if (isProposed)
+        return (
+            <div className={classNames(styles.newBadge, styles.proposed)}>
+                PROPOSED
+            </div>
+        );
+
     return <div className={styles.newBadge}>{isNew ? "NEW" : "UPDATE"}</div>;
 };
 
@@ -28,10 +39,16 @@ const RulesList = ({ header, children, showDivider }) => {
     );
 };
 
-const RulesListItem = ({ text, bolded, isNew, isUpdated }) => {
+const RulesListItem = ({ text, bolded, isNew, isUpdated, isProposed }) => {
+    const Badge = () => {
+        if (isProposed) return <NewBadge isProposed />;
+        if (isNew) return <NewBadge isNew />;
+        if (isUpdated) return <NewBadge isUpdated />;
+        return null;
+    };
     return (
         <li className={styles.listItem}>
-            {(isNew || isUpdated) && <NewBadge isNew isUpdated />}
+            <Badge />
             {text}:<b className={styles.bolded}>{bolded}</b>
         </li>
     );
@@ -78,7 +95,7 @@ const RulesPage = () => {
                         isNew
                     />
                 </RulesList>
-                <RulesList header="Receiving">
+                <RulesList header="Receiving" showDivider>
                     <RulesListItem
                         text={"Receiving Yards"}
                         bolded={"0.1 per Yard / 1 per 10 Yards"}
@@ -91,6 +108,79 @@ const RulesPage = () => {
                         bolded={2}
                         isNew
                     />
+                    <RulesListItem
+                        text={"Pick 6 Thrown"}
+                        bolded={-2}
+                        isProposed
+                    />
+                </RulesList>
+                <RulesList header="Kicking" showDivider>
+                    <RulesListItem text={"PAT Made"} bolded={1} />
+                    <RulesListItem text={"PAT Missed"} bolded={-3} />
+                    <RulesListItem
+                        text={"Points per FG yard"}
+                        bolded={0.1}
+                        isNew
+                    />
+                    <RulesListItem text={"FG Missed"} bolded={-2} />
+                </RulesList>
+                <RulesList header="Team Defense" showDivider>
+                    <RulesListItem text={"Defense TD"} bolded={6} />
+                    <RulesListItem text={"Safety"} bolded={4} />
+                    <RulesListItem
+                        text={"2-PT Conversion Returns"}
+                        bolded={4}
+                        isNew
+                    />
+                    <RulesListItem text={"Blocked Kick"} bolded={3} isUpdated />
+                    <RulesListItem text={"Interceptions"} bolded={2} />
+                    <RulesListItem text={"Fumble Recovery"} bolded={1} />
+                    <RulesListItem text={"Forced Fumble"} bolded={1} />
+                    <RulesListItem text={"Sack"} bolded={1} />
+
+                    <RulesListItem
+                        text={"Tackle For Loss"}
+                        bolded={0.5}
+                        isNew
+                    />
+                    <RulesListItem
+                        text={"Passed Defended"}
+                        bolded={0.25}
+                        isNew
+                    />
+                    <RulesListItem text={"3 and Out"} bolded={0.5} isNew />
+                    <RulesListItem text={"4th Down Stop"} bolded={1} isNew />
+
+                    <RulesListItem
+                        text={"Points Allowed"}
+                        bolded={"-0.4 per Point"}
+                        isProposed
+                    />
+                    <RulesListItem
+                        text={"Yards Allowed"}
+                        bolded={"-0.02 per Yard"}
+                        isProposed
+                    />
+                </RulesList>
+                <RulesList header="Special Teams" showDivider>
+                    <RulesListItem
+                        text={"Special Teams TD"}
+                        bolded={8}
+                        isUpdated
+                    />
+                    <RulesListItem
+                        text={"Special Teams Forced Fumble"}
+                        bolded={1}
+                    />
+                    <RulesListItem
+                        text={"Special Teams Fumble Recovery"}
+                        bolded={1}
+                    />
+                </RulesList>
+                <RulesList header="Miscellaneous">
+                    <RulesListItem text={"Fumble"} bolded={-1} />
+                    <RulesListItem text={"Fumble Lost"} bolded={-1} />
+                    <RulesListItem text={"Fumble Recovery TD"} bolded={6} />
                 </RulesList>
             </RuleCard>
         </Page>
