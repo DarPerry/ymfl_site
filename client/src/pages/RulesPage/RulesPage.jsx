@@ -1,9 +1,9 @@
 import classNames from "classnames";
 
-// import styles from "./RulesPage.module.scss";
 import Page from "../../components/Page/Page";
+import styles from "./RulesPage.module.scss";
 
-const styles = {};
+// const styles = {};
 
 // eslint-disable-next-line react/prop-types
 const RuleCard = ({ children, title }) => {
