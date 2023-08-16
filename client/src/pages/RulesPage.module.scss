@@ -65,19 +65,19 @@
     list-style-type: none;
     align-items: center;
     height: fit-content;
+}
 
-    &:before {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        content: "";
-        margin-right: 6px;
-        font-size: 24px;
-        width: 5px;
-        height: 5px;
-        background-color: $bsu-dark-gray;
-        border-radius: 100%;
-    }
+.bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "";
+    margin-right: 6px;
+    font-size: 24px;
+    width: 5px;
+    height: 5px;
+    background-color: $bsu-dark-gray;
+    border-radius: 100%;
 }
 
 .bolded {
@@ -92,4 +92,9 @@
 
 .icon {
     cursor: pointer;
+    width: fit-content;
+}
+
+.text {
+    width: 100%;
 }

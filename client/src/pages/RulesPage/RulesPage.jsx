@@ -14,7 +14,7 @@ const RuleCard = ({ children, title }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={styles.rule} onClick={() => setIsOpen(!isOpen)}>
+        <div className={styles.rule} onClick={() => setIsOpen(true)}>
             <div className={styles.title}>
                 <i
                     className={classNames(
@@ -58,10 +58,19 @@ const RulesListItem = ({ text, bolded, isNew, isUpdated, isProposed }) => {
         return null;
     };
     return (
-        <li className={styles.listItem}>
+        <div className={styles.listItem}>
+            <div className={styles.bullet} />
             <Badge />
-            {text}:<b className={styles.bolded}>{bolded}</b>
-        </li>
+
+            <div className={styles.text}>
+                {text}
+                {bolded && (
+                    <>
+                        : <b className={styles.bolded}>{bolded}</b>
+                    </>
+                )}
+            </div>
+        </div>
     );
 };
 
@@ -211,62 +220,49 @@ const RulesPage = () => {
             <RuleCard title={"Keeper Rules"}>
                 <RulesList header="Overview" showDivider>
                     <RulesListItem
-                        text={"Passing Yards"}
-                        bolded={"0.04 per Yard / 1 per 25 Yards"}
+                        text={
+                            "Each season, you will select up to 4 players to potentially be kept."
+                        }
                     />
-                    <RulesListItem text={"Passing TD"} bolded={6} />
-                    <RulesListItem text={"Pass Intercepted"} bolded={-2} />
-                    <RulesListItem text={"2-PT Conversion"} bolded={2} />
-                    <RulesListItem text={"Pass Completed"} bolded={0.1} isNew />
+
                     <RulesListItem
-                        text={"40+ Yard TD Bonus"}
-                        bolded={2}
-                        isNew
+                        text={
+                            "You can designate one player to not be included in the Keeper Lottery, guaranteeing that player will be on your team."
+                        }
                     />
                     <RulesListItem
-                        text={"Pick 6 Thrown"}
-                        bolded={-2}
-                        isProposed
+                        text={
+                            "The other non-designated players will be entered into the Keeper Lottery, where one will randomly be added to the draft pool"
+                        }
                     />
                 </RulesList>
                 <RulesList header="Player Costs" showDivider>
                     <RulesListItem
-                        text={"Passing Yards"}
-                        bolded={"0.04 per Yard / 1 per 25 Yards"}
-                    />
-                    <RulesListItem text={"Passing TD"} bolded={6} />
-                    <RulesListItem text={"Pass Intercepted"} bolded={-2} />
-                    <RulesListItem text={"2-PT Conversion"} bolded={2} />
-                    <RulesListItem text={"Pass Completed"} bolded={0.1} isNew />
-                    <RulesListItem
-                        text={"40+ Yard TD Bonus"}
-                        bolded={2}
-                        isNew
+                        text={"Player last acquired by Waiver"}
+                        bolded={"ADP + 1"}
                     />
                     <RulesListItem
-                        text={"Pick 6 Thrown"}
-                        bolded={-2}
-                        isProposed
+                        text={"Player drafted last season"}
+                        bolded={"Draft Round - 1"}
+                    />
+                    <RulesListItem
+                        text={"Player 2nd time kept"}
+                        bolded={"Prev. keeper cost - 2"}
+                    />
+                    <RulesListItem
+                        text={"Player 3nd time kept"}
+                        bolded={"Prev. keeper cost - 3"}
+                    />
+                    <RulesListItem
+                        text={"Player 4th time kept"}
+                        bolded={"Prev. keeper cost - 5"}
                     />
                 </RulesList>
-                <RulesList header="Draft Lottery" showDivider>
+                <RulesList header="Draft Lottery">
                     <RulesListItem
-                        text={"Passing Yards"}
-                        bolded={"0.04 per Yard / 1 per 25 Yards"}
-                    />
-                    <RulesListItem text={"Passing TD"} bolded={6} />
-                    <RulesListItem text={"Pass Intercepted"} bolded={-2} />
-                    <RulesListItem text={"2-PT Conversion"} bolded={2} />
-                    <RulesListItem text={"Pass Completed"} bolded={0.1} isNew />
-                    <RulesListItem
-                        text={"40+ Yard TD Bonus"}
-                        bolded={2}
-                        isNew
-                    />
-                    <RulesListItem
-                        text={"Pick 6 Thrown"}
-                        bolded={-2}
-                        isProposed
+                        text={
+                            "The draft lottery will commence 1 hour before the draft."
+                        }
                     />
                 </RulesList>
             </RuleCard>
