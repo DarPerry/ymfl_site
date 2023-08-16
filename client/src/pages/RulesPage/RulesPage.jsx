@@ -1,7 +1,6 @@
 import classNames from "classnames";
 
 import styles from "./RulesPage.module.scss";
-``
 import Page from "../../components/Page/Page";
 
 // eslint-disable-next-line react/prop-types
