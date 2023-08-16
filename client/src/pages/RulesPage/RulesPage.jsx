@@ -80,6 +80,11 @@ const RulesPage = () => {
                         bolded={2}
                         isNew
                     />
+                    <RulesListItem
+                        text={"Pick 6 Thrown"}
+                        bolded={-2}
+                        isProposed
+                    />
                 </RulesList>
                 <RulesList header="Rushing" showDivider>
                     <RulesListItem
@@ -108,9 +113,10 @@ const RulesPage = () => {
                         bolded={2}
                         isNew
                     />
+
                     <RulesListItem
-                        text={"Pick 6 Thrown"}
-                        bolded={-2}
+                        text={"TE Reception"}
+                        bolded={0.5}
                         isProposed
                     />
                 </RulesList>
