@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import styles from "./RulesPage.module.scss";
+// import styles from "./RulesPage.module.scss";
 import Page from "../../components/Page/Page";
 
 // eslint-disable-next-line react/prop-types
@@ -36,6 +36,8 @@ const RulesListItem = ({ text, bolded, isNew, isUpdated }) => {
 };
 
 const RulesPage = () => {
+    return 1;
+
     return (
         <Page>
             <RuleCard title={"Entry Fee & Payouts"}>
