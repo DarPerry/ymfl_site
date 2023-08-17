@@ -142,7 +142,7 @@ const RulesPage = () => {
                     />
 
                     <RulesListItem
-                        text={"TE Reception"}
+                        text={"TE Reception Bonus"}
                         bolded={0.5}
                         isProposed
                     />
