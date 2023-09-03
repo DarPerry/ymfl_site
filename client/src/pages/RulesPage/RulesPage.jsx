@@ -116,11 +116,7 @@ const RulesPage = () => {
                     />
                     <RulesListItem text={"Rushing TD"} bolded={6} />
                     <RulesListItem text={"2-PT Conversion"} bolded={2} />
-                    <RulesListItem
-                        text={"Rush Attempts"}
-                        bolded={"0.1 or 0.2"}
-                        isNew
-                    />
+                    <RulesListItem text={"Rush Attempts"} bolded={0.15} isNew />
                     <RulesListItem
                         text={"40+ Yard TD Bonus"}
                         bolded={2}
@@ -141,11 +137,11 @@ const RulesPage = () => {
                         isNew
                     />
 
-                    <RulesListItem
+                    {/* <RulesListItem
                         text={"TE Reception Bonus"}
                         bolded={0.5}
                         isProposed
-                    />
+                    /> */}
                 </RulesList>
                 <RulesList header="Kicking" showDivider>
                     <RulesListItem text={"PAT Made"} bolded={1} />
@@ -187,12 +183,12 @@ const RulesPage = () => {
                     <RulesListItem
                         text={"Points Allowed"}
                         bolded={"-0.4 per Point"}
-                        isProposed
+                        isNew
                     />
                     <RulesListItem
                         text={"Yards Allowed"}
                         bolded={"-0.02 per Yard"}
-                        isProposed
+                        isNew
                     />
                 </RulesList>
                 <RulesList header="Special Teams" showDivider>
