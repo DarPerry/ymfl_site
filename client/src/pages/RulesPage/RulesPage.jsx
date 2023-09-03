@@ -30,7 +30,6 @@ const RuleCard = ({ children, title }) => {
 };
 
 const NewBadge = ({ isNew, isUpdated, isProposed }) => {
-    console.log("isProposed", isProposed);
     if (isProposed)
         return (
             <div className={classNames(styles.newBadge, styles.proposed)}>
@@ -103,11 +102,7 @@ const RulesPage = () => {
                         bolded={2}
                         isNew
                     />
-                    <RulesListItem
-                        text={"Pick 6 Thrown"}
-                        bolded={-2}
-                        isProposed
-                    />
+                    <RulesListItem text={"Pick 6 Thrown"} bolded={-2} isNew />
                 </RulesList>
                 <RulesList header="Rushing" showDivider>
                     <RulesListItem
