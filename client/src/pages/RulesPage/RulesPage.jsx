@@ -125,7 +125,7 @@ const RulesPage = () => {
                     />
                     <RulesListItem text={"Receiving TD"} bolded={6} />
                     <RulesListItem text={"2-PT Conversion"} bolded={2} />
-                    <RulesListItem text={"Reception"} bolded={0.5} isUpdated />
+                    <RulesListItem text={"Reception"} bolded={1} isUpdated />
                     <RulesListItem
                         text={"40+ Yard TD Bonus"}
                         bolded={2}
