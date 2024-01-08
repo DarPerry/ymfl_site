@@ -11,6 +11,7 @@ import {
 } from "./services/draft.service.js";
 import {
     getAllLeagueSeasons,
+    getLeagueManagers,
     getLeagueRosters,
     getLeagueTransactions,
 } from "./services/league.service.js";
@@ -408,10 +409,93 @@ const getRostersByTeamId = async () => {
     }, {});
 };
 
+const getHighestScoringWeekTeam =() => {
+    const weeksInSeason = 17;
+
+    const x = await Promise.all(
+        _.times(weeksInSeason, async (week) => {
+            return axios.get(
+                `https://api.sleeper.app/v1/league/964962685274103808/matchups/${
+                    week + 1
+                }`
+            );
+
+            console.log(
+                `https://api.sleeper.app/v1/league/${LEAGUE_ID}/matchups/${
+                    week + 1
+                }`
+            );
+
+            console.log(data);
+
+            return data;
+        })
+    );
+
+}
+
 app.get("/", async (req, res) => {
     return res.send(await getRostersByTeamId());
+    
+    const weeksInSeason = 17;
+
+    
+
+    const x = await Promise.all(
+        _.times(weeksInSeason, async (week) => {
+            return axios.get(
+                `https://api.sleeper.app/v1/league/964962685274103808/matchups/${
+                    week + 1
+                }`
+            );
+
+            console.log(
+                `https://api.sleeper.app/v1/league/${LEAGUE_ID}/matchups/${
+                    week + 1
+                }`
+            );
+
+            console.log(data);
+
+            return data;
+        })
+    );
+
+    const data2 = x.map(({ data }, index) => ({
+        week: index + 1,
+        matchups: data,
+    }));
+
+    const rosterIdMap = await getLeagueManagers();
+
+    return res.send(
+        data2.reduce(
+            (acc, { week, matchups }) => {
+                const highestScoring = _.maxBy(matchups, "points");
+
+                if (
+                    highestScoring.points > 0 &&
+                    highestScoring.points > acc.score
+                ) {
+                    acc.week = week;
+                    acc.roster = highestScoring.roster_id;
+                    acc.score = highestScoring.points;
+                    acc.manager =
+                        rosterIdMap[highestScoring.roster_id].display_name;
+                }
+
+                return acc;
+            },
+            {
+                week: null,
+                roster: null,
+                score: 0,
+                manager: null,
+            }
+        )
+    );
 });
 
 app.listen(PORT, () => {
-    console.log("Server is running on port 1738");
+    console.log(`Server is running on port ${PORT}`);
 });

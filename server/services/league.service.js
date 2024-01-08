@@ -64,12 +64,12 @@ const getLastCompletedSeason = async () => {
 
 // GET https://api.sleeper.app/v1/user/<user_id>/leagues/<sport>/<season>
 
-const getLeagueManagers = async (req, res) => {
+export const getLeagueManagers = async (req, res) => {
     const currentLeagueId = await fetchFromSleeperEndpoint(
         `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`
     );
 
-    const cli = currentLeagueId.at(0).league_id;
+    const cli = "964962685274103808";
 
     const currentRosters = await fetchFromSleeperEndpoint(
         `/league/${cli}/rosters`
