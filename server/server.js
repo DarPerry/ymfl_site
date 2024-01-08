@@ -409,7 +409,7 @@ const getRostersByTeamId = async () => {
     }, {});
 };
 
-const getHighestScoringWeekTeam =() => {
+const getHighestScoringWeekTeam = async () => {
     const weeksInSeason = 17;
 
     const x = await Promise.all(
@@ -431,15 +431,12 @@ const getHighestScoringWeekTeam =() => {
             return data;
         })
     );
-
-}
+};
 
 app.get("/", async (req, res) => {
     return res.send(await getRostersByTeamId());
-    
-    const weeksInSeason = 17;
 
-    
+    const weeksInSeason = 17;
 
     const x = await Promise.all(
         _.times(weeksInSeason, async (week) => {
