@@ -275,6 +275,8 @@ const getPlayerKeeperValue = (transactions, playerAdr) => {
 
     let keeperValue = 0;
 
+    // console.log(Number(lastTransactionSeason), dayjs().year() - 1);
+
     if (
         Number(lastTransactionSeason) !== dayjs().year() - 1 ||
         lastTransactionSeasonType === "WAIVER_DROP"
