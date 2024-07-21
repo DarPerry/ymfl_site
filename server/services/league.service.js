@@ -9,6 +9,14 @@ const YMFL_LEAGUE_ID = "837484548060192768";
 const LEAGUE_NAME = "Your Mom's Favorite League";
 const JUSTIN_JEFFERSON_PLAYER_ID = "6794";
 
+export const getCurrentLeagueId = async () => {
+    const response = await fetchFromSleeperEndpoint(
+        `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`
+    );
+
+    return response.at(0).league_id;
+};
+
 const getAllLeaguesForUser = async (userId, season) =>
     fetchFromSleeperEndpoint(`/user/${userId}/leagues/nfl/${season}`);
 

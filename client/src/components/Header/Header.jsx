@@ -49,7 +49,7 @@ const Header = () => {
                                 )}
                             />
                             <span>Reigning Champion:</span>
-                            <span className={styles.champName}>Brayden</span>
+                            <span className={styles.champName}>Nick</span>
                         </div>
                     </div>
                 </div>

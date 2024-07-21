@@ -11,6 +11,7 @@ import {
 } from "./services/draft.service.js";
 import {
     getAllLeagueSeasons,
+    getCurrentLeagueId,
     getLeagueManagers,
     getLeagueRosters,
     getLeagueTransactions,
@@ -380,8 +381,11 @@ const getAllPlayersTransactions = async () => {
 };
 
 const getRostersByTeamId = async () => {
-    const rosters = await getLeagueRosters(LEAGUE_ID);
+    const currentLeagueID = await getCurrentLeagueId();
+    const rosters = await getLeagueRosters("1095616714546479104");
     const allPlayerHistory = await getAllPlayersTransactions();
+
+    console.log(rosters);
 
     const nameMap = {
         1: "Darius",
