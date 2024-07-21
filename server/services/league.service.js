@@ -5,9 +5,7 @@ import { fetchFromSleeperEndpoint } from "../util/api.util.js";
 
 const YEAR_STARTED = 2019;
 const MY_USER_ID = "444630794862850048";
-const YMFL_LEAGUE_ID = "837484548060192768";
 const LEAGUE_NAME = "Your Mom's Favorite League";
-const JUSTIN_JEFFERSON_PLAYER_ID = "6794";
 
 export const getCurrentLeagueId = async () => {
     const response = await fetchFromSleeperEndpoint(
@@ -58,7 +56,7 @@ export const getAllLeagueSeasons = async () => {
     );
 
     const leaguesSinceInception = _.flatten(responses).filter(
-        ({ name }) => name === LEAGUE_NAME
+        ({ name }) => name !== "FanDuel - Fantasy Gameplay Peeps"
     );
 
     return leaguesSinceInception;

@@ -134,8 +134,8 @@ const KeeperPricesPage = ({ data }) => {
                                         },
                                         { value: "Bob", label: "Bob" },
                                         { value: "Zack", label: "Zack" },
-                                        // { value: "Joel", label: "Joel" },
-                                        // { value: "Tri", label: "Tri" },
+                                        { value: "Joel", label: "Joel" },
+                                        { value: "Tri", label: "Tri" },
                                     ],
                                     "label"
                                 ).map(({ value }) => (
