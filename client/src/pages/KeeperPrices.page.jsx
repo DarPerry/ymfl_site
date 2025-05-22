@@ -10,7 +10,7 @@ import classNames from "classnames";
 import PositionBadge from "../components/PositionBadge/PositionBadge";
 
 const KeeperPricesPage = ({ data }) => {
-    console.log(2, data);
+    // console.log(2, data);
     const [rosterFilter, setRosterFilter] = useState("All");
     const [positionFilter, setPositionFilter] = useState("ALL");
 
@@ -189,7 +189,7 @@ const KeeperPricesPage = ({ data }) => {
                                     className={styles.checkbox}
                                     value={valueFilter}
                                     onChange={(checked) => {
-                                        console.log(checked);
+                                        // console.log(checked);
                                         setValueFilter(!valueFilter);
                                     }}
                                 />
@@ -257,7 +257,7 @@ const KeeperPricesPage = ({ data }) => {
                 </div>
                 <body className={styles.body}>
                     {players.map((player) => {
-                        console.log(player);
+                        // console.log(player);
                         return (
                             <PlayerRow
                                 {...player}

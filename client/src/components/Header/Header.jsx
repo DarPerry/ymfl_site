@@ -38,7 +38,7 @@ const Header = () => {
                     <div>
                         <div className={styles.leagueInfo}>
                             <div className={styles.leagueName}>
-                                The Usubi Boys
+                                The Indy (Never Above) .500
                             </div>
                         </div>
                         <div className={styles.champ}>
@@ -49,7 +49,7 @@ const Header = () => {
                                 )}
                             />
                             <span>Reigning Champion:</span>
-                            <span className={styles.champName}>Nick</span>
+                            <span className={styles.champName}>Jeremiah</span>
                         </div>
                     </div>
                 </div>

@@ -359,6 +359,8 @@ const getAllPlayersTransactions = async () => {
             playerTransactions
         );
 
+        console.log(44444, full_name, transactions);
+
         const keeperValueForCurrentTeam = getPlayerKeeperValue(
             transactions,
             adr
@@ -384,10 +386,9 @@ const getAllPlayersTransactions = async () => {
 
 const getRostersByTeamId = async () => {
     const currentLeagueID = await getCurrentLeagueId();
+    console.log("currentLeagueID", currentLeagueID);
     const rosters = await getLeagueRosters("1095616714546479104");
     const allPlayerHistory = await getAllPlayersTransactions();
-
-    console.log(rosters);
 
     const nameMap = {
         1: "Darius",
@@ -440,6 +441,7 @@ const getHighestScoringWeekTeam = async () => {
 };
 
 app.get("/", async (req, res) => {
+    console.log(123);
     return res.send(await getRostersByTeamId());
 
     const weeksInSeason = 17;
