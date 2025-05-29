@@ -55,7 +55,7 @@ export const getAllLeagueSeasons = async () => {
     );
 
     const leaguesSinceInception = _.flatten(responses).filter(
-        ({ name }) => name !== "FanDuel - Fantasy Gameplay Peeps"
+        ({ name }) => !name.toUpperCase().includes("FANDUEL")
     );
 
     return leaguesSinceInception;

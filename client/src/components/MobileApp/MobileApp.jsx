@@ -12,9 +12,7 @@ const MobileApp = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch(
-                "https://indy-ff-site-server.onrender.com/"
-            );
+            const response = await fetch("http://localhost:1739/");
             const data = await response.json();
             setData(data);
         };

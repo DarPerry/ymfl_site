@@ -267,8 +267,8 @@ const getPlayerKeeperValue = (transactions, playerAdr, player) => {
 
     const lastTransaction = nonTradedTransactions?.at(0);
 
-    if (player.full_name === "Saquon Barkley") {
-        console.log(player.full_name, transactions);
+    if (player.full_name === "Matthew Stafford") {
+        console.log(player.full_name, transactions, lastTransaction);
     }
 
     if (!lastTransaction) return 0;
