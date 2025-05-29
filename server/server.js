@@ -316,29 +316,66 @@ const getFibonacciNumberFromSequence = (sequence) =>
 
 const getPlayerAdpMap = async (playerIdMap) => {
     const { data } = await axios.get(
-        "https://www.fantasypros.com/nfl/adp/half-point-ppr-overall.php"
+        "https://www.fantasypros.com/nfl/rankings/dynasty-superflex.php",
+        { responseType: "document" }
     );
 
-    const playerAdpMap = {};
-
+    let ecrDataScriptContent = "";
     const $ = cheerio.load(data);
-    $("tbody tr").each((i, el) => {
-        const $el = $(el);
-        const name = $el.find(".player-name").text();
-        const adp = Number($el.find("td").eq(-1).text());
 
-        const playerId = playerIdMap[normalizePlayerName(name)];
+    $("script").each((i, script) => {
+        const scriptContent = $(script).html();
 
-        playerAdpMap[playerId] = adp;
+        if (scriptContent && scriptContent.includes("var ecrData")) {
+            ecrDataScriptContent = scriptContent;
+        }
     });
 
-    return playerAdpMap;
+    const ecrDataMatch = ecrDataScriptContent.match(
+        /var ecrData\s*=\s*(\{.*?\});/s
+    );
+    if (!ecrDataMatch || ecrDataMatch.length < 2) {
+        throw new Error("Failed to extract ecrData JSON.");
+    }
+
+    const ecrDataJson = ecrDataMatch[1];
+    const { players } = JSON.parse(ecrDataJson);
+
+    return players.reduce((acc, { player_name, rank_ecr }) => {
+        const normalizedPlayerName = normalizePlayerName(player_name);
+        const playerId = playerIdMap[normalizedPlayerName];
+
+        acc[playerId] = rank_ecr;
+
+        return acc;
+    }, {});
+
+    // const { data } = await axios.get(
+    //     "https://www.fantasypros.com/nfl/adp/half-point-ppr-overall.php"
+    // );
+
+    // const playerAdpMap = {};
+
+    // const $ = cheerio.load(data);
+    // $("tbody tr").each((i, el) => {
+    //     const $el = $(el);
+    //     const name = $el.find(".player-name").text();
+    //     const adp = Number($el.find("td").eq(-1).text());
+
+    //     const playerId = playerIdMap[normalizePlayerName(name)];
+
+    //     playerAdpMap[playerId] = adp;
+    // });
+
+    // return playerAdpMap;
 };
 
 const getAllPlayersTransactions = async () => {
     const { players, playerIdMap } = await getValidPlayers();
 
     const playerAdpMap = await getPlayerAdpMap(playerIdMap);
+
+    console.log("playerAdpMap", playerAdpMap);
 
     // return playerAdpMap;
 
@@ -359,7 +396,7 @@ const getAllPlayersTransactions = async () => {
             playerTransactions
         );
 
-        console.log(44444, full_name, transactions);
+        // console.log(44444, full_name, transactions);
 
         const keeperValueForCurrentTeam = getPlayerKeeperValue(
             transactions,
@@ -397,7 +434,7 @@ const getRostersByTeamId = async () => {
         4: "Jeremiah",
         5: "Bob",
         6: "Hues",
-        7: "Brayden",
+        7: "Diego",
         8: "Jack",
         9: "Quast",
         10: "T Cool",
@@ -441,7 +478,7 @@ const getHighestScoringWeekTeam = async () => {
 };
 
 app.get("/", async (req, res) => {
-    console.log(123);
+    console.log(await getRostersByTeamId());
     return res.send(await getRostersByTeamId());
 
     const weeksInSeason = 17;

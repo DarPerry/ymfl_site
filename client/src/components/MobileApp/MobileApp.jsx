@@ -3,7 +3,6 @@ import styles from "./MobileApp.module.scss";
 import { useEffect, useState } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 
-import Page from "../Page/Page";
 import Header from "../Header/Header";
 import KeeperPricesPage from "../../pages/KeeperPrices.page";
 import RulesPage from "../../pages/RulesPage/RulesPage";

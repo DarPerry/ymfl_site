@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { useEffect, useState } from "react";
-
 import styles from "./App.module.scss";
 
 import MobileApp from "./components/MobileApp/MobileApp";
