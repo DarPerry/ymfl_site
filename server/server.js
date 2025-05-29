@@ -267,10 +267,6 @@ const getPlayerKeeperValue = (transactions, playerAdr, player) => {
 
     const lastTransaction = nonTradedTransactions?.at(0);
 
-    if (player.full_name === "Matthew Stafford") {
-        console.log(player.full_name, transactions, lastTransaction);
-    }
-
     if (!lastTransaction) return 0;
 
     const {
@@ -428,7 +424,6 @@ const getAllPlayersTransactions = async () => {
 
 const getRostersByTeamId = async () => {
     const currentLeagueID = await getCurrentLeagueId();
-    console.log("currentLeagueID", currentLeagueID);
     const rosters = await getLeagueRosters("1095616714546479104");
     const allPlayerHistory = await getAllPlayersTransactions();
 

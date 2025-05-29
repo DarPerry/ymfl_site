@@ -102,8 +102,6 @@ const PlayerRow = ({
     hotColdPlayers,
     playerId: id,
 }) => {
-    console.log(name);
-
     const keeperAdpCost = getSnakeDraftPick(
         rosteredByPickMap[rosteredBy],
         keeperCost
