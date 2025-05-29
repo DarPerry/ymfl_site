@@ -5,7 +5,6 @@ import { fetchFromSleeperEndpoint } from "../util/api.util.js";
 
 const YEAR_STARTED = 2019;
 const MY_USER_ID = "444630794862850048";
-const LEAGUE_NAME = "Your Mom's Favorite League";
 
 export const getCurrentLeagueId = async () => {
     const response = await fetchFromSleeperEndpoint(

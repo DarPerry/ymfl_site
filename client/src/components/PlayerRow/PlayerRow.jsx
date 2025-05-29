@@ -88,7 +88,7 @@ const rosteredByPickMap = {
     Quast: 9,
     Zack: 10,
     Nick: 11,
-    Brayden: 12,
+    Diego: 12,
 };
 
 const PlayerRow = ({

@@ -8,9 +8,10 @@ const getTrendingPlayers = async () =>
 
 export const normalizePlayerName = (playerName) => {
     return playerName
-        ?.replaceAll(/ (?:I+$|JR)/gi, "")
+        ?.replaceAll(/ (?:I+$|JR|SR)/gi, "")
         ?.replaceAll(/[.]/gi, "")
-        .replaceAll(/[ -]/g, "_")
+        ?.replaceAll(/[ -]/g, "_")
+        ?.replaceAll(/Hollywood/g, "MARQUISE")
         .toUpperCase();
     // .replace(/\s+/g, " ") // remove suffixes
     // .replace(/[^a-zA-Z ]/g, "")

@@ -136,7 +136,9 @@ const getAllDrafts = async () => {
         )
     );
 
-    return _.flatten(allDrafts);
+    return _.flatten(allDrafts).filter(({ metadata: { name } }) => {
+        return !name.toUpperCase().includes("FANDUEL");
+    });
 };
 
 const getDraftPicksByPlayerId = async () => {
@@ -258,12 +260,16 @@ const mergePlayerTransactions = (draftPicks = [], transactions = []) => {
     );
 };
 
-const getPlayerKeeperValue = (transactions, playerAdr) => {
+const getPlayerKeeperValue = (transactions, playerAdr, player) => {
     const nonTradedTransactions = transactions.filter(
         ({ type }) => !type.includes("TRADE")
     );
 
     const lastTransaction = nonTradedTransactions?.at(0);
+
+    if (player.full_name === "Saquon Barkley") {
+        console.log(player.full_name, transactions);
+    }
 
     if (!lastTransaction) return 0;
 
@@ -316,7 +322,7 @@ const getFibonacciNumberFromSequence = (sequence) =>
 
 const getPlayerAdpMap = async (playerIdMap) => {
     const { data } = await axios.get(
-        "https://www.fantasypros.com/nfl/rankings/dynasty-superflex.php",
+        "https://www.fantasypros.com/nfl/rankings/ppr-superflex-cheatsheets.php",
         { responseType: "document" }
     );
 
@@ -375,8 +381,6 @@ const getAllPlayersTransactions = async () => {
 
     const playerAdpMap = await getPlayerAdpMap(playerIdMap);
 
-    console.log("playerAdpMap", playerAdpMap);
-
     // return playerAdpMap;
 
     const draftPicksByPlayerId = await getDraftPicksByPlayerId();
@@ -400,7 +404,8 @@ const getAllPlayersTransactions = async () => {
 
         const keeperValueForCurrentTeam = getPlayerKeeperValue(
             transactions,
-            adr
+            adr,
+            player
         );
 
         return {
@@ -478,7 +483,6 @@ const getHighestScoringWeekTeam = async () => {
 };
 
 app.get("/", async (req, res) => {
-    console.log(await getRostersByTeamId());
     return res.send(await getRostersByTeamId());
 
     const weeksInSeason = 17;

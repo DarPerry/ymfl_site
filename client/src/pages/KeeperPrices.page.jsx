@@ -125,8 +125,8 @@ const KeeperPricesPage = ({ data }) => {
                                             label: "Jeremiah",
                                         },
                                         {
-                                            value: "Brayden",
-                                            label: "Brayden",
+                                            value: "Diego",
+                                            label: "Diego",
                                         },
                                         {
                                             value: "T Cool",
