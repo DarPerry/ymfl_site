@@ -318,7 +318,7 @@ const getFibonacciNumberFromSequence = (sequence) =>
 
 const getPlayerAdpMap = async (playerIdMap) => {
     const { data } = await axios.get(
-        "https://www.fantasypros.com/nfl/rankings/ppr-superflex-cheatsheets.php",
+        "https://www.fantasypros.com/nfl/rankings/superflex-cheatsheets.php",
         { responseType: "document" }
     );
 

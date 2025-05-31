@@ -22,7 +22,7 @@ const getPlayerADPs = async () => {
     const playerAdpMap = {};
 
     const { body: html } = await got(
-        "https://www.fantasypros.com/nfl/adp/half-point-ppr-overall.php"
+        "https://www.fantasypros.com/nfl/rankings/superflex-cheatsheets.php"
     );
     const $ = load(html);
     const $selected = $("tr");
