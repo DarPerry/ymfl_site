@@ -8,7 +8,7 @@ const MY_USER_ID = "444630794862850048";
 
 export const getCurrentLeagueId = async () => {
     const response = await fetchFromSleeperEndpoint(
-        `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`
+        `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`,
     );
 
     return response.at(0).league_id;
@@ -43,7 +43,7 @@ const getNflState = () => fetchFromSleeperEndpoint(`/state/nfl`);
 export const getAllLeagueSeasons = async () => {
     const yearsLeagueHasExisted = dayjs().diff(
         dayjs(`${YEAR_STARTED}-01-01`),
-        "month"
+        "month",
     );
 
     const yearsActive = Math.ceil(yearsLeagueHasExisted / 12);
@@ -54,16 +54,16 @@ export const getAllLeagueSeasons = async () => {
             const leagues = await getAllLeaguesForUser(MY_USER_ID, year);
 
             return leagues;
-        })
+        }),
     );
 
     const leaguesSinceInception = _.flatten(responses).filter(
         ({ name }) =>
             !name.toUpperCase().includes("FANDUEL") &&
-            !name.toUpperCase().includes("ADYEN")
+            !name.toUpperCase().includes("ADYEN"),
     );
 
-    return leaguesSinceInception;
+    return leaguesSinceInception.filter(({ status }) => status !== "pre_draft");
 };
 
 const getLastCompletedSeason = async () => {
@@ -76,20 +76,20 @@ const getLastCompletedSeason = async () => {
 
 export const getLeagueManagers = async (req, res) => {
     const currentLeagueId = await fetchFromSleeperEndpoint(
-        `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`
+        `/user/${MY_USER_ID}/leagues/nfl/${dayjs().year()}`,
     );
 
     const cli = "964962685274103808";
 
     const currentRosters = await fetchFromSleeperEndpoint(
-        `/league/${cli}/rosters`
+        `/league/${cli}/rosters`,
     );
 
     const currentUsers = await fetchFromSleeperEndpoint(`/league/${cli}/users`);
 
     return currentUsers.reduce((acc, curr) => {
         const match = currentRosters.find(
-            ({ owner_id }) => owner_id === curr.user_id
+            ({ owner_id }) => owner_id === curr.user_id,
         );
 
         acc[match.roster_id] = { ...match, ...curr };

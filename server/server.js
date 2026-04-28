@@ -132,8 +132,8 @@ const getAllDrafts = async () => {
 
     const allDrafts = await Promise.all(
         allLeagueSeasons.map(
-            async ({ league_id }) => await getAllDraftsForLeague(league_id)
-        )
+            async ({ league_id }) => await getAllDraftsForLeague(league_id),
+        ),
     );
 
     return _.flatten(allDrafts).filter(({ metadata: { name } }) => {
@@ -176,7 +176,7 @@ const getDraftPicksByPlayerId = async () => {
             });
 
             allDraftPicks.push(...picksWithSeason);
-        })
+        }),
     );
 
     return _.groupBy(allDraftPicks, "player_id");
@@ -190,13 +190,13 @@ const getTransactionByPlayerIDs = async () => {
             const t = [];
 
             const p = await Promise.all(
-                _.times(18).map((i) => getLeagueTransactions(league_id, i))
+                _.times(18).map((i) => getLeagueTransactions(league_id, i)),
             );
 
             t.push(..._.flatten(p));
 
             return _.flattenDeep(t.map((y) => ({ ...y, season })));
-        })
+        }),
     );
 
     return _.flatten(transactions)
@@ -221,9 +221,9 @@ const getTransactionByPlayerIDs = async () => {
                         type: isWaiverMove
                             ? "WAIVER_ADD"
                             : type === "trade"
-                            ? "TRADED_IN"
-                            : "DRAFT_PICK",
-                    })
+                              ? "TRADED_IN"
+                              : "DRAFT_PICK",
+                    }),
                 );
             });
 
@@ -245,9 +245,9 @@ const getTransactionByPlayerIDs = async () => {
                         type: isWaiverMove
                             ? "WAIVER_DROP"
                             : type === "trade"
-                            ? "TRADED_OUT"
-                            : "DRAFT_PICK",
-                    })
+                              ? "TRADED_OUT"
+                              : "DRAFT_PICK",
+                    }),
                 );
             });
 
@@ -259,13 +259,13 @@ const mergePlayerTransactions = (draftPicks = [], transactions = []) => {
     return _.orderBy(
         [...draftPicks, ...transactions],
         ["season", "week", "type"],
-        ["desc", "desc", "asc"]
+        ["desc", "desc", "asc"],
     );
 };
 
 const getPlayerKeeperValue = (transactions, playerAdr, player) => {
     const nonTradedTransactions = transactions.filter(
-        ({ type }) => !type.includes("TRADE")
+        ({ type }) => !type.includes("TRADE"),
     );
 
     const lastTransaction = nonTradedTransactions?.at(0);
@@ -293,11 +293,11 @@ const getPlayerKeeperValue = (transactions, playerAdr, player) => {
     } else if (lastTransactionSeasonType === "DRAFT_KEEPER") {
         const consecutiveTimesKeptByOwner = nonTradedTransactions.findIndex(
             ({ type, draftedBy }) =>
-                type !== "DRAFT_KEEPER" || draftedBy !== lastTeamDraftedBy
+                type !== "DRAFT_KEEPER" || draftedBy !== lastTeamDraftedBy,
         );
 
         const keeperAdjustment = getFibonacciNumberFromSequence(
-            consecutiveTimesKeptByOwner
+            consecutiveTimesKeptByOwner,
         );
 
         keeperValue = lastRoundDrafted - keeperAdjustment;
@@ -338,7 +338,7 @@ const getAllPlayersTransactions = async () => {
 
         const transactions = mergePlayerTransactions(
             playerDraftPicks,
-            playerTransactions
+            playerTransactions,
         );
 
         // console.log(44444, full_name, transactions);
@@ -346,8 +346,12 @@ const getAllPlayersTransactions = async () => {
         const keeperValueForCurrentTeam = getPlayerKeeperValue(
             transactions,
             adr,
-            player
+            player,
         );
+
+        if (player.last_name === "Dart") {
+            console.log(transactions, adr, keeperValueForCurrentTeam);
+        }
 
         return {
             // ...player,
@@ -406,19 +410,19 @@ const getHighestScoringWeekTeam = async () => {
             return axios.get(
                 `https://api.sleeper.app/v1/league/964962685274103808/matchups/${
                     week + 1
-                }`
+                }`,
             );
 
             console.log(
                 `https://api.sleeper.app/v1/league/${LEAGUE_ID}/matchups/${
                     week + 1
-                }`
+                }`,
             );
 
             console.log(data);
 
             return data;
-        })
+        }),
     );
 };
 
@@ -432,19 +436,19 @@ app.get("/", async (req, res) => {
             return axios.get(
                 `https://api.sleeper.app/v1/league/964962685274103808/matchups/${
                     week + 1
-                }`
+                }`,
             );
 
             console.log(
                 `https://api.sleeper.app/v1/league/${LEAGUE_ID}/matchups/${
                     week + 1
-                }`
+                }`,
             );
 
             console.log(data);
 
             return data;
-        })
+        }),
     );
 
     const data2 = x.map(({ data }, index) => ({
@@ -477,14 +481,14 @@ app.get("/", async (req, res) => {
                 roster: null,
                 score: 0,
                 manager: null,
-            }
-        )
+            },
+        ),
     );
 });
 
 export const getSleeperAdpMap = async () => {
     const { data: sleeperAdp } = await axios.get(
-        "https://api.sleeper.com/projections/nfl/2025?season_type=regular&position[]=DEF&position[]=K&position[]=QB&position[]=RB&position[]=TE&position[]=WR&order_by=adp_2qb"
+        "https://api.sleeper.com/projections/nfl/2026?season_type=regular&position[]=DEF&position[]=K&position[]=QB&position[]=RB&position[]=TE&position[]=WR&order_by=adp_2qb",
     );
 
     return sleeperAdp.reduce((acc, { player_id, stats: { adp_2qb } }) => {
