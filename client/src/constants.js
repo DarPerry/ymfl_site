@@ -1,4 +1,4 @@
-export const USE_PRESEASON_MODE = true;
+export const USE_PRESEASON_MODE = false;
 
 export const ENTRY_COST = 75;
 
